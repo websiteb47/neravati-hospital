@@ -7,27 +7,26 @@ const Contact = () => {
       icon: Phone,
       title: "Phone",
       details: [
-        { label: "Main Office", value: "(555) 123-4567" },
-        { label: "Emergency", value: "(555) 123-4567" },
-        { label: "Fax", value: "(555) 123-4568" }
+        { label: "Main Office", value: "97041 30234" },
+        { label: "Emergency", value: "97041 30234" },
       ]
     },
     {
       icon: Mail,
       title: "Email",
       details: [
-        { label: "General Inquiries", value: "info@healthcare.com" },
-        { label: "Appointments", value: "appointments@healthcare.com" },
-        { label: "Billing", value: "billing@healthcare.com" }
+            { label: "General Inquiries", value: "info@neravati.com" },
+    { label: "Appointments", value: "appointments@neravati.com" },
+    { label: "Billing", value: "billing@neravati.com" }
       ]
     },
     {
       icon: MapPin,
       title: "Address",
       details: [
-        { label: "Main Office", value: "123 Medical Center Drive" },
-        { label: "City, State", value: "City, State 12345" },
-        { label: "Country", value: "United States" }
+        { label: "Main Office", value: "25/684-43-1A, near RYTHU BAZAR, near NANDYAL CRITICAL CARE HOSPITAL, Padmavathi Nagar" },
+        { label: "City, State", value: "Nandyala, Andhra Pradesh 518501" },
+        { label: "Country", value: "India" }
       ]
     },
     {
@@ -42,12 +41,12 @@ const Contact = () => {
   ];
 
   const departments = [
-    { name: "Cardiology", phone: "(555) 123-4001" },
-    { name: "Neurology", phone: "(555) 123-4002" },
-    { name: "Pediatrics", phone: "(555) 123-4003" },
-    { name: "Orthopedics", phone: "(555) 123-4004" },
-    { name: "Dermatology", phone: "(555) 123-4005" },
-    { name: "Emergency", phone: "(555) 123-4567" }
+    { name: "Cardiology", phone: "97041 30234" },
+    { name: "Neurology", phone: "97041 30234" },
+    { name: "Pediatrics", phone: "97041 30234" },
+    { name: "Orthopedics", phone: "97041 30234" },
+    { name: "Dermatology", phone: "97041 30234" },
+    { name: "Emergency", phone: "97041 30234" }
   ];
 
   return (
@@ -107,7 +106,7 @@ const Contact = () => {
                   <div className="text-center">
                     <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600">Interactive Map</p>
-                    <p className="text-sm text-gray-500">123 Medical Center Drive, City, State 12345</p>
+                    <p className="text-sm text-gray-500">25/684-43-1A, near RYTHU BAZAR, near NANDYAL CRITICAL CARE HOSPITAL, Padmavathi Nagar, Nandyala, Andhra Pradesh 518501</p>
                   </div>
                 </div>
                 <div className="p-6">
@@ -224,7 +223,7 @@ const Contact = () => {
               For medical emergencies, please call our emergency hotline immediately.
             </p>
             <div className="bg-white text-red-600 rounded-lg p-8 mb-8">
-              <p className="text-3xl font-bold mb-2">(555) 123-4567</p>
+              <p className="text-3xl font-bold mb-2">97041 30234</p>
               <p className="text-lg">Available 24/7</p>
             </div>
             <p className="text-lg">

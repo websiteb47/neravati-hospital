@@ -30,7 +30,7 @@ const ServiceCard = ({ service }) => {
         {/* Price and Duration */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
           <div className="space-y-1">
-            <p className="text-2xl font-bold text-blue-600">{service.price}</p>
+            {/* <p className="text-2xl font-bold text-blue-600">{service.price}</p> */}
             <p className="text-sm text-gray-500">Duration: {service.duration}</p>
           </div>
           <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors duration-200">

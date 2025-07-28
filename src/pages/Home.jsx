@@ -1,54 +1,55 @@
 import Hero from '../components/Hero';
 import DepartmentCard from '../components/DepartmentCard';
 import ServiceCard from '../components/ServiceCard';
+import TestimonialCard from '../components/TestimonialCard';
 import { departments, services } from '../data/doctors';
-import { Heart, Shield, Clock, Users, Award, Phone } from 'lucide-react';
+import { testimonials } from '../data/testimonials';
+import { Heart, Shield, Users, Clock, Award, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   const features = [
     {
       icon: Heart,
-      title: "Expert Care",
-      description: "Our team of experienced doctors provides the highest quality medical care."
+      title: "Compassionate Care",
+      description: "We treat every patient with empathy, respect, and understanding, ensuring personalized care for all."
     },
     {
       icon: Shield,
-      title: "Advanced Technology",
-      description: "State-of-the-art medical equipment and facilities for accurate diagnosis."
+      title: "Expert Doctors",
+      description: "Our team of experienced medical professionals provides the highest quality healthcare services."
+    },
+    {
+      icon: Users,
+      title: "Modern Facilities",
+      description: "State-of-the-art medical equipment and facilities to ensure accurate diagnosis and treatment."
     },
     {
       icon: Clock,
       title: "24/7 Emergency",
-      description: "Round-the-clock emergency care when you need it most."
-    },
-    {
-      icon: Users,
-      title: "Patient-Centered",
-      description: "Personalized care plans tailored to your individual health needs."
+      description: "Round-the-clock emergency care services to handle critical medical situations anytime."
     },
     {
       icon: Award,
-      title: "Accredited Facility",
-      description: "Fully accredited medical center meeting the highest standards."
+      title: "Quality Assurance",
+      description: "Fully accredited medical center meeting the highest standards of healthcare excellence."
     },
     {
-      icon: Phone,
-      title: "Easy Access",
-      description: "Convenient location with easy appointment booking and access."
+      icon: Star,
+      title: "Patient Satisfaction",
+      description: "We are committed to providing exceptional healthcare services with compassion, innovation, and excellence. Your health and well-being are our top priorities."
     }
   ];
 
   return (
     <div>
-      {/* Hero Section */}
       <Hero />
 
       {/* Features Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose HealthCare?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Neravati?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We are committed to providing exceptional healthcare services with compassion, 
               innovation, and excellence. Your health and well-being are our top priorities.
@@ -64,6 +65,25 @@ const Home = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From routine check-ups to specialized treatments, we offer a wide range 
+              of medical services to meet your healthcare needs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <ServiceCard key={service.id} service={service} />
             ))}
           </div>
         </div>
@@ -97,21 +117,27 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Patient Testimonials</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From routine check-ups to specialized treatments, we offer a wide range 
-              of medical services to meet your healthcare needs.
+              Hear from our satisfied patients about their experience at Neravati Multispeciality Hospital
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <ServiceCard key={service.id} service={service} />
+            {testimonials.slice(0, 6).map((testimonial) => (
+              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold shadow-lg">
+              <Star className="w-5 h-5 text-yellow-400 fill-current" />
+              <span>4.9/5 Average Rating from 1000+ Patients</span>
+            </div>
           </div>
         </div>
       </section>

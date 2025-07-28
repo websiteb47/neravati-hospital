@@ -9,6 +9,7 @@ import Services from './pages/Services';
 import Appointment from './pages/Appointment';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
+import Gallery from './pages/Gallery';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/appointment" element={<Appointment />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

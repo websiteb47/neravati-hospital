@@ -10,6 +10,7 @@ const Footer = () => {
     { name: 'Departments', href: '/departments' },
     { name: 'Doctors', href: '/doctors' },
     { name: 'Services', href: '/services' },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'Contact', href: '/contact' },
     { name: 'FAQ', href: '/faq' },
   ];
@@ -42,11 +43,11 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">H</span>
+                <span className="text-white font-bold">N</span>
               </div>
               <div>
-                <h3 className="text-lg font-bold">HealthCare</h3>
-                <p className="text-sm text-gray-400">Medical Center</p>
+                <h3 className="text-lg font-bold">Neravati</h3>
+                <p className="text-sm text-gray-400">Multispeciality Hospital</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
@@ -54,16 +55,36 @@ const Footer = () => {
               Your health is our priority.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a 
+                href="https://www.facebook.com/neravatimultispecialityhospital/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a 
+                href="https://x.com/NeravatiC42987" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a 
+                href="https://www.instagram.com/neravati_testtube_babycentre/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a 
+                href="https://www.google.com/search?q=Neravati+Hospitals" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
@@ -111,21 +132,20 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">
-                    123 Medical Center Drive<br />
-                    City, State 12345
+                  25/684-43-1A, near RYTHU BAZAR, near NANDYAL CRITICAL CARE HOSPITAL, Padmavathi Nagar, Nandyala, Andhra Pradesh 518501
                   </p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300 text-sm">(555) 123-4567</p>
-                  <p className="text-gray-400 text-xs">Emergency: (555) 123-4567</p>
+                  <p className="text-gray-300 text-sm">97041 30234</p>
+                  <p className="text-gray-400 text-xs">Emergency: 97041 30234</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                <p className="text-gray-300 text-sm">info@healthcare.com</p>
+                <p className="text-gray-300 text-sm">info@neravati.com</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="w-5 h-5 text-blue-400 flex-shrink-0" />
@@ -142,7 +162,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © {currentYear} HealthCare Medical Center. All rights reserved.
+              © {currentYear} Neravati Multispeciality Hospital. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy" className="text-gray-400 hover:text-blue-400 transition-colors">
