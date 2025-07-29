@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Chrome  } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -42,8 +42,9 @@ const Footer = () => {
           {/* Hospital Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">N</span>
+              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                {/* <span className="text-white font-bold">N</span> */}
+                <img src="./logo.jpeg" alt="logo" className="w-10 h-10 rounded-full" />
               </div>
               <div>
                 <h3 className="text-lg font-bold">Neravati</h3>
@@ -85,7 +86,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
-                <Linkedin className="w-5 h-5" />
+                <Chrome  className="w-5 h-5" />
               </a>
             </div>
           </div>

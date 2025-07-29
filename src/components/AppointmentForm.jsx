@@ -21,18 +21,111 @@ const AppointmentForm = () => {
     ? doctors.filter(doctor => doctor.department === selectedDepartment)
     : doctors;
 
+  // Function to send appointment data to WhatsApp
+  const sendToWhatsApp = (data) => {
+    // Replace this with your actual WhatsApp number (with country code, no + or spaces)
+    const whatsappNumber = '919494694195'; // Example: 919876543210 for India
+    
+    // Format date for better readability
+    const formatDate = (dateString) => {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+    };
+
+    // Format time for better readability
+    const formatTime = (timeString) => {
+      const [hours, minutes] = timeString.split(':');
+      const hour = parseInt(hours);
+      const ampm = hour >= 12 ? 'PM' : 'AM';
+      const displayHour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
+      return `${displayHour}:${minutes} ${ampm}`;
+    };
+
+    // Get doctor name if selected
+    const getDoctorName = (doctorId) => {
+      if (!doctorId) return 'Any Available Doctor';
+      const doctor = filteredDoctors.find(d => d.id === doctorId);
+      return doctor ? `${doctor.name} (${doctor.specialty})` : 'Any Available Doctor';
+    };
+
+    // Format the appointment data for WhatsApp message
+    const message = `🏥 *NERAVATI HOSPITAL - APPOINTMENT REQUEST* 🏥
+
+📋 *PATIENT INFORMATION*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 *Name:* ${data.name}
+📱 *Phone:* ${data.phone}
+📧 *Email:* ${data.email}
+
+🏥 *APPOINTMENT DETAILS*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🏢 *Department:* ${data.department}
+👨‍⚕️ *Preferred Doctor:* ${getDoctorName(data.doctor)}
+📅 *Preferred Date:* ${formatDate(data.date)}
+⏰ *Preferred Time:* ${formatTime(data.time)}
+
+📝 *ADDITIONAL NOTES*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${data.notes ? data.notes : 'No additional notes provided'}
+
+
+*This appointment request was submitted through our website.*`;
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    // Open WhatsApp with a small delay for better UX
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+    }, 500);
+  };
+
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Validate required fields
+      if (!data.name || !data.phone || !data.email || !data.department || !data.date || !data.time) {
+        throw new Error('Please fill in all required fields');
+      }
+
+      // Validate phone number format
+      const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+      if (!phoneRegex.test(data.phone)) {
+        throw new Error('Please enter a valid phone number');
+      }
+
+      // Validate email format
+      const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+      if (!emailRegex.test(data.email)) {
+        throw new Error('Please enter a valid email address');
+      }
+
+      // Validate date (not in the past)
+      const selectedDate = new Date(data.date);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      if (selectedDate < today) {
+        throw new Error('Please select a future date');
+      }
+
+      // Send to WhatsApp
+      sendToWhatsApp(data);
       
-      console.log('Appointment data:', data);
+      console.log('Appointment data sent to WhatsApp:', data);
       setSubmitStatus('success');
       reset();
     } catch (error) {
+      console.error('Error sending to WhatsApp:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -52,8 +145,8 @@ const AppointmentForm = () => {
           <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-3">
             <CheckCircle className="w-5 h-5 text-green-600" />
             <div>
-              <p className="text-green-800 font-medium">Appointment Booked Successfully!</p>
-              <p className="text-green-700 text-sm">We'll contact you shortly to confirm your appointment.</p>
+              <p className="text-green-800 font-medium">Appointment Request Ready!</p>
+              <p className="text-green-700 text-sm">WhatsApp will open automatically. Please review the message and click 'Send' to complete your booking. We'll confirm your appointment within 2 hours.</p>
             </div>
           </div>
         )}
@@ -62,8 +155,8 @@ const AppointmentForm = () => {
           <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-3">
             <AlertCircle className="w-5 h-5 text-red-600" />
             <div>
-              <p className="text-red-800 font-medium">Booking Failed</p>
-              <p className="text-red-700 text-sm">Please try again or contact us directly.</p>
+              <p className="text-red-800 font-medium">Unable to Process Request</p>
+              <p className="text-red-700 text-sm">Please check your information and try again, or call us directly at 97041 30234 for immediate assistance.</p>
             </div>
           </div>
         )}
@@ -245,10 +338,10 @@ const AppointmentForm = () => {
             {isSubmitting ? (
               <>
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                <span>Booking Appointment...</span>
+                <span>Preparing WhatsApp Message...</span>
               </>
             ) : (
-              <span>Book Appointment</span>
+              <span>Send Appointment Request</span>
             )}
           </button>
         </form>

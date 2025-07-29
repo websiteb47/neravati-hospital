@@ -30,17 +30,17 @@ const Navbar = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-blue-600 text-white py-2">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-blue-600 text-white py-2">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
             <div className="flex items-center space-x-6 mb-2 sm:mb-0">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>(555) 123-4567</span>
+                <span>97041 30234</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
-                <span>123 Medical Center Dr, City, State</span>
+                <span>Padmavathi Nagar, Nandyala, Andhra Pradesh 518501</span>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -51,7 +51,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      <nav className={`fixed left-0 right-0 z-50 transition-all duration-300 top-8 ${
         isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
       }`}>
         <div className="container mx-auto px-4">
@@ -59,7 +59,8 @@ const Navbar = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">N</span>
+                {/* <span className="text-white font-bold text-lg">N</span> */}
+                <img src="./logo.jpeg" alt="logo" className="w-10 h-10" />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Neravati</h1>
@@ -133,7 +134,7 @@ const Navbar = () => {
       </nav>
 
       {/* Spacer for fixed navbar */}
-      <div className="h-16"></div>
+      <div className="h-24"></div>
     </>
   );
 };

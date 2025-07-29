@@ -237,7 +237,7 @@ const FAQ = () => {
                   Speak with our team immediately for urgent questions.
                 </p>
                 <a
-                  href="tel:(555) 123-4567"
+                  href="tel:9704130234"
                   className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
                 >
                   Call Now
@@ -276,7 +276,7 @@ const FAQ = () => {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Support</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li><a href="/contact" className="hover:text-blue-600 transition-colors">Get Help</a></li>
-                  <li><a href="tel:(555) 123-4567" className="hover:text-blue-600 transition-colors">Emergency: (555) 123-4567</a></li>
+                  <li><a href="tel:9704130234" className="hover:text-blue-600 transition-colors">Emergency: 97041 30234</a></li>
                   <li><a href="/appointment" className="hover:text-blue-600 transition-colors">Schedule Online</a></li>
                 </ul>
               </div>

@@ -121,7 +121,7 @@ const Appointment = () => {
 
                 <div className="mt-8 p-4 bg-blue-50 rounded-lg">
                   <h4 className="font-semibold text-gray-900 mb-2">Emergency Contact</h4>
-                  <p className="text-blue-600 font-bold text-lg">(555) 123-4567</p>
+                  <p className="text-blue-600 font-bold text-lg">97041 30234</p>
                   <p className="text-sm text-gray-600">Available 24/7 for emergencies</p>
                 </div>
               </div>

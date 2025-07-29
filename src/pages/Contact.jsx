@@ -130,7 +130,7 @@ const Contact = () => {
       </section>
 
       {/* Department Contacts */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Department Contacts</h2>
@@ -156,7 +156,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">
