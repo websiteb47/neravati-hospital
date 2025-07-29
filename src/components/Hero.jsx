@@ -58,7 +58,7 @@ const Hero = () => {
       >
         {bannerImages.map((banner) => (
           <SwiperSlide key={banner.id}>
-            <div className="relative w-full h-screen">
+            <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen">
               <img
                 src={banner.image}
                 alt={banner.alt}

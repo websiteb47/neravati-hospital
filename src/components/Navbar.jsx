@@ -33,18 +33,18 @@ const Navbar = () => {
       <div className="fixed top-0 left-0 right-0 z-50 bg-blue-600 text-white py-2">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
-            <div className="flex items-center space-x-6 mb-2 sm:mb-0">
+            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-2 sm:mb-0">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>97041 30234</span>
+                <span className="text-xs sm:text-sm">97041 30234</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
-                <span>Padmavathi Nagar, Nandyala, Andhra Pradesh 518501</span>
+                <span className="text-xs sm:text-sm">Padmavathi Nagar, Nandyala, Andhra Pradesh 518501</span>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-blue-100">Emergency: 24/7</span>
+              <span className="text-blue-100 text-xs sm:text-sm">Emergency: 24/7</span>
             </div>
           </div>
         </div>
