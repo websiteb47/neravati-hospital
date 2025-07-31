@@ -11,7 +11,7 @@ const FAQ = () => {
       questions: [
         {
           question: "How do I schedule an appointment?",
-          answer: "You can schedule an appointment by calling our main office at (555) 123-4567, using our online booking system, or visiting us in person. We recommend booking at least 1-2 weeks in advance for routine appointments."
+          answer: "You can schedule an appointment by calling our main office at 97041 30234, using our online booking system, or visiting us in person. We recommend booking at least 1-2 weeks in advance for routine appointments."
         },
         {
           question: "What if I need to cancel or reschedule my appointment?",

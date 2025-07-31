@@ -32,14 +32,14 @@ const DoctorCard = ({ doctor }) => {
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
       {/* Doctor Image */}
-      <div className="relative h-48 bg-gradient-to-br from-blue-50 to-green-50">
+      <div className="relative h-70 bg-gradient-to-br  from-blue-50 to-green-50">
         <img
           src={doctor.image}
           alt={doctor.name}
           className="w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 shadow-md">
+        <div className="absolute bottom-4 right-4 bg-white rounded-full px-3 py-1 shadow-md">
           <span className="text-sm font-semibold text-blue-600">{doctor.specialty}</span>
         </div>
       </div>
@@ -64,11 +64,11 @@ const DoctorCard = ({ doctor }) => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 gap-4 py-3 border-t border-gray-100">
-          <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2">
             <Clock className="w-4 h-4 text-gray-400" />
             <span className="text-sm text-gray-600">{doctor.experience}</span>
           </div>
+        <div className="grid grid-cols-2 gap-4 py-3 border-t border-gray-100">
           <div className="flex items-center space-x-2">
             <Users className="w-4 h-4 text-gray-400" />
             <span className="text-sm text-gray-600">{doctor.patients}+ patients</span>
