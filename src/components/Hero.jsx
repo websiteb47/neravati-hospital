@@ -21,7 +21,7 @@ const Hero = () => {
     },
     // {
     //   id: 3,
-    //   image: "/images/banner3.jpg",
+    //   image: "/images/banner3.jpeg",
     //   alt: "Healthcare team working together"
     // },
     // {

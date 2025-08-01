@@ -1,4 +1,4 @@
-import { Heart, Brain, Baby, Bone, Shield, Microscope, Ambulance, ArrowRight } from 'lucide-react';
+import { Heart, Brain, Baby, Bone, Shield, Microscope, Ambulance, ArrowRight, Ear } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const DepartmentCard = ({ department }) => {
@@ -10,7 +10,7 @@ const DepartmentCard = ({ department }) => {
       bone: Bone,
       skin: Shield,
       microscope: Microscope,
-    
+      ear: Ear,
       ambulance: Ambulance,
     };
     return icons[iconName] || Heart;
@@ -21,7 +21,7 @@ const DepartmentCard = ({ department }) => {
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white">
+      <div className="bg-gradient-to-r from-blue-600 h-max to-blue-700 p-6 text-white">
         <div className="flex items-center space-x-4">
           <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
             <IconComponent className="w-6 h-6" />

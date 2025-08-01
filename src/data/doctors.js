@@ -70,117 +70,109 @@ export const doctors = [
 export const departments = [
   {
     id: 1,
-    name: "Cardiology",
-    icon: "heart",
-    description: "Comprehensive heart care and cardiovascular treatments",
-    doctors: 3,
-    services: ["EKG", "Echocardiogram", "Cardiac Catheterization", "Stress Tests"]
+    name: "ENT (Ear, Nose & Throat)",
+    icon: "ear",
+    description: "Specialized treatment for ear, nose, and throat disorders",
+    doctors: 1,
+    services: ["Hearing Loss Treatment", "Sinus Surgery", "Tonsillectomy", "Voice Disorders", "Allergic Rhinitis", "Sleep Apnea Treatment"]
   },
   {
     id: 2,
-    name: "Neurology",
-    icon: "brain",
-    description: "Specialized care for neurological disorders and brain health",
+    name: "Obstetrics & Gynecology",
+    icon: "baby",
+    description: "Comprehensive women's health care and reproductive medicine",
     doctors: 2,
-    services: ["MRI", "EEG", "Neurological Exams", "Stroke Treatment"]
+    services: ["IVF Treatment", "Laparoscopic Surgery", "Hysteroscopic Surgery", "Pregnancy Care", "Infertility Treatment", "Cosmetic Gynecology", "Normal Delivery", "C-Section"]
   },
   {
     id: 3,
-    name: "Pediatrics",
-    icon: "baby",
-    description: "Complete healthcare for children from birth to adolescence",
-    doctors: 4,
-    services: ["Well-child Visits", "Vaccinations", "Growth Monitoring", "Behavioral Health"]
+    name: "Orthopedics",
+    icon: "bone",
+    description: "Treatment for bone and joint diseases, trauma, and joint replacements",
+    doctors: 1,
+    services: ["Joint Replacement Surgery", "Trauma Care", "Sports Injuries", "Fracture Treatment", "Arthritis Management", "Spine Surgery", "Hand Surgery", "Knee & Hip Surgery"]
   },
   {
     id: 4,
-    name: "Orthopedics",
-    icon: "bone",
-    description: "Treatment for musculoskeletal conditions and injuries",
-    doctors: 3,
-    services: ["Joint Replacement", "Sports Medicine", "Physical Therapy", "Fracture Care"]
+    name: "General Medicine & Internal Medicine",
+    icon: "heart",
+    description: "Comprehensive medical care for adults with focus on chronic diseases",
+    doctors: 1,
+    services: ["Diabetes Management", "Hypertension Treatment", "Thyroid Disorders", "Heart Disease", "Respiratory Problems", "Infectious Diseases", "Liver & Kidney Diseases", "Emergency Care"]
   },
   {
     id: 5,
-    name: "Dermatology",
-    icon: "skin",
-    description: "Skin care, disease treatment, and cosmetic procedures",
-    doctors: 2,
-    services: ["Skin Cancer Screening", "Acne Treatment", "Cosmetic Procedures", "Allergy Testing"]
-  },
-  {
-    id: 6,
-    name: "Oncology",
-    icon: "microscope",
-    description: "Comprehensive cancer care and treatment programs",
-    doctors: 2,
-    services: ["Chemotherapy", "Radiation Therapy", "Immunotherapy", "Clinical Trials"]
-  },
-  {
-    id: 7,
-    name: "Psychiatry",
-    icon: "mind",
-    description: "Mental health care and psychological treatment",
-    doctors: 3,
-    services: ["Individual Therapy", "Group Therapy", "Medication Management", "Crisis Intervention"]
-  },
-  {
-    id: 8,
     name: "Emergency Medicine",
     icon: "ambulance",
-    description: "24/7 emergency care and trauma treatment",
-    doctors: 5,
-    services: ["Trauma Care", "Emergency Surgery", "Critical Care", "Urgent Care"]
+    description: "24/7 emergency care and critical medical services",
+    doctors: 1,
+    services: ["Trauma Care", "Emergency Surgery", "Critical Care", "Urgent Care", "Heart Attack Treatment", "Stroke Management", "Accident Care", "IPD Facility"]
   }
 ];
 
 export const services = [
   {
     id: 1,
-    name: "Primary Care",
-    description: "Comprehensive health care for all ages",
+    name: "General Physician Consultation",
+    description: "Comprehensive medical care for diabetes, BP, thyroid, heart diseases, and more",
     icon: "stethoscope",
-    price: "$150",
-    duration: "30-60 min"
+    price: "₹500",
+    duration: "30-45 min"
   },
   {
     id: 2,
-    name: "Specialist Consultation",
-    description: "Expert consultation with specialized doctors",
-    icon: "user-md",
-    price: "$200",
+    name: "ENT Specialist Consultation",
+    description: "Expert treatment for ear, nose, and throat problems",
+    icon: "ear",
+    price: "₹800",
     duration: "45 min"
   },
   {
     id: 3,
-    name: "Diagnostic Imaging",
-    description: "Advanced imaging services including MRI, CT, X-ray",
-    icon: "scan",
-    price: "$300-800",
-    duration: "30-90 min"
-  },
-  {
-    id: 4,
-    name: "Laboratory Services",
-    description: "Comprehensive blood work and diagnostic testing",
-    icon: "flask",
-    price: "$50-200",
-    duration: "15 min"
-  },
-  {
-    id: 5,
-    name: "Physical Therapy",
-    description: "Rehabilitation and physical therapy services",
-    icon: "activity",
-    price: "$120",
+    name: "Gynecology & IVF Treatment",
+    description: "Advanced fertility treatment and women's health care",
+    icon: "baby",
+    price: "₹1500",
     duration: "60 min"
   },
   {
-    id: 6,
-    name: "Surgery",
-    description: "Advanced surgical procedures and operations",
+    id: 4,
+    name: "Orthopedic Consultation",
+    description: "Specialized care for bone and joint problems, trauma, and joint replacements",
+    icon: "bone",
+    price: "₹1000",
+    duration: "45 min"
+  },
+  {
+    id: 5,
+    name: "Laparoscopic Surgery",
+    description: "Minimally invasive surgical procedures for various conditions",
     icon: "scissors",
-    price: "Varies",
+    price: "₹25,000+",
     duration: "Varies"
+  },
+  {
+    id: 6,
+    name: "Emergency Care",
+    description: "24/7 emergency medical services and IPD facility",
+    icon: "ambulance",
+    price: "Emergency",
+    duration: "24/7"
+  },
+  {
+    id: 7,
+    name: "Diagnostic Services",
+    description: "Blood tests, imaging, and comprehensive diagnostic workup",
+    icon: "flask",
+    price: "₹200-2000",
+    duration: "15-60 min"
+  },
+  {
+    id: 8,
+    name: "Fever & Infection Treatment",
+    description: "Treatment for malaria, typhoid, dengue, viral fevers, and infections",
+    icon: "thermometer",
+    price: "₹800",
+    duration: "30 min"
   }
 ]; 

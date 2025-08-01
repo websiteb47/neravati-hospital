@@ -1,4 +1,4 @@
-import { Stethoscope, User, Scan,  Activity, Scissors, ArrowRight } from 'lucide-react';
+import { Stethoscope, User, Scan, Activity, Scissors, ArrowRight, Ear, Baby, Bone, Ambulance, Thermometer } from 'lucide-react';
 
 const ServiceCard = ({ service }) => {
   const getIcon = (iconName) => {
@@ -6,9 +6,14 @@ const ServiceCard = ({ service }) => {
       stethoscope: Stethoscope,
       'user-md': User,
       scan: Scan,
-    
       activity: Activity,
       scissors: Scissors,
+      ear: Ear,
+      baby: Baby,
+      bone: Bone,
+      ambulance: Ambulance,
+      
+      thermometer: Thermometer,
     };
     return icons[iconName] || Stethoscope;
   };
