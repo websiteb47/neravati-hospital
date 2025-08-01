@@ -14,7 +14,7 @@ export const doctors = [
   },
   {
     id: 2,
-    name: "Dr. A. Aruna Kumar",
+    name: "Dr. A. Aruna Kumari",
     specialty: "Gynecology & IVF",
     department: "Gynecology",
     image: "/images/doctor-aruna.jpeg",
@@ -70,43 +70,51 @@ export const doctors = [
 export const departments = [
   {
     id: 1,
-    name: "ENT (Ear, Nose & Throat)",
+    name: "IVF Infertility",
+    icon: "baby",
+    description: "Advanced fertility treatment and reproductive medicine",
+    doctors: 1,
+    services: ["IVF Treatment", "IUI Treatment", "Fertility Assessment", "Hormone Therapy", "Egg Freezing", "Surrogacy Consultation"]
+  },
+  {
+    id: 2,
+    name: "ENT",
     icon: "ear",
     description: "Specialized treatment for ear, nose, and throat disorders",
     doctors: 1,
     services: ["Hearing Loss Treatment", "Sinus Surgery", "Tonsillectomy", "Voice Disorders", "Allergic Rhinitis", "Sleep Apnea Treatment"]
   },
   {
-    id: 2,
-    name: "Obstetrics & Gynecology",
+    id: 3,
+    name: "Gynecology",
     icon: "baby",
     description: "Comprehensive women's health care and reproductive medicine",
     doctors: 2,
-    services: ["IVF Treatment", "Laparoscopic Surgery", "Hysteroscopic Surgery", "Pregnancy Care", "Infertility Treatment", "Cosmetic Gynecology", "Normal Delivery", "C-Section"]
+    services: ["Pregnancy Care", "Laparoscopic Surgery", "Hysteroscopic Surgery", "Normal Delivery", "C-Section", "Menstrual Disorders", "PCOS Treatment"]
   },
   {
-    id: 3,
-    name: "Orthopedics",
+    id: 4,
+    name: "Cosmetic Gynecology",
+    icon: "scissors",
+    description: "Advanced cosmetic and aesthetic gynecological procedures",
+    doctors: 1,
+    services: ["Vaginal Rejuvenation", "Labiaplasty", "Hymenoplasty", "G-Spot Enhancement", "Laser Treatment", "Intimate Surgery"]
+  },
+  {
+    id: 5,
+    name: "Orthopaedic",
     icon: "bone",
     description: "Treatment for bone and joint diseases, trauma, and joint replacements",
     doctors: 1,
     services: ["Joint Replacement Surgery", "Trauma Care", "Sports Injuries", "Fracture Treatment", "Arthritis Management", "Spine Surgery", "Hand Surgery", "Knee & Hip Surgery"]
   },
   {
-    id: 4,
-    name: "General Medicine & Internal Medicine",
+    id: 6,
+    name: "MD General",
     icon: "heart",
     description: "Comprehensive medical care for adults with focus on chronic diseases",
     doctors: 1,
     services: ["Diabetes Management", "Hypertension Treatment", "Thyroid Disorders", "Heart Disease", "Respiratory Problems", "Infectious Diseases", "Liver & Kidney Diseases", "Emergency Care"]
-  },
-  {
-    id: 5,
-    name: "Emergency Medicine",
-    icon: "ambulance",
-    description: "24/7 emergency care and critical medical services",
-    doctors: 1,
-    services: ["Trauma Care", "Emergency Surgery", "Critical Care", "Urgent Care", "Heart Attack Treatment", "Stroke Management", "Accident Care", "IPD Facility"]
   }
 ];
 

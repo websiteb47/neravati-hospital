@@ -1,7 +1,8 @@
 import React from 'react';
+import { contactInfo } from '../config/contact';
 
 const WhatsAppFloat = () => {
-  const phoneNumber = '9704130234'; // Replace with your actual WhatsApp number
+  const phoneNumber = contactInfo.whatsappNumber;
   const message = 'Hello! I would like to know more about your services.'; // Default message
 
   const handleWhatsAppClick = () => {

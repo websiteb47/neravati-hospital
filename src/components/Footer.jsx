@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Chrome  } from 'lucide-react';
+import { contactInfo } from '../config/contact';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,14 +17,12 @@ const Footer = () => {
   ];
 
   const departments = [
-    'Cardiology',
-    'Neurology',
-    'Pediatrics',
-    'Orthopedics',
-    'Dermatology',
-    'Oncology',
-    'Psychiatry',
-    'Emergency Medicine',
+    'IVF Infertility',
+    'ENT',
+    'Gynecology',
+    'Cosmetic Gynecology',
+    'Orthopaedic',
+    'MD General',
   ];
 
   const services = [
@@ -133,20 +132,20 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">
-                  25/684-43-1A, near RYTHU BAZAR, near NANDYAL CRITICAL CARE HOSPITAL, Padmavathi Nagar, Nandyala, Andhra Pradesh 518501
+                    {contactInfo.address}
                   </p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300 text-sm">97041 30234</p>
-                  <p className="text-gray-400 text-xs">Emergency: 97041 30234</p>
+                  <p className="text-gray-300 text-sm">{contactInfo.phoneNumbers[0]}</p>
+                  <p className="text-gray-400 text-xs">Emergency: {contactInfo.emergencyNumber}</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                <p className="text-gray-300 text-sm">info@neravati.com</p>
+                <p className="text-gray-300 text-sm">{contactInfo.email}</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="w-5 h-5 text-blue-400 flex-shrink-0" />

@@ -30,13 +30,13 @@ const DoctorCard = ({ doctor }) => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col h-full">
       {/* Doctor Image */}
-      <div className="relative h-70 bg-gradient-to-br  from-blue-50 to-green-50">
+      <div className="relative h-64 bg-gradient-to-br from-blue-50 to-green-50 flex-shrink-0 overflow-hidden">
         <img
           src={doctor.image}
           alt={doctor.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
           loading="lazy"
         />
         <div className="absolute bottom-4 right-4 bg-white rounded-full px-3 py-1 shadow-md">
@@ -45,10 +45,10 @@ const DoctorCard = ({ doctor }) => {
       </div>
 
       {/* Doctor Info */}
-      <div className="p-6 space-y-4">
+      <div className="p-6 space-y-4 flex-1 flex flex-col">
         {/* Name and Rating */}
         <div className="space-y-2">
-          <h3 className="text-xl font-bold text-gray-900">{doctor.name}</h3>
+          <h3 className="text-xl font-bold text-gray-900 leading-tight">{doctor.name}</h3>
           <div className="flex items-center space-x-2">
             <div className="flex items-center space-x-1">
               {renderStars(doctor.rating)}
@@ -82,10 +82,10 @@ const DoctorCard = ({ doctor }) => {
         </div>
 
         {/* Description */}
-        <p className="text-sm text-gray-600 line-clamp-2">{doctor.description}</p>
+        <p className="text-sm text-gray-600 line-clamp-3 flex-1">{doctor.description}</p>
 
         {/* Action Buttons */}
-        <div className="flex space-x-3 pt-2">
+        <div className="flex space-x-3 pt-4 mt-auto">
           <Link
             to={`/appointment?doctor=${doctor.id}`}
             className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors duration-200"

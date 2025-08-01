@@ -1,5 +1,6 @@
 import ContactForm from '../components/ContactForm';
 import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { contactInfo as hospitalContact } from '../config/contact';
 
 const Contact = () => {
   const contactInfo = [
@@ -7,24 +8,24 @@ const Contact = () => {
       icon: Phone,
       title: "Phone",
       details: [
-        { label: "Main Office", value: "97041 30234" },
-        { label: "Emergency", value: "97041 30234" },
+        { label: "Main Office", value: hospitalContact.phoneNumbers[0] },
+        { label: "Emergency", value: hospitalContact.emergencyNumber },
       ]
     },
     {
       icon: Mail,
       title: "Email",
       details: [
-            { label: "General Inquiries", value: "info@neravati.com" },
-    { label: "Appointments", value: "appointments@neravati.com" },
-    { label: "Billing", value: "billing@neravati.com" }
+        { label: "General Inquiries", value: hospitalContact.email },
+        { label: "Appointments", value: "appointments@neravati.com" },
+        { label: "Billing", value: "billing@neravati.com" }
       ]
     },
     {
       icon: MapPin,
       title: "Address",
       details: [
-        { label: "Main Office", value: "25/684-43-1A, near RYTHU BAZAR, near NANDYAL CRITICAL CARE HOSPITAL, Padmavathi Nagar" },
+        { label: "Main Office", value: hospitalContact.address },
         { label: "City, State", value: "Nandyala, Andhra Pradesh 518501" },
         { label: "Country", value: "India" }
       ]
@@ -102,12 +103,17 @@ const Contact = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Find Us</h2>
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="h-96 bg-gray-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-600">Interactive Map</p>
-                    <p className="text-sm text-gray-500">25/684-43-1A, near RYTHU BAZAR, near NANDYAL CRITICAL CARE HOSPITAL, Padmavathi Nagar, Nandyala, Andhra Pradesh 518501</p>
-                  </div>
+                <div className="h-96 bg-gray-200">
+                  <iframe
+                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&q=${encodeURIComponent(hospitalContact.address)}`}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Hospital Location"
+                  ></iframe>
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Getting Here</h3>
@@ -223,7 +229,7 @@ const Contact = () => {
               For medical emergencies, please call our emergency hotline immediately.
             </p>
             <div className="bg-white text-red-600 rounded-lg p-8 mb-8">
-              <p className="text-3xl font-bold mb-2">97041 30234</p>
+              <p className="text-3xl font-bold mb-2">{hospitalContact.emergencyNumber}</p>
               <p className="text-lg">Available 24/7</p>
             </div>
             <p className="text-lg">

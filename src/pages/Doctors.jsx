@@ -80,7 +80,7 @@ const Doctors = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           {filteredDoctors.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-full mx-auto">
               {filteredDoctors.map((doctor) => (
                 <DoctorCard key={doctor.id} doctor={doctor} />
               ))}

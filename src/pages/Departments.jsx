@@ -1,10 +1,41 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DepartmentCard from '../components/DepartmentCard';
 import { departments } from '../data/doctors';
 import { Search } from 'lucide-react';
 
 const Departments = () => {
   const [searchTerm, setSearchTerm] = useState('');
+
+  // Handle anchor links for smooth scrolling
+  useEffect(() => {
+    const handleScrollToSection = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          setTimeout(() => {
+            const offset = 140; // Account for fixed navbar and top bar
+            const elementPosition = element.offsetTop - offset;
+            window.scrollTo({
+              top: elementPosition,
+              behavior: 'smooth'
+            });
+          }, 500);
+        }
+      }
+    };
+
+    // Handle initial load
+    handleScrollToSection();
+
+    // Handle hash changes
+    const handleHashChange = () => {
+      handleScrollToSection();
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   const filteredDepartments = departments.filter(dept =>
     dept.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -53,7 +84,7 @@ const Departments = () => {
             </div>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {filteredDepartments.map((department) => (
               <DepartmentCard key={department.id} department={department} />
             ))}
@@ -79,7 +110,7 @@ const Departments = () => {
 
           <div className="space-y-16">
             {departments.map((department) => (
-              <div key={department.id} id={department.name.toLowerCase()} className="bg-white rounded-xl shadow-lg p-8">
+              <div key={department.id} id={department.name.toLowerCase().replace(/\s+/g, '-')} className="bg-white rounded-xl shadow-lg p-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-6">{department.name}</h3>

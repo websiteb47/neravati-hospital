@@ -19,11 +19,11 @@ const Hero = () => {
       image: "/images/banner2.jpeg",
       alt: "Modern medical equipment"
     },
-    // {
-    //   id: 3,
-    //   image: "/images/banner3.jpeg",
-    //   alt: "Healthcare team working together"
-    // },
+        // {
+        //   id: 3,
+        //   image: "/images/banner3.jpeg",
+        //   alt: "Healthcare team working together"
+        // },
     // {
     //   id: 4,
     //   image: "/images/banner4.jpg",
@@ -69,7 +69,7 @@ const Hero = () => {
                 }}
               />
               {/* Overlay for better text readability if needed */}
-              <div className="absolute inset-0 bg-black/20"></div>
+              <div className="absolute inset-0 bg-black/0"></div>
             </div>
           </SwiperSlide>
         ))}
