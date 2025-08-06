@@ -11,29 +11,14 @@ const Hero = () => {
   const bannerImages = [
     {
       id: 1,
-      image: "/images/banner1.jpeg",
+      image: "/images/banner3.jpg",
       alt: "Medical professionals in hospital"
     },
     {
       id: 2,
-      image: "/images/banner2.jpeg",
+      image: "/images/banner4.jpg",
       alt: "Modern medical equipment"
-    },
-        // {
-        //   id: 3,
-        //   image: "/images/banner3.jpeg",
-        //   alt: "Healthcare team working together"
-        // },
-    // {
-    //   id: 4,
-    //   image: "/images/banner4.jpg",
-    //   alt: "Hospital building exterior"
-    // },
-    // {
-    //   id: 5,
-    //   image: "/images/banner5.jpg",
-    //   alt: "Medical laboratory"
-    // }
+    }
   ];
 
   return (
@@ -58,18 +43,18 @@ const Hero = () => {
       >
         {bannerImages.map((banner) => (
           <SwiperSlide key={banner.id}>
-            <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen">
+            <div className="relative w-full aspect-[2.4/1]">
               <img
                 src={banner.image}
                 alt={banner.alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain object-center"
                 onError={(e) => {
                   // Fallback to a placeholder if image doesn't exist
                   e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='800' viewBox='0 0 1920 800'%3E%3Crect width='1920' height='800' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='24' fill='%236b7280'%3EBanner Image %23" + banner.id + "%3C/text%3E%3C/svg%3E";
                 }}
               />
-              {/* Overlay for better text readability if needed */}
-              <div className="absolute inset-0 bg-black/0"></div>
+              {/* Subtle overlay for better visual appeal and potential text readability */}
+              <div className="absolute inset-0 bg-black/10"></div>
             </div>
           </SwiperSlide>
         ))}

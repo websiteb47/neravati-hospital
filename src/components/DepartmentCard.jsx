@@ -18,11 +18,30 @@ const DepartmentCard = ({ department }) => {
 
   const IconComponent = getIcon(department.icon);
 
+  // Debug logging
+  console.log('Department:', department.name, 'Image path:', department.image);
+
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col h-full">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white min-h-[120px] flex items-center">
-        <div className="flex items-center space-x-4 w-full">
+      {/* Header with Image */}
+      <div className="relative bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white min-h-[120px] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 opacity-20">
+          <img
+            src={department.image}
+            alt={department.name}
+            className="w-full h-full object-cover"
+            onLoad={() => console.log('Image loaded successfully:', department.name)}
+            onError={(e) => {
+              console.error('Image failed to load:', department.name, department.image);
+              // Hide the image on error, fallback to gradient background
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+        
+        {/* Content */}
+        <div className="flex items-center space-x-4 w-full relative z-10">
           <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
             <IconComponent className="w-6 h-6" />
           </div>

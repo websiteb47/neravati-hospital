@@ -72,6 +72,7 @@ export const departments = [
     id: 1,
     name: "IVF Infertility",
     icon: "baby",
+    image: "/images/departments/ivf-infertility.svg",
     description: "Advanced fertility treatment and reproductive medicine",
     doctors: 1,
     services: ["IVF Treatment", "IUI Treatment", "Fertility Assessment", "Hormone Therapy", "Egg Freezing", "Surrogacy Consultation"]
@@ -80,6 +81,7 @@ export const departments = [
     id: 2,
     name: "ENT",
     icon: "ear",
+    image: "/images/departments/ent.svg",
     description: "Specialized treatment for ear, nose, and throat disorders",
     doctors: 1,
     services: ["Hearing Loss Treatment", "Sinus Surgery", "Tonsillectomy", "Voice Disorders", "Allergic Rhinitis", "Sleep Apnea Treatment"]
@@ -88,6 +90,7 @@ export const departments = [
     id: 3,
     name: "Gynecology",
     icon: "baby",
+    image: "/images/departments/gynecology.svg",
     description: "Comprehensive women's health care and reproductive medicine",
     doctors: 2,
     services: ["Pregnancy Care", "Laparoscopic Surgery", "Hysteroscopic Surgery", "Normal Delivery", "C-Section", "Menstrual Disorders", "PCOS Treatment"]
@@ -96,6 +99,7 @@ export const departments = [
     id: 4,
     name: "Cosmetic Gynecology",
     icon: "scissors",
+    image: "/images/departments/cosmetic-gynecology.svg",
     description: "Advanced cosmetic and aesthetic gynecological procedures",
     doctors: 1,
     services: ["Vaginal Rejuvenation", "Labiaplasty", "Hymenoplasty", "G-Spot Enhancement", "Laser Treatment", "Intimate Surgery"]
@@ -104,6 +108,7 @@ export const departments = [
     id: 5,
     name: "Orthopaedic",
     icon: "bone",
+    image: "/images/departments/orthopaedic.svg",
     description: "Treatment for bone and joint diseases, trauma, and joint replacements",
     doctors: 1,
     services: ["Joint Replacement Surgery", "Trauma Care", "Sports Injuries", "Fracture Treatment", "Arthritis Management", "Spine Surgery", "Hand Surgery", "Knee & Hip Surgery"]
@@ -112,6 +117,7 @@ export const departments = [
     id: 6,
     name: "MD General",
     icon: "heart",
+    image: "/images/departments/md-general.svg",
     description: "Comprehensive medical care for adults with focus on chronic diseases",
     doctors: 1,
     services: ["Diabetes Management", "Hypertension Treatment", "Thyroid Disorders", "Heart Disease", "Respiratory Problems", "Infectious Diseases", "Liver & Kidney Diseases", "Emergency Care"]

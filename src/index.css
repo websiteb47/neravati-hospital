@@ -112,29 +112,8 @@
 
 /* Swiper Hero Styles */
 .hero-swiper {
-  height: 60vh;
-  min-height: 400px;
-}
-
-@media (min-width: 640px) {
-  .hero-swiper {
-    height: 70vh;
-    min-height: 500px;
-  }
-}
-
-@media (min-width: 768px) {
-  .hero-swiper {
-    height: 80vh;
-    min-height: 600px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-swiper {
-    height: 100vh;
-    min-height: 600px;
-  }
+  /* Using aspect ratio instead of fixed heights to prevent image cropping */
+  width: 100%;
 }
 
 .swiper-pagination-bullet {

@@ -103,17 +103,22 @@ const Contact = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Find Us</h2>
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="h-96 bg-gray-200">
-                  <iframe
-                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&q=${encodeURIComponent(hospitalContact.address)}`}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Hospital Location"
-                  ></iframe>
+                <div className="h-96 bg-gray-200 relative">
+                  {/* Static Map Image - No API Key Required */}
+                  <img
+                    src={`https://maps.googleapis.com/maps/api/staticmap?center=${encodeURIComponent(hospitalContact.address)}&zoom=15&size=600x400&maptype=roadmap&markers=color:red%7C${encodeURIComponent(hospitalContact.address)}&key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg`}
+                    alt="Hospital Location Map"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback to a placeholder map if the API fails
+                      e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' font-family='Arial, sans-serif' font-size='18' fill='%236b7280'%3EMap Unavailable%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-family='Arial, sans-serif' font-size='14' fill='%236b7280'%3EPlease check address below%3C/text%3E%3C/svg%3E";
+                    }}
+                  />
+                  {/* Overlay with hospital info */}
+                  <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg p-4 max-w-xs">
+                    <h4 className="font-semibold text-gray-900 mb-2">Neravati Hospital</h4>
+                    <p className="text-sm text-gray-600">{hospitalContact.address}</p>
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Getting Here</h3>
@@ -121,6 +126,18 @@ const Contact = () => {
                     <p><strong>By Car:</strong> Located off Main Street with ample parking available.</p>
                     <p><strong>By Bus:</strong> Routes 10, 15, and 22 stop directly in front of our building.</p>
                     <p><strong>By Train:</strong> 10-minute walk from Central Station.</p>
+                  </div>
+                  {/* Direct link to Google Maps */}
+                  <div className="mt-4">
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hospitalContact.address)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Open in Google Maps
+                    </a>
                   </div>
                 </div>
               </div>
