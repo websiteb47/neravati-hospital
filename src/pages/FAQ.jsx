@@ -127,10 +127,10 @@ const FAQ = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-950 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Frequently Asked Questions</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
             Find answers to common questions about our services, appointments, billing, and more. 
             If you can't find what you're looking for, please contact us.
           </p>
@@ -148,7 +148,7 @@ const FAQ = () => {
                 placeholder="Search FAQs..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent"
               />
             </div>
             {searchTerm && (
@@ -191,7 +191,7 @@ const FAQ = () => {
                 </p>
                 <button
                   onClick={() => setSearchTerm('')}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+                  className="bg-blue-900 hover:bg-blue-950 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
                 >
                   Clear Search
                 </button>
@@ -213,8 +213,8 @@ const FAQ = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl shadow-lg p-8">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <MessageSquare className="w-8 h-8 text-blue-600" />
+                <div className="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <MessageSquare className="w-8 h-8 text-blue-900" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Send us a Message</h3>
                 <p className="text-gray-600 mb-6">
@@ -222,7 +222,7 @@ const FAQ = () => {
                 </p>
                 <a
                   href="/contact"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+                  className="bg-blue-900 hover:bg-blue-950 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
                 >
                   Contact Us
                 </a>
@@ -257,27 +257,27 @@ const FAQ = () => {
               <div className="text-center">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Appointments</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li><a href="/appointment" className="hover:text-blue-600 transition-colors">Book Appointment</a></li>
-                  <li><a href="/doctors" className="hover:text-blue-600 transition-colors">Find a Doctor</a></li>
-                  <li><a href="/departments" className="hover:text-blue-600 transition-colors">Our Departments</a></li>
+                  <li><a href="/appointment" className="hover:text-blue-900 transition-colors">Book Appointment</a></li>
+                  <li><a href="/doctors" className="hover:text-blue-900 transition-colors">Find a Doctor</a></li>
+                  <li><a href="/departments" className="hover:text-blue-900 transition-colors">Our Departments</a></li>
                 </ul>
               </div>
               
               <div className="text-center">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Services</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li><a href="/services" className="hover:text-blue-600 transition-colors">Our Services</a></li>
-                  <li><a href="/about" className="hover:text-blue-600 transition-colors">About Us</a></li>
-                  <li><a href="/contact" className="hover:text-blue-600 transition-colors">Contact Info</a></li>
+                  <li><a href="/services" className="hover:text-blue-900 transition-colors">Our Services</a></li>
+                  <li><a href="/about" className="hover:text-blue-900 transition-colors">About Us</a></li>
+                  <li><a href="/contact" className="hover:text-blue-900 transition-colors">Contact Info</a></li>
                 </ul>
               </div>
               
               <div className="text-center">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Support</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li><a href="/contact" className="hover:text-blue-600 transition-colors">Get Help</a></li>
-                  <li><a href="tel:9704130234" className="hover:text-blue-600 transition-colors">Emergency: 97041 30234</a></li>
-                  <li><a href="/appointment" className="hover:text-blue-600 transition-colors">Schedule Online</a></li>
+                  <li><a href="/contact" className="hover:text-blue-900 transition-colors">Get Help</a></li>
+                  <li><a href="tel:9704130234" className="hover:text-blue-900 transition-colors">Emergency: 97041 30234</a></li>
+                  <li><a href="/appointment" className="hover:text-blue-900 transition-colors">Schedule Online</a></li>
                 </ul>
               </div>
             </div>

@@ -53,10 +53,10 @@ const Contact = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-950 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
             Get in touch with us for any questions, concerns, or to schedule an appointment. 
             We're here to help you with all your healthcare needs.
           </p>
@@ -77,8 +77,8 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactInfo.map((info, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-8 text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <info.icon className="w-8 h-8 text-blue-600" />
+                <div className="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <info.icon className="w-8 h-8 text-blue-900" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-6">{info.title}</h3>
                 <div className="space-y-3">
@@ -133,7 +133,7 @@ const Contact = () => {
                       href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hospitalContact.address)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      className="inline-flex items-center px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-950 transition-colors"
                     >
                       <MapPin className="w-4 h-4 mr-2" />
                       Open in Google Maps

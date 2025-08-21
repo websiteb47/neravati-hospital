@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-blue-600 text-white py-2">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-blue-900 text-white py-4">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
             <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-2 sm:mb-0">
@@ -45,23 +45,23 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-blue-100 text-xs sm:text-sm">Emergency: 24/7</span>
+              <span className="bg-red-600 text-white font-semibold text-xs sm:text-sm px-2 py-1 rounded animate-pulse">Emergency: 24/7</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Navigation */}
-      <nav className={`fixed left-0 right-0 z-50 transition-all duration-300 top-8 ${
-        isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
+      <nav className={`fixed left-0 right-0 z-50 transition-all duration-300 top-16 ${
+        isScrolled ? 'bg-white' : 'bg-white/95 backdrop-blur-sm'
       }`}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+              <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center">
                 {/* <span className="text-white font-bold text-lg">N</span> */}
-                <img src="./logo.jpeg" alt="logo" className="w-10 h-10" />
+                <img src="./logo.jpeg" alt="logo" className="w-16 h-16" />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Neravati</h1>
@@ -75,10 +75,10 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-sm font-bold transition-colors ${
                     location.pathname === item.href
-                      ? 'text-blue-600'
-                      : 'text-gray-700 hover:text-blue-600'
+                      ? 'text-blue-900'
+                      : 'text-gray-700 hover:text-blue-900'
                   }`}
                 >
                   {item.name}
@@ -86,7 +86,7 @@ const Navbar = () => {
               ))}
               <Link
                 to="/appointment"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+                className="bg-blue-900 hover:bg-blue-950 text-white px-6 py-2 rounded-lg font-medium transition-colors"
               >
                 Book Appointment
               </Link>
@@ -96,7 +96,7 @@ const Navbar = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-700 hover:text-blue-600 transition-colors"
+                className="text-gray-700 hover:text-blue-900 transition-colors"
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -104,38 +104,38 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200">
-            <div className="px-4 py-6 space-y-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`block text-base font-medium transition-colors ${
-                    location.pathname === item.href
-                      ? 'text-blue-600'
-                      : 'text-gray-700 hover:text-blue-600'
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Link
-                to="/appointment"
-                className="block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Book Appointment
-              </Link>
-            </div>
-          </div>
-        )}
+                    {/* Mobile Navigation */}
+            {isOpen && (
+              <div className="md:hidden bg-white border-t border-gray-200">
+                <div className="px-4 py-6 space-y-4">
+                  {navigation.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={`block text-base font-bold transition-colors ${
+                        location.pathname === item.href
+                          ? 'text-blue-900'
+                          : 'text-gray-700 hover:text-blue-900'
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <Link
+                    to="/appointment"
+                    className="block bg-blue-900 hover:bg-blue-950 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Book Appointment
+                  </Link>
+                </div>
+              </div>
+            )}
       </nav>
 
       {/* Spacer for fixed navbar */}
-      <div className="h-24"></div>
+      <div className="h-32"></div>
     </>
   );
 };

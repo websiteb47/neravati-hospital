@@ -29,10 +29,10 @@ const Services = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-950 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
             Comprehensive healthcare services designed to meet all your medical needs. 
             From routine check-ups to specialized treatments, we're here for you.
           </p>
@@ -71,8 +71,8 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <feature.icon className="w-8 h-8 text-blue-600" />
+                <div className="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <feature.icon className="w-8 h-8 text-blue-900" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
@@ -95,9 +95,9 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Primary Care */}
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-blue-600">PC</span>
-              </div>
+                              <div className="w-16 h-16 bg-blue-200 rounded-xl flex items-center justify-center mb-6">
+                  <span className="text-2xl font-bold text-blue-900">PC</span>
+                </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Primary Care</h3>
               <p className="text-gray-600 mb-6">
                 Comprehensive health care for all ages, including routine check-ups, 
@@ -221,14 +221,14 @@ const Services = () => {
                 {services.map((service) => (
                   <div key={service.id} className="border border-gray-200 rounded-lg p-6">
                     <h3 className="text-lg font-bold text-gray-900 mb-2">{service.name}</h3>
-                    <div className="text-2xl font-bold text-blue-600 mb-2">{service.price}</div>
+                    <div className="text-2xl font-bold text-blue-900 mb-2">{service.price}</div>
                     <p className="text-sm text-gray-600 mb-4">{service.duration}</p>
                     <p className="text-sm text-gray-600">{service.description}</p>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-8 p-6 bg-blue-50 rounded-lg">
+                              <div className="mt-8 p-6 bg-blue-100 rounded-lg">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Insurance & Payment</h3>
                 <p className="text-gray-600 mb-4">
                   We accept most major insurance plans and offer flexible payment options. 
@@ -255,10 +255,10 @@ const Services = () => {
       </section> */}
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-950 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
             Contact us today to learn more about our services or schedule an appointment 
             with one of our healthcare professionals.
           </p>
@@ -271,7 +271,7 @@ const Services = () => {
             </a>
             <a
               href="/contact"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
             >
               Contact Us
             </a>

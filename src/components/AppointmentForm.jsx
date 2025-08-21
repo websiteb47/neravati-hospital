@@ -172,9 +172,9 @@ ${data.notes ? data.notes : 'No additional notes provided'}
               <input
                 type="text"
                 {...register('name', { required: 'Full name is required' })}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                  errors.name ? 'border-red-500' : 'border-gray-300'
-                }`}
+                              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent ${
+                errors.name ? 'border-red-500' : 'border-gray-300'
+              }`}
                 placeholder="Enter your full name"
               />
               {errors.name && (
@@ -196,9 +196,9 @@ ${data.notes ? data.notes : 'No additional notes provided'}
                     message: 'Please enter a valid phone number'
                   }
                 })}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                  errors.phone ? 'border-red-500' : 'border-gray-300'
-                }`}
+                              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent ${
+                errors.phone ? 'border-red-500' : 'border-gray-300'
+              }`}
                 placeholder="Enter your phone number"
               />
               {errors.phone && (
@@ -221,7 +221,7 @@ ${data.notes ? data.notes : 'No additional notes provided'}
                   message: 'Please enter a valid email address'
                 }
               })}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="Enter your email address"
@@ -239,7 +239,7 @@ ${data.notes ? data.notes : 'No additional notes provided'}
               </label>
               <select
                 {...register('department', { required: 'Please select a department' })}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent ${
                   errors.department ? 'border-red-500' : 'border-gray-300'
                 }`}
               >
@@ -261,7 +261,7 @@ ${data.notes ? data.notes : 'No additional notes provided'}
               </label>
               <select
                 {...register('doctor')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent"
               >
                 <option value="">Any Available Doctor</option>
                 {filteredDoctors.map((doctor) => (
@@ -283,7 +283,7 @@ ${data.notes ? data.notes : 'No additional notes provided'}
                 type="date"
                 {...register('date', { required: 'Please select a date' })}
                 min={new Date().toISOString().split('T')[0]}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent ${
                   errors.date ? 'border-red-500' : 'border-gray-300'
                 }`}
               />
@@ -299,7 +299,7 @@ ${data.notes ? data.notes : 'No additional notes provided'}
               </label>
               <select
                 {...register('time', { required: 'Please select a time' })}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent ${
                   errors.time ? 'border-red-500' : 'border-gray-300'
                 }`}
               >
@@ -325,7 +325,7 @@ ${data.notes ? data.notes : 'No additional notes provided'}
             <textarea
               {...register('notes')}
               rows="4"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent"
               placeholder="Any specific concerns or information you'd like to share..."
             />
           </div>
@@ -333,7 +333,7 @@ ${data.notes ? data.notes : 'No additional notes provided'}
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+            className="w-full bg-blue-900 hover:bg-blue-950 disabled:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
           >
             {isSubmitting ? (
               <>

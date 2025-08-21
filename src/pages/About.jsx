@@ -60,10 +60,10 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-950 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">About Neravati</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
             Providing exceptional healthcare services with compassion, innovation, and excellence
           </p>
         </div>
@@ -76,7 +76,7 @@ const About = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="flex justify-center mb-4">
-                  <stat.icon className="w-12 h-12 text-blue-600" />
+                  <stat.icon className="w-12 h-12 text-blue-900" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.label}</div>
@@ -151,7 +151,7 @@ const About = () => {
             {values.map((value, index) => (
               <div key={index} className="text-center p-6 bg-white rounded-lg shadow-lg">
                 <div className="flex justify-center mb-4">
-                  <value.icon className="w-12 h-12 text-blue-600" />
+                  <value.icon className="w-12 h-12 text-blue-900" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
@@ -174,7 +174,7 @@ const About = () => {
             {timeline.map((item, index) => (
               <div key={index} className="flex items-start space-x-8 mb-12">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center text-white font-bold text-lg">
                     {item.year}
                   </div>
                 </div>
@@ -189,7 +189,7 @@ const About = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+      <section className="py-16 bg-gradient-to-r from-blue-100 to-blue-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Patients Say</h2>
@@ -205,7 +205,7 @@ const About = () => {
           </div>
 
           <div className="text-center mt-12">
-            <div className="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold shadow-lg">
+            <div className="inline-flex items-center space-x-2 bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold shadow-lg">
               <Star className="w-5 h-5 text-yellow-400 fill-current" />
               <span>4.9/5 Average Rating from 1000+ Patients</span>
             </div>
@@ -214,22 +214,22 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
+      <section className="py-16 bg-blue-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Experience Quality Healthcare?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
             Book an appointment with our expert medical team and take the first step towards better health.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/appointment"
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
               Book Appointment
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-colors"
             >
               Contact Us
             </Link>

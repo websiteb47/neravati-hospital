@@ -56,7 +56,7 @@ const DoctorModal = ({ doctor, isOpen, onClose }) => {
                   className="w-48 h-48 object-cover object-center rounded-full mx-auto mb-4 shadow-lg"
                 />
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{doctor.name}</h3>
-                <p className="text-blue-600 font-medium mb-3">{doctor.specialty}</p>
+                <p className="text-blue-900 font-medium mb-3">{doctor.specialty}</p>
                 
                 {/* Rating */}
                 <div className="flex items-center justify-center space-x-1 mb-3">
@@ -83,7 +83,7 @@ const DoctorModal = ({ doctor, isOpen, onClose }) => {
               {/* Education & Qualifications */}
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                  <GraduationCap className="w-5 h-5 mr-2 text-blue-600" />
+                  <GraduationCap className="w-5 h-5 mr-2 text-blue-900" />
                   Education & Qualifications
                 </h4>
                 <div className="bg-gray-50 rounded-lg p-4">
@@ -94,7 +94,7 @@ const DoctorModal = ({ doctor, isOpen, onClose }) => {
               {/* Experience */}
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                  <Award className="w-5 h-5 mr-2 text-blue-600" />
+                  <Award className="w-5 h-5 mr-2 text-blue-900" />
                   Professional Experience
                 </h4>
                 <div className="bg-gray-50 rounded-lg p-4">
@@ -106,8 +106,8 @@ const DoctorModal = ({ doctor, isOpen, onClose }) => {
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Specializations</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <div className="bg-blue-50 rounded-lg p-3">
-                    <span className="text-blue-700 font-medium">{doctor.specialty}</span>
+                  <div className="bg-blue-100 rounded-lg p-3">
+                    <span className="text-blue-900 font-medium">{doctor.specialty}</span>
                   </div>
                   <div className="bg-green-50 rounded-lg p-3">
                     <span className="text-green-700 font-medium">{doctor.department}</span>
@@ -126,11 +126,11 @@ const DoctorModal = ({ doctor, isOpen, onClose }) => {
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Contact Information</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <Phone className="w-5 h-5 text-blue-600" />
+                    <Phone className="w-5 h-5 text-blue-900" />
                     <span className="text-gray-700">+91 97041 30234</span>
                   </div>
                   <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <Mail className="w-5 h-5 text-blue-600" />
+                    <Mail className="w-5 h-5 text-blue-900" />
                     <span className="text-gray-700">doctor@hospital.com</span>
                   </div>
                 </div>
@@ -148,7 +148,7 @@ const DoctorModal = ({ doctor, isOpen, onClose }) => {
                 // Navigate to appointment page with doctor pre-selected
                 window.location.href = `/appointment?doctor=${doctor.id}`;
               }}
-              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium transition-colors duration-200"
+              className="flex-1 bg-blue-900 hover:bg-blue-950 text-white py-3 px-6 rounded-lg font-medium transition-colors duration-200"
             >
               Book Appointment
             </button>

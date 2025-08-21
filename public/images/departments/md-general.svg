@@ -1,1 +1,14 @@
- 
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#grad6)"/>
+  <circle cx="200" cy="120" r="40" fill="white" opacity="0.2"/>
+  <path d="M180 100 L220 100 L200 140 Z" fill="white" opacity="0.3"/>
+  <circle cx="200" cy="110" r="8" fill="white" opacity="0.4"/>
+  <text x="200" y="200" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">MD General</text>
+  <text x="200" y="220" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" opacity="0.8">General Medicine</text>
+</svg> 

@@ -1,1 +1,14 @@
- 
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#grad4)"/>
+  <circle cx="200" cy="120" r="40" fill="white" opacity="0.2"/>
+  <path d="M180 100 L220 100 L200 120 Z" fill="white" opacity="0.3"/>
+  <circle cx="200" cy="140" r="20" fill="white" opacity="0.3"/>
+  <text x="200" y="200" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Cosmetic Gynecology</text>
+  <text x="200" y="220" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" opacity="0.8">Aesthetic Procedures</text>
+</svg> 

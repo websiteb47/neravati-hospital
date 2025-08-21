@@ -45,7 +45,7 @@ const DoctorCard = ({ doctor }) => {
             loading="lazy"
           />
           <div className="absolute bottom-4 right-4 bg-white rounded-full px-3 py-1 shadow-md">
-            <span className="text-sm font-semibold text-blue-600">{doctor.specialty}</span>
+            <span className="text-sm font-semibold text-blue-900">{doctor.specialty}</span>
           </div>
         </div>
 
@@ -64,7 +64,7 @@ const DoctorCard = ({ doctor }) => {
 
           {/* Specialty and Education */}
           <div className="space-y-2">
-            <p className="text-blue-600 font-medium">{doctor.specialty}</p>
+            <p className="text-blue-900 font-medium">{doctor.specialty}</p>
             <p className="text-sm text-gray-600">{doctor.education}</p>
           </div>
 
@@ -93,7 +93,7 @@ const DoctorCard = ({ doctor }) => {
           <div className="flex space-x-3 pt-4 mt-auto">
             <Link
               to={`/appointment?doctor=${doctor.id}`}
-              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors duration-200"
+              className="flex-1 bg-blue-900 hover:bg-blue-950 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors duration-200"
             >
               Book Appointment
             </Link>

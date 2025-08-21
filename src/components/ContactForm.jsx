@@ -71,9 +71,9 @@ const ContactForm = () => {
               <input
                 type="text"
                 {...register('name', { required: 'Full name is required' })}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                  errors.name ? 'border-red-500' : 'border-gray-300'
-                }`}
+                              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent ${
+                errors.name ? 'border-red-500' : 'border-gray-300'
+              }`}
                 placeholder="Enter your full name"
               />
               {errors.name && (
@@ -94,9 +94,9 @@ const ContactForm = () => {
                     message: 'Please enter a valid phone number'
                   }
                 })}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                  errors.phone ? 'border-red-500' : 'border-gray-300'
-                }`}
+                              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent ${
+                errors.phone ? 'border-red-500' : 'border-gray-300'
+              }`}
                 placeholder="Enter your phone number"
               />
               {errors.phone && (
@@ -119,7 +119,7 @@ const ContactForm = () => {
                   message: 'Please enter a valid email address'
                 }
               })}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="Enter your email address"
@@ -135,7 +135,7 @@ const ContactForm = () => {
             </label>
             <select
               {...register('subject', { required: 'Please select a subject' })}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent ${
                 errors.subject ? 'border-red-500' : 'border-gray-300'
               }`}
             >
@@ -166,7 +166,7 @@ const ContactForm = () => {
                 }
               })}
               rows="6"
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent ${
                 errors.message ? 'border-red-500' : 'border-gray-300'
               }`}
               placeholder="Please describe your inquiry or concern..."
@@ -179,7 +179,7 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+            className="w-full bg-blue-900 hover:bg-blue-950 disabled:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
           >
             {isSubmitting ? (
               <>

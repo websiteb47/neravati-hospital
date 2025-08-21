@@ -17,10 +17,10 @@ const Doctors = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-950 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Our Doctors</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
             Meet our team of experienced and compassionate doctors who are dedicated to 
             providing you with the highest quality medical care.
           </p>
@@ -40,7 +40,7 @@ const Doctors = () => {
                   placeholder="Search doctors by name or specialty..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent"
                 />
               </div>
 
@@ -50,7 +50,7 @@ const Doctors = () => {
                 <select
                   value={selectedDepartment}
                   onChange={(e) => setSelectedDepartment(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent appearance-none bg-white"
                 >
                   <option value="">All Departments</option>
                   {departments.map((dept) => (
@@ -100,7 +100,7 @@ const Doctors = () => {
                     setSearchTerm('');
                     setSelectedDepartment('');
                   }}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+                  className="bg-blue-900 hover:bg-blue-950 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
                 >
                   Clear Filters
                 </button>
@@ -123,8 +123,8 @@ const Doctors = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl font-bold text-blue-600">15+</span>
+              <div className="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl font-bold text-blue-900">15+</span>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Years Average Experience</h3>
               <p className="text-gray-600">
@@ -159,10 +159,10 @@ const Doctors = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-950 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Meet Your Doctor?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
             Schedule an appointment with one of our expert doctors and take the first step 
             towards better health today.
           </p>
@@ -175,7 +175,7 @@ const Doctors = () => {
             </a>
             <a
               href="/contact"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
             >
               Contact Us
             </a>

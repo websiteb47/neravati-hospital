@@ -124,10 +124,10 @@ const Gallery = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-950 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Hospital Gallery</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
             Take a virtual tour of our state-of-the-art facilities, meet our medical team, 
             and see the advanced equipment that makes Neravati Multispeciality Hospital 
             a trusted healthcare destination.
@@ -147,7 +147,7 @@ const Gallery = () => {
                 placeholder="Search images..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent"
               />
             </div>
 
@@ -159,7 +159,7 @@ const Gallery = () => {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors ${
                     selectedCategory === category.id
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-blue-900 text-white'
                       : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
                   }`}
                 >
@@ -200,7 +200,7 @@ const Gallery = () => {
                     <h3 className="font-semibold text-gray-900 mb-1">{image.title}</h3>
                     <p className="text-sm text-gray-600">{image.description}</p>
                     <div className="mt-2">
-                      <span className="inline-block px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
+                      <span className="inline-block px-2 py-1 text-xs font-medium bg-blue-200 text-blue-900 rounded-full">
                         {categories.find(cat => cat.id === image.category)?.name}
                       </span>
                     </div>
@@ -226,21 +226,21 @@ const Gallery = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <Building className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <Building className="w-12 h-12 text-blue-900 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Modern Facilities</h3>
               <p className="text-gray-600">
                 State-of-the-art medical facilities designed for patient comfort and optimal care delivery.
               </p>
             </div>
             <div className="text-center">
-              <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <Users className="w-12 h-12 text-blue-900 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Expert Team</h3>
               <p className="text-gray-600">
                 Experienced medical professionals dedicated to providing compassionate and quality healthcare.
               </p>
             </div>
             <div className="text-center">
-              <Stethoscope className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <Stethoscope className="w-12 h-12 text-blue-900 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Advanced Equipment</h3>
               <p className="text-gray-600">
                 Latest medical technology and equipment for accurate diagnosis and effective treatment.

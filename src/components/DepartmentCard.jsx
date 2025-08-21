@@ -22,9 +22,9 @@ const DepartmentCard = ({ department }) => {
   console.log('Department:', department.name, 'Image path:', department.image);
 
   return (
-    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col h-full">
+    <div className="bg-white rounded-xl shadow-none hover:shadow-none transition-all duration-300 overflow-hidden group flex flex-col h-full" style={{ boxShadow: 'none' }}>
       {/* Header with Image */}
-      <div className="relative bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white min-h-[120px] flex items-center overflow-hidden">
+              <div className="relative bg-blue-900 p-6 text-white min-h-[120px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 opacity-20">
           <img
@@ -62,7 +62,7 @@ const DepartmentCard = ({ department }) => {
           <div className="grid grid-cols-2 gap-2">
             {department.services.map((service, index) => (
               <div key={index} className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-blue-900 rounded-full flex-shrink-0"></div>
                 <span className="text-sm text-gray-600">{service}</span>
               </div>
             ))}
@@ -73,7 +73,7 @@ const DepartmentCard = ({ department }) => {
         <div className="pt-4 border-t border-gray-100 mt-auto">
           <Link
             to={`/departments#${department.name.toLowerCase().replace(/\s+/g, '-')}`}
-            className="inline-flex items-center justify-center w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-colors duration-200 group-hover:bg-blue-700"
+            className="inline-flex items-center justify-center w-full bg-blue-900 hover:bg-blue-950 text-white py-2 px-4 rounded-lg font-medium transition-colors duration-200 group-hover:bg-blue-950"
             onClick={() => {
               // Force scroll to section after navigation
               setTimeout(() => {

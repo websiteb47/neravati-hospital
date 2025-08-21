@@ -23,7 +23,7 @@ const ServiceCard = ({ service }) => {
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 group flex flex-col h-full">
       {/* Icon */}
-      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+      <div className="w-16 h-16 bg-gradient-to-br from-blue-800 to-blue-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
         <IconComponent className="w-8 h-8 text-white" />
       </div>
 
@@ -39,7 +39,7 @@ const ServiceCard = ({ service }) => {
             <p className="text-sm text-gray-500">Duration: {service.duration}</p>
           </div>
           <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors duration-200">
-            <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-blue-600 transition-colors duration-200" />
+            <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-blue-900 transition-colors duration-200" />
           </div>
         </div>
       </div>
