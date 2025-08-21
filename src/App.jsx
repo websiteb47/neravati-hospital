@@ -12,6 +12,7 @@ import Appointment from './pages/Appointment';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Gallery from './pages/Gallery';
+import IVF from './pages/IVF';
 import NotFound from './pages/NotFound';
 
 // ScrollToTop component to handle scroll restoration
@@ -38,6 +39,7 @@ function App() {
             <Route path="/departments" element={<Departments />} />
             <Route path="/doctors" element={<Doctors />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/ivf" element={<IVF />} />
             <Route path="/appointment" element={<Appointment />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />

@@ -26,7 +26,7 @@ const DepartmentCard = ({ department }) => {
       {/* Header with Image */}
               <div className="relative bg-blue-900 p-6 text-white min-h-[120px] flex items-center overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 opacity-20">
+        {/* <div className="absolute inset-0 opacity-20">
           <img
             src={department.image}
             alt={department.name}
@@ -38,7 +38,7 @@ const DepartmentCard = ({ department }) => {
               e.target.style.display = 'none';
             }}
           />
-        </div>
+        </div> */}
         
         {/* Content */}
         <div className="flex items-center space-x-4 w-full relative z-10">
