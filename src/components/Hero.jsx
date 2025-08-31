@@ -49,12 +49,12 @@ const Hero = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Moving Ambulance Animation */}
-      <div className="absolute top-4 left-0 z-10 animate-bounce-x">
-        <div className="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-full shadow-lg">
-          <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-            <span className="text-red-600 font-bold text-sm">🚑</span>
+      <div className="absolute top-6 sm:top-6 md:top-8 left-6 sm:left-6 md:left-8 z-10 animate-bounce-x">
+        <div className="flex items-center space-x-1 sm:space-x-2 bg-red-600 text-white px-4 sm:px-4 md:px-6 py-3 sm:py-3 md:py-4 rounded-full shadow-lg">
+          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-full flex items-center justify-center">
+            <span className="text-red-600 font-bold text-xs sm:text-sm">🚑</span>
           </div>
-          <span className="font-semibold text-sm">Emergency: 24/7</span>
+          <span className="font-semibold text-xs sm:text-sm md:text-base">Emergency: 24/7</span>
         </div>
       </div>
       
@@ -78,7 +78,7 @@ const Hero = () => {
       >
         {bannerImages.map((banner) => (
           <SwiperSlide key={banner.id}>
-            <div className="relative w-full aspect-[2.4/1] overflow-hidden">
+            <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] overflow-hidden">
               <img
                 src={banner.image}
                 alt={banner.alt}
@@ -98,25 +98,25 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
               
               {/* Content overlay */}
-              <div className="absolute inset-0 flex items-center">
+              <div className="absolute inset-0 flex items-center justify-center">
                 <div className="container mx-auto px-4 md:px-16 lg:px-20">
-                  <div className="max-w-2xl relative z-20">
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
+                  <div className="max-w-2xl relative z-20 text-center sm:text-left">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-2 sm:mb-4 leading-tight">
                       {banner.title}
                     </h1>
-                    <p className="text-xl md:text-2xl text-blue-200 mb-8 font-medium">
+                    <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-blue-200 mb-4 sm:mb-6 md:mb-8 font-medium">
                       {banner.subtitle}
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                       <a
                         href="/appointment"
-                        className="bg-blue-900 hover:bg-blue-950 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center"
+                        className="bg-blue-900 hover:bg-blue-950 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center"
                       >
                         Book Appointment
                       </a>
                       <a
                         href="/departments"
-                        className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-2 border-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center"
+                        className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-2 border-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center"
                       >
                         Our Departments
                       </a>

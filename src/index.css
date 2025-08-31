@@ -123,6 +123,24 @@
   background: #94a3b8;
 }
 
+/* Mobile navigation scrollbar */
+.mobile-nav-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-nav-scrollbar::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+.mobile-nav-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+.mobile-nav-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
 /* Swiper Hero Styles */
 .hero-swiper {
   /* Using aspect ratio instead of fixed heights to prevent image cropping */
@@ -133,6 +151,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 .hero-swiper .swiper-slide img {
@@ -141,6 +160,38 @@
   object-fit: cover;
   object-position: center;
   display: block;
+}
+
+/* Mobile specific hero adjustments */
+@media (max-width: 768px) {
+  .hero-swiper {
+    height: 300px;
+  }
+  
+  .hero-swiper .swiper-slide {
+    height: 300px;
+  }
+}
+
+/* Desktop hero adjustments */
+@media (min-width: 1024px) {
+  .hero-swiper {
+    height: 600px;
+  }
+  
+  .hero-swiper .swiper-slide {
+    height: 600px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-swiper {
+    height: 700px;
+  }
+  
+  .hero-swiper .swiper-slide {
+    height: 700px;
+  }
 }
 
 .swiper-pagination-bullet {

@@ -176,7 +176,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200">
+          <div className="md:hidden bg-white border-t border-gray-200 max-h-[80vh] overflow-y-auto mobile-nav-scrollbar">
             <div className="px-4 py-6 space-y-4">
               {navigation.map((item) => {
                 const hasDropdown = item.name === 'Departments' || item.name === 'Services';
