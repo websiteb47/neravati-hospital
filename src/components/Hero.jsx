@@ -13,7 +13,7 @@ const Hero = () => {
       id: 1,
       image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       alt: "Modern Hospital Building",
-      title: "Welcome to Neravati Multispeciality Hospital",
+      title: "నెరవటి మల్టిస్పెషాలిటీ హాస్పిటల్‌కి స్వాగతం",
       subtitle: "Excellence in Healthcare"
     },
     // {
@@ -78,11 +78,17 @@ const Hero = () => {
       >
         {bannerImages.map((banner) => (
           <SwiperSlide key={banner.id}>
-            <div className="relative w-full aspect-[2.4/1]">
+            <div className="relative w-full aspect-[2.4/1] overflow-hidden">
               <img
                 src={banner.image}
                 alt={banner.alt}
                 className="w-full h-full object-cover object-center"
+                style={{ 
+                  objectFit: 'cover', 
+                  objectPosition: 'center',
+                  minHeight: '100%',
+                  minWidth: '100%'
+                }}
                 onError={(e) => {
                   // Fallback to a placeholder if image doesn't exist
                   e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='800' viewBox='0 0 1920 800'%3E%3Crect width='1920' height='800' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='24' fill='%236b7280'%3EBanner Image %23" + banner.id + "%3C/text%3E%3C/svg%3E";
@@ -93,8 +99,8 @@ const Hero = () => {
               
               {/* Content overlay */}
               <div className="absolute inset-0 flex items-center">
-                <div className="container mx-auto px-4">
-                  <div className="max-w-2xl">
+                <div className="container mx-auto px-4 md:px-16 lg:px-20">
+                  <div className="max-w-2xl relative z-20">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
                       {banner.title}
                     </h1>
