@@ -287,6 +287,304 @@ const IVF = () => {
         </div>
       </section>
 
+      {/* IVF Gallery Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">IVF Center Gallery</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Take a look at our advanced IVF laboratory, state-of-the-art equipment, and the journey of life
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* IVF Equipment Images */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/equipment/equipment3.jpeg"
+                  alt="IVF Workstation Elite Series"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">IVF Workstation Elite Series</h3>
+                <p className="text-gray-600 mb-3">Advanced IVF workstation by HYTEK SCIENTIFICS INC for precise fertility treatments</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  IVF Equipment
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/equipment/equipment4.jpeg"
+                  alt="Laminar Flow Hood"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Laminar Flow Hood</h3>
+                <p className="text-gray-600 mb-3">Specialized laboratory workstation with laminar flow for sterile IVF procedures</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Sterile Environment
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/equipment/equipment6.jpeg"
+                  alt="Labotect Incubator C16"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Labotect Incubator C16</h3>
+                <p className="text-gray-600 mb-3">Advanced incubator maintaining optimal conditions for embryo development</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Embryo Culture
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/equipment/equipment1.jpeg"
+                  alt="Advanced Medical Microscope"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Advanced Medical Microscope</h3>
+                <p className="text-gray-600 mb-3">High-precision microscope for detailed embryo analysis and selection</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Embryo Analysis
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/equipment/equipment2.jpeg"
+                  alt="Laboratory Workstation"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">IVF Laboratory</h3>
+                <p className="text-gray-600 mb-3">Spacious laboratory with multiple workstations for comprehensive IVF procedures</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Laboratory
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/equipment/equipment5.jpeg"
+                  alt="Gynecology Examination Room"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Gynecology Examination Room</h3>
+                <p className="text-gray-600 mb-3">Specialized examination room with modern equipment for women's fertility assessment</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Consultation
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/equipment/equipment7.jpeg"
+                  alt="Embryo Transfer Room"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Embryo Transfer Room</h3>
+                <p className="text-gray-600 mb-3">Specialized room equipped for safe and precise embryo transfer procedures</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Embryo Transfer
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/equipment/equipment8.jpeg"
+                  alt="Ultrasound Machine"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Advanced Ultrasound Machine</h3>
+                <p className="text-gray-600 mb-3">High-resolution ultrasound for monitoring follicle development and embryo transfer</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Monitoring
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/equipment/equipment9.jpeg"
+                  alt="Cryopreservation Unit"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Cryopreservation Unit</h3>
+                <p className="text-gray-600 mb-3">Advanced freezing technology for preserving eggs, sperm, and embryos</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Cryopreservation
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/ivf/ivf1.jpeg"
+                  alt="Sperm Analysis Equipment"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Sperm Analysis Equipment</h3>
+                <p className="text-gray-600 mb-3">Computerized sperm analysis system for comprehensive male fertility assessment</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Male Fertility
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/ivf/ivf2.jpeg"
+                  alt="IVF Laboratory Control Room"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Laboratory Control Room</h3>
+                <p className="text-gray-600 mb-3">Centralized monitoring and control system for all IVF laboratory operations</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Control Center
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/ivf/ivf3.jpeg"
+                  alt="Patient Recovery Room"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
+                <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Patient Care
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/ivf/ivf4.jpeg"
+                  alt="Patient Recovery Room"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
+                <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Patient Care
+                </span>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/ivf/ivf5.jpeg"
+                  alt="Patient Recovery Room"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
+                <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Patient Care
+                </span>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/ivf/ivf6.jpeg"
+                  alt="Patient Recovery Room"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
+                <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Patient Care
+                </span>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src="/images/ivf/ivf7.jpeg"
+                  alt="Patient Recovery Room"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
+                <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                  Patient Care
+                </span>
+              </div>
+            </div>
+         
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-4">
+              Our IVF center is equipped with the latest technology and staffed by experienced professionals
+            </p>
+            <Link
+              to="/gallery"
+              className="inline-flex items-center px-6 py-3 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-800 transition-colors"
+            >
+              View Full Gallery
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Success Stories */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">

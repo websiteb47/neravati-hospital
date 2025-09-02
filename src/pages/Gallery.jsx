@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, Filter, Image as ImageIcon, Building, Users, Heart, Stethoscope } from 'lucide-react';
+import { Search, Filter, Image as ImageIcon, Building, Users, Heart, Stethoscope, Calendar } from 'lucide-react';
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -7,6 +7,7 @@ const Gallery = () => {
 
   const categories = [
     { id: 'all', name: 'All Images', icon: ImageIcon },
+    { id: 'opening', name: 'Hospital Opening', icon: Calendar },
     { id: 'facility', name: 'Facilities', icon: Building },
     { id: 'staff', name: 'Medical Staff', icon: Users },
     { id: 'equipment', name: 'Medical Equipment', icon: Stethoscope },
@@ -17,30 +18,86 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "/images/gallery/facility1.jpeg",
+      src: "/images/gallery/opening-ceremony-1.jpeg",
+      alt: "Hospital Opening Ceremony",
+      category: "opening",
+      title: "Hospital Opening Ceremony",
+      description: "Grand opening ceremony of Neravati Multispeciality Hospital with dignitaries and staff"
+    },
+    {
+      id: 2,
+      src: "/images/gallery/opening-ceremony-2.jpeg",
+      alt: "Ribbon Cutting Ceremony",
+      category: "opening",
+      title: "Ribbon Cutting Ceremony",
+      description: "Official ribbon cutting ceremony marking the inauguration of our hospital"
+    },
+    {
+      id: 3,
+      src: "/images/gallery/opening-ceremony-3.jpeg",
+      alt: "Dignitaries at Opening",
+      category: "opening",
+      title: "Dignitaries at Opening",
+      description: "Honorable guests and dignitaries attending the hospital opening ceremony"
+    },
+    {
+      id: 4,
+      src: "/images/gallery/opening-ceremony-4.jpeg",
+      alt: "Dignitaries at Opening",
+      category: "opening",
+      title: "Dignitaries at Opening",
+      description: "Honorable guests and dignitaries attending the hospital opening ceremony"
+    },
+    {
+      id: 5,
+      src: "/images/gallery/opening-ceremony-5.jpeg",
+      alt: "Dignitaries at Opening",
+      category: "opening",
+      title: "Dignitaries at Opening",
+      description: "Honorable guests and dignitaries attending the hospital opening ceremony"
+    },
+    {
+      id: 6,
+      src: "/images/gallery/opening-ceremony-6.jpeg",
+      alt: "Dignitaries at Opening",
+      category: "opening",
+      title: "Dignitaries at Opening",
+      description: "Honorable guests and dignitaries attending the hospital opening ceremony"
+    },
+    {
+      id: 7,
+      src: "/images/gallery/opening-ceremony-7.jpeg",
+      alt: "Dignitaries at Opening",
+      category: "opening",
+      title: "Dignitaries at Opening",
+      description: "Honorable guests and dignitaries attending the hospital opening ceremony"
+    },
+    {
+      id: 8,
+      src: "/images/gallery/hospotalbuilding.jpeg",
       alt: "Hospital Building Exterior",
       category: "facility",
       title: "Hospital Building",
       description: "Modern hospital building with state-of-the-art facilities"
     },
     {
-      id: 2,
-      src: "/images/gallery/facility2.jpeg",
+      id: 9,
+      src: "/images/gallery/reception.jpeg",
       alt: "Reception Area",
       category: "facility",
       title: "Reception Area",
       description: "Welcoming reception area with professional staff"
     },
     {
-      id: 3,
-      src: "/images/gallery/facility3.jpeg",
+      id: 10,
+      src: "/images/gallery/waitingarea.jpeg",
       alt: "Waiting Area",
       category: "facility",
       title: "Patient Waiting Area",
       description: "Comfortable waiting area for patients and visitors"
     },
     {
-      id: 4,
+      id: 11,
       src: "/images/gallery/staff1.jpg",
       alt: "Medical Team",
       category: "staff",
@@ -48,7 +105,7 @@ const Gallery = () => {
       description: "Our dedicated team of healthcare professionals"
     },
     {
-      id: 5,
+      id: 12,
       src: "/images/gallery/staff2.jpg",
       alt: "Doctor Consultation",
       category: "staff",
@@ -56,7 +113,7 @@ const Gallery = () => {
       description: "Expert doctor providing patient consultation"
     },
     {
-      id: 6,
+      id: 13,
       src: "/images/gallery/staff3.jpg",
       alt: "Nursing Staff",
       category: "staff",
@@ -64,7 +121,7 @@ const Gallery = () => {
       description: "Caring nursing staff providing patient care"
     },
     {
-      id: 7,
+      id: 14,
       src: "/images/equipment/equipment1.jpeg",
       alt: "Advanced Medical Microscope",
       category: "equipment",
@@ -72,7 +129,7 @@ const Gallery = () => {
       description: "High-precision microscope setup for detailed medical analysis and research"
     },
     {
-      id: 8,
+      id: 15,
       src: "/images/equipment/equipment2.jpeg",
       alt: "Laboratory Workstation",
       category: "equipment",
@@ -80,7 +137,7 @@ const Gallery = () => {
       description: "Spacious laboratory with multiple workstations for comprehensive diagnostics"
     },
     {
-      id: 9,
+      id: 16,
       src: "/images/equipment/equipment3.jpeg",
       alt: "IVF Workstation Elite Series",
       category: "equipment",
@@ -88,7 +145,7 @@ const Gallery = () => {
       description: "Advanced IVF workstation by HYTEK SCIENTIFICS INC for fertility treatments"
     },
     {
-      id: 10,
+      id: 17,
       src: "/images/equipment/equipment4.jpeg",
       alt: "Laminar Flow Hood",
       category: "equipment",
@@ -96,7 +153,7 @@ const Gallery = () => {
       description: "Specialized laboratory workstation with laminar flow for sterile procedures"
     },  
     {
-      id: 11,
+      id: 18,
       src: "/images/equipment/equipment5.jpeg",
       alt: "Gynecology Examination Room",
       category: "equipment",
@@ -104,7 +161,7 @@ const Gallery = () => {
       description: "Specialized examination room with modern equipment for women's health"
     },
     {
-      id: 12,
+      id: 19,
       src: "/images/equipment/equipment6.jpeg",
       alt: "Labotect Incubator C16",
       category: "equipment",
@@ -112,7 +169,7 @@ const Gallery = () => {
       description: "Advanced incubator maintaining optimal conditions for medical procedures"
     },
     {
-      id: 13,
+      id: 20,
       src: "/images/equipment/equipment7.jpeg",
       alt: "Medical Equipment Setup",
       category: "equipment",
@@ -120,7 +177,7 @@ const Gallery = () => {
       description: "Professional medical equipment including HYTEK SCIENTIFICS and Labotect Aspirator"
     },
     {
-      id: 14,
+      id: 21,
       src: "/images/equipment/equipment8.jpeg",
       alt: "Operation Theatre Door",
       category: "equipment",
@@ -128,23 +185,15 @@ const Gallery = () => {
       description: "Sterile operation theatre entrance with controlled access for surgical procedures"
     },
     {
-      id: 15,
+      id: 22,
       src: "/images/equipment/equipment9.jpeg",
       alt: "Laboratory Freezer",
       category: "equipment",
       title: "Laboratory Freezer",
       description: "Professional laboratory freezer with digital temperature control system"
     },
-    // {
-    //   id: 16,
-    //   src: "/images/equipment/equipment10.jpeg",
-    //   alt: "Medical Equipment",
-    //   category: "equipment",
-    //   title: "Advanced Medical Equipment",
-    //   description: "State-of-the-art medical equipment for comprehensive patient care"
-    // },
     {
-      id: 17,
+      id: 23,
       src: "/images/gallery/patient1.jpg",
       alt: "Patient Care",
       category: "patient-care",
@@ -152,7 +201,7 @@ const Gallery = () => {
       description: "Compassionate care for our patients"
     },
     {
-      id: 18,
+      id: 24,
       src: "/images/gallery/patient2.jpg",
       alt: "Child Care",
       category: "patient-care",
@@ -160,7 +209,7 @@ const Gallery = () => {
       description: "Specialized care for children"
     },
     {
-      id: 19,
+      id: 25,
       src: "/images/services/emergency-care.jpeg",
       alt: "Emergency Care",
       category: "patient-care",

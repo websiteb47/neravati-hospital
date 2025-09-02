@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
-import { CheckCircle, Award, Users, Heart, Shield, Clock, Star } from 'lucide-react';
+import { CheckCircle, Award, Users, Heart, Shield, Clock, Star, Calendar, MapPin, Stethoscope } from 'lucide-react';
 import TestimonialCard from '../components/TestimonialCard';
 import { testimonials } from '../data/testimonials';
 
 const About = () => {
   const stats = [
-    { number: '5+', label: 'Expert Doctors', icon: Users },
-    { number: '10k+', label: 'Happy Patients', icon: Heart },
-    { number: '15+', label: 'Years Experience', icon: Award },
+    { number: '50+', label: 'Hospital Beds', icon: Users },
+    { number: '10k+', label: 'Families Conceived', icon: Heart },
+    { number: '20+', label: 'Years Experience', icon: Award },
     { number: '24/7', label: 'Emergency Care', icon: Clock },
   ];
 
@@ -36,25 +36,54 @@ const About = () => {
 
   const timeline = [
     {
+      year: '2004',
+      title: 'Foundation & Establishment',
+      description: 'Neravati Hospitals was established on November 1, 2004, opposite Head Post Office in Gandhi Chowk, Nandyal. Started with two departments (ENT, OG) as a 15-bedded hospital with functioning OT services and emergency services.',
+      icon: Calendar,
+      location: 'Gandhi Chowk, Nandyal'
+    },
+    {
+      year: '2005',
+      title: 'Service Expansion',
+      description: 'Added X-ray and audiology services to enhance diagnostic capabilities. In 2004, Zies Oto-microscope and Storz endoscope were already available for ENT services.',
+      icon: Stethoscope,
+      location: 'Nandyal'
+    },
+    {
       year: '2008',
-      title: 'Foundation',
-      description: 'Neravati Multispeciality Hospital was established with a vision to provide comprehensive healthcare services to the community.'
+      title: 'Advanced ENT Technology',
+      description: 'Micro-debridor was made available for advanced ENT surgeries, marking a significant technological advancement in our ENT department.',
+      icon: Award,
+      location: 'Nandyal'
     },
     {
-      year: '2012',
-      title: 'Expansion',
-      description: 'Added new departments and state-of-the-art medical equipment to serve more patients.'
+      year: '2010',
+      title: 'Laparoscopy & Hysteroscopy Services',
+      description: 'Dr. Aruna Kumari established state-of-the-art laparoscopy and hysteroscopy services at NH. We became the 1st hospital in Kurnool district to start colposcopy guided cervical cancer screening services.',
+      icon: Heart,
+      location: 'Kurnool District'
     },
     {
-      year: '2018',
-      title: 'Recognition',
-      description: 'Recognized as a leading healthcare provider with multiple awards for excellence.'
+      year: '2014',
+      title: 'Reproductive Medicine Excellence',
+      description: 'Dr. Aruna Kumari achieved ICOG TOPPER in reproductive medicine and established the Department of Reproductive Medicine at NH. With state-of-the-art embryology and IVF labs, we became the pioneers and 1st hospital to start fertility services in Nandyal district.',
+      icon: Award,
+      location: 'Nandyal District'
     },
     {
-      year: '2024',
-      title: 'Innovation',
-      description: 'Continued commitment to innovation and patient-centered care with latest medical technologies.'
+      year: '2014+',
+      title: 'IVF Success & Growth',
+      description: 'The 1st IVF baby of Nandyal, KARISHMA, was born at our hospital. Till now, around 10,000 families have conceived at our hospital and fulfilled their dreams.',
+      icon: Heart,
+      location: 'Nandyal'
     },
+    {
+      year: 'Present',
+      title: '50-Bedded Multispeciality Hospital',
+      description: 'Now established at Padmavathi Nagar with state-of-art corporate hospital services at affordable prices. New departments include Orthopaedics and General Medicine. Features world-class laminar OT, post-op recovery rooms, embryology and IVF labs. Under Dr. Vinod Kumar\'s ENT department, we have the 1st vertigo and allergy labs in Nandyal district. Dr. Suman\'s orthopaedics department offers joint replacement services and spine surgeries.',
+      icon: MapPin,
+      location: 'Padmavathi Nagar'
+    }
   ];
 
   return (
@@ -167,23 +196,144 @@ const About = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Journey</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A journey of excellence and commitment to healthcare
+              A remarkable journey of growth, innovation, and commitment to healthcare excellence
             </p>
           </div>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             {timeline.map((item, index) => (
               <div key={index} className="flex items-start space-x-8 mb-12">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                    {item.year}
+                  <div className="w-20 h-20 bg-blue-900 rounded-full flex items-center justify-center text-white">
+                    <item.icon className="w-8 h-8" />
+                  </div>
+                  <div className="text-center mt-2">
+                    <div className="text-sm font-semibold text-blue-900">{item.year}</div>
                   </div>
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-900">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <p className="text-gray-600 mb-3">{item.description}</p>
+                  <div className="flex items-center text-sm text-blue-600">
+                    <MapPin className="w-4 h-4 mr-1" />
+                    <span>{item.location}</span>
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Dr. Aruna Kumari Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Leading Specialist</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Dr. A. Aruna Kumari - A pioneer in reproductive medicine and women's health
+            </p>
+          </div>
+          
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+              <div className="md:flex">
+                <div className="md:w-1/3 bg-gradient-to-br from-blue-900 to-blue-700 p-8 text-white">
+                  <div className="text-center">
+                    <div className="w-40 h-40 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                      <img 
+                        src="/images/doctor-aruna.jpeg" 
+                        alt="Dr. A. Aruna Kumari Araveeti" 
+                        className="w-full h-full object-cover rounded-full"
+                      />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2">Dr. A. Aruna Kumari Araveeti</h3>
+                    <p className="text-blue-200 mb-4">Senior Consultant</p>
+                    <p className="text-blue-200">Obstetrics & Gynaecology</p>
+                    <p className="text-blue-200">Reproductive Medicine</p>
+                  </div>
+                </div>
+                
+                <div className="md:w-2/3 p-8">
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Professional Journey</h4>
+                    <div className="space-y-3 text-gray-600">
+                      <p>• Working as Senior Consultant in Obstetrics and Gynaecology since 2004 at Neravati Hospital, Gandhi Chowk, Nandyal</p>
+                      <p>• Started Department of Reproductive Medicine at Neravati Hospital in 2015</p>
+                      <p>• Providing fertility treatments for the last 10+ years</p>
+                      <p>• Successfully helped around 10,000 families fulfill their dream of motherhood</p>
+                    </div>
+                  </div>
+
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Educational Qualifications</h4>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-blue-900">MBBS (1993-99)</h5>
+                          <p className="text-sm text-gray-600">Guntur Medical College, Guntur</p>
+                        </div>
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-blue-900">DGO (1999-2001)</h5>
+                          <p className="text-sm text-gray-600">Diploma in Obstetrics & Gynaecology</p>
+                        </div>
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-blue-900">ICOG Fellowship</h5>
+                          <p className="text-sm text-gray-600">Reproductive Medicine (AIR-1 Topper)</p>
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-blue-900">Masters in Reproductive Medicine</h5>
+                          <p className="text-sm text-gray-600">Homerton University Hospital (UK), 2019</p>
+                        </div>
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-blue-900">Advanced Diploma in ART</h5>
+                          <p className="text-sm text-gray-600">University of Schleswig Holstein-Kiel (Germany), 2022</p>
+                        </div>
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-blue-900">Multiple Fellowships</h5>
+                          <p className="text-sm text-gray-600">Cosmetic Gynaecology, Embryology, IMA-AMS</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Areas of Interest</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {['Fertility Treatment', 'Operative Laparoscopy', 'Operative Hysteroscopy', 'Adolescent Health Education'].map((area, index) => (
+                        <span key={index} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                          {area}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Available Services</h4>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-900">Fertility Treatments</h5>
+                        <ul className="space-y-2 text-sm text-gray-600">
+                          <li>• IUI (Intrauterine Insemination)</li>
+                          <li>• IVF (In Vitro Fertilization)</li>
+                          <li>• ICSI (Intracytoplasmic Sperm Injection)</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-900">Advanced Procedures</h5>
+                        <ul className="space-y-2 text-sm text-gray-600">
+                          <li>• Operative Laparoscopy</li>
+                          <li>• Operative Hysteroscopy</li>
+                          <li>• Cosmetic Gynaecology</li>
+                          <li>• Obstetric & Gynaecology Services</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

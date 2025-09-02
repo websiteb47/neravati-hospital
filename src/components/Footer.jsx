@@ -160,11 +160,11 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
               © {currentYear} Neravati Multispeciality Hospital. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-sm">
+            {/* <div className="flex space-x-6 text-sm">
               <Link to="/privacy" className="text-gray-400 hover:text-blue-300 transition-colors">
                 Privacy Policy
               </Link>
@@ -174,7 +174,7 @@ const Footer = () => {
               <Link to="/sitemap" className="text-gray-400 hover:text-blue-300 transition-colors">
                 Sitemap
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
