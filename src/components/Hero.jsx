@@ -13,7 +13,7 @@ const Hero = () => {
       id: 1,
       image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       alt: "Modern Hospital Building",
-      title: "నెరవటి మల్టిస్పెషాలిటీ హాస్పిటల్‌కి స్వాగతం",
+      title: "నెరవటి మల్టిస్పెషాలిటీ హాస్పిటల్‌",
       subtitle: "Excellence in Healthcare"
     },
     // {
