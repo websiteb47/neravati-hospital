@@ -55,7 +55,7 @@ const IVF = () => {
     }
   ];
 
-  const successStories = [
+ const successStories = [
     {
       name: "Priya & Rajesh",
       age: "32 & 35",
@@ -80,7 +80,7 @@ const IVF = () => {
       rating: 5,
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     }
-  ];
+  ]; 
 
   const facilities = [
     {
