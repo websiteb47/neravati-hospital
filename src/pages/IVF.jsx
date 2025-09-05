@@ -486,7 +486,7 @@ const IVF = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            {/* <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="aspect-square overflow-hidden">
                 <img
                   src="/images/ivf/ivf3.jpeg"
@@ -501,9 +501,9 @@ const IVF = () => {
                   Patient Care
                 </span>
               </div>
-            </div>
+            </div> */}
 
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            {/* <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="aspect-square overflow-hidden">
                 <img
                   src="/images/ivf/ivf4.jpeg"
@@ -566,7 +566,7 @@ const IVF = () => {
                   Patient Care
                 </span>
               </div>
-            </div>
+            </div> */}
          
           </div>
 
@@ -599,11 +599,11 @@ const IVF = () => {
             {successStories.map((story, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6">
                 <div className="flex items-center mb-4">
-                  <img
+                  {/* <img
                     src={story.image}
                     alt={story.name}
                     className="w-16 h-16 rounded-full object-cover mr-4"
-                  />
+                  /> */}
                   <div>
                     <h3 className="font-bold text-gray-900">{story.name}</h3>
                     <p className="text-sm text-gray-500">Age: {story.age}</p>
