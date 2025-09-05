@@ -64,7 +64,8 @@ const Navbar = () => {
             <Link to="/" className="flex items-center space-x-3">
               <div className="w-18 h-18 bg-blue-900 rounded-full flex items-center justify-center">
                 {/* <span className="text-white font-bold text-lg">N</span> */}
-                <img src="./logo.png" alt="logo" className="w-18 h-18" />
+                <img src="./logo.jpeg" alt="logo" className="w-18 h-18" />
+                {/* <img src="./logo.jpeg" alt="logo" className="w-10 h-10 rounded-full" /> */}
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Neravati</h1>

@@ -144,6 +144,12 @@ const IVF = () => {
     }
   ];
 
+
+
+
+
+
+
   return (
     <div>
       {/* Hero Section */}
@@ -652,3 +658,81 @@ const IVF = () => {
 };
 
 export default IVF; 
+
+
+
+
+
+
+  // {
+  //   id: 14,
+  //   src: "/images/equipment/equipment1.jpeg",
+  //   alt: "Advanced Medical Microscope",
+  //   category: "equipment",
+  //   title: "Advanced Medical Microscope",
+  //   description: "High-precision microscope setup for detailed medical analysis and research"
+  // },
+  // {
+  //   id: 15,
+  //   src: "/images/equipment/equipment2.jpeg",
+  //   alt: "Laboratory Workstation",
+  //   category: "equipment",
+  //   title: "Laboratory Workstation",
+  //   description: "Spacious laboratory with multiple workstations for comprehensive diagnostics"
+  // },
+  // {
+  //   id: 16,
+  //   src: "/images/equipment/equipment3.jpeg",
+  //   alt: "IVF Workstation Elite Series",
+  //   category: "equipment",
+  //   title: "IVF Workstation Elite Series",
+  //   description: "Advanced IVF workstation by HYTEK SCIENTIFICS INC for fertility treatments"
+  // },
+  // {
+  //   id: 17,
+  //   src: "/images/equipment/equipment4.jpeg",
+  //   alt: "Laminar Flow Hood",
+  //   category: "equipment",
+  //   title: "Laminar Flow Hood",
+  //   description: "Specialized laboratory workstation with laminar flow for sterile procedures"
+  // },  
+  // {
+  //   id: 18,
+  //   src: "/images/equipment/equipment5.jpeg",
+  //   alt: "Gynecology Examination Room",
+  //   category: "equipment",
+  //   title: "Gynecology Examination Room",
+  //   description: "Specialized examination room with modern equipment for women's health"
+  // },
+  // {
+  //   id: 19,
+  //   src: "/images/equipment/equipment6.jpeg",
+  //   alt: "Labotect Incubator C16",
+  //   category: "equipment",
+  //   title: "Labotect Incubator C16",
+  //   description: "Advanced incubator maintaining optimal conditions for medical procedures"
+  // },
+  // {
+  //   id: 20,
+  //   src: "/images/equipment/equipment7.jpeg",
+  //   alt: "Medical Equipment Setup",
+  //   category: "equipment",
+  //   title: "Medical Equipment Setup",
+  //   description: "Professional medical equipment including HYTEK SCIENTIFICS and Labotect Aspirator"
+  // },
+  // {
+  //   id: 21,
+  //   src: "/images/equipment/equipment8.jpeg",
+  //   alt: "Operation Theatre Door",
+  //   category: "equipment",
+  //   title: "Operation Theatre",
+  //   description: "Sterile operation theatre entrance with controlled access for surgical procedures"
+  // },
+  // {
+  //   id: 22,
+  //   src: "/images/equipment/equipment9.jpeg",
+  //   alt: "Laboratory Freezer",
+  //   category: "equipment",
+  //   title: "Laboratory Freezer",
+  //   description: "Professional laboratory freezer with digital temperature control system"
+  // },
