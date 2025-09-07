@@ -158,7 +158,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-950 text-white">
+      <section className="py-20 bg-blue-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">

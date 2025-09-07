@@ -22,9 +22,9 @@ const DepartmentCard = ({ department }) => {
   console.log('Department:', department.name, 'Image path:', department.image);
 
   return (
-    <div className="bg-white rounded-xl shadow-none hover:shadow-none transition-all duration-300 overflow-hidden group flex flex-col h-full" style={{ boxShadow: 'none' }}>
+    <div className="bg-white rounded-xl shadow-xl  transition-all duration-300 overflow-hidden group flex flex-col h-full">
       {/* Header with Image */}
-              <div className="relative bg-blue-900 p-6 text-white min-h-[120px] flex items-center overflow-hidden">
+      <div className="relative bg-blue-500 p-6 text-white min-h-[120px] flex items-center overflow-hidden">
         {/* Background Image */}
         {/* <div className="absolute inset-0 opacity-20">
           <img
@@ -39,7 +39,7 @@ const DepartmentCard = ({ department }) => {
             }}
           />
         </div> */}
-        
+
         {/* Content */}
         <div className="flex items-center space-x-4 w-full relative z-10">
           <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -73,7 +73,7 @@ const DepartmentCard = ({ department }) => {
         <div className="pt-4 border-t border-gray-100 mt-auto">
           <Link
             to={`/departments#${department.name.toLowerCase().replace(/\s+/g, '-')}`}
-            className="inline-flex items-center justify-center w-full bg-blue-900 hover:bg-blue-950 text-white py-2 px-4 rounded-lg font-medium transition-colors duration-200 group-hover:bg-blue-950"
+            className="inline-flex items-center justify-center w-full  text-blue-700 py-2 px-4 rounded-lg font-medium transition-colors duration-200"
             onClick={() => {
               // Force scroll to section after navigation
               setTimeout(() => {

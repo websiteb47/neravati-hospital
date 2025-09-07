@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import DepartmentCard from '../components/DepartmentCard';
 import { departments } from '../data/doctors';
+import { doctors } from '../data/doctors';   // ✅ import doctors
 import { Search } from 'lucide-react';
 
 const Departments = () => {
@@ -14,7 +15,7 @@ const Departments = () => {
         const element = document.querySelector(hash);
         if (element) {
           setTimeout(() => {
-            const offset = 140; // Account for fixed navbar and top bar
+            const offset = 140;
             const elementPosition = element.offsetTop - offset;
             window.scrollTo({
               top: elementPosition,
@@ -25,14 +26,8 @@ const Departments = () => {
       }
     };
 
-    // Handle initial load
     handleScrollToSection();
-
-    // Handle hash changes
-    const handleHashChange = () => {
-      handleScrollToSection();
-    };
-
+    const handleHashChange = () => handleScrollToSection();
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
@@ -45,7 +40,7 @@ const Departments = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-950 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-500 to-blue-500 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Our Departments</h1>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto">
@@ -109,59 +104,102 @@ const Departments = () => {
           </div>
 
           <div className="space-y-16">
-            {departments.map((department) => (
-              <div key={department.id} id={department.name.toLowerCase().replace(/\s+/g, '-')} className="bg-white rounded-xl p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-6">{department.name}</h3>
-                    <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                      {department.description}
-                    </p>
-                    
-                    <div className="space-y-4">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-3 h-3 bg-blue-900 rounded-full"></div>
-                        <span className="text-gray-700">
-                          <strong>{department.doctors} Expert Doctors</strong> specializing in {department.name}
-                        </span>
+            {departments.map((department) => {
+             const relatedDoctors = doctors.filter((doc) =>
+              doc.department.toLowerCase().includes(department.name.toLowerCase())
+            );
+
+              return (
+                <div
+                  key={department.id}
+                  id={department.name.toLowerCase().replace(/\s+/g, '-')}
+                  className="bg-white rounded-xl p-8"
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                      <h3 className="text-3xl font-bold text-gray-900 mb-6">{department.name}</h3>
+                      <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                        {department.description}
+                      </p>
+
+                      <div className="space-y-4">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-3 h-3 bg-blue-900 rounded-full"></div>
+                          <span className="text-gray-700">
+                            <strong>{department.doctors} Expert Doctors</strong> specializing in {department.name}
+                          </span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="w-3 h-3 bg-green-600 rounded-full"></div>
+                          <span className="text-gray-700">
+                            <strong>State-of-the-art facilities</strong> for accurate diagnosis and treatment
+                          </span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="w-3 h-3 bg-purple-600 rounded-full"></div>
+                          <span className="text-gray-700">
+                            <strong>Comprehensive care</strong> from diagnosis to treatment and follow-up
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <div className="w-3 h-3 bg-green-600 rounded-full"></div>
-                        <span className="text-gray-700">
-                          <strong>State-of-the-art facilities</strong> for accurate diagnosis and treatment
-                        </span>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <div className="w-3 h-3 bg-purple-600 rounded-full"></div>
-                        <span className="text-gray-700">
-                          <strong>Comprehensive care</strong> from diagnosis to treatment and follow-up
-                        </span>
+                    </div>
+
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-6">Services Offered</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {department.services.map((service, index) => (
+                          <div key={index} className="bg-gray-50 rounded-lg p-4">
+                            <div className="flex items-center space-x-3">
+                              <div className="w-2 h-2 bg-blue-900 rounded-full"></div>
+                              <span className="text-gray-700 font-medium">{service}</span>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
 
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-6">Services Offered</h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {department.services.map((service, index) => (
-                        <div key={index} className="bg-gray-50 rounded-lg p-4">
-                          <div className="flex items-center space-x-3">
-                            <div className="w-2 h-2 bg-blue-900 rounded-full"></div>
-                            <span className="text-gray-700 font-medium">{service}</span>
+                  {/* ✅ Related Doctors */}
+                  {relatedDoctors.length > 0 && (
+                    <div className="mt-12">
+                      <h4 className="text-2xl font-bold text-gray-900 mb-6">
+                        Our Doctors in {department.name}
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {relatedDoctors.map((doc) => (
+                          <div
+                            key={doc.id}
+                            className="border rounded-lg shadow-sm p-6 bg-white"
+                          >
+                            <img
+                              src={doc.image}
+                              alt={doc.name}
+                              className="w-full object-cover rounded-lg mb-4"
+                            />
+                            <h5 className="text-xl font-semibold text-gray-900">
+                              {doc.name}
+                            </h5>
+                            <p className="text-gray-600">{doc.specialty}</p>
+                            <p className="text-sm text-gray-500 mt-2">{doc.experience}</p>
+                            <p className="text-sm text-gray-500">{doc.education}</p>
+                            <p className="text-sm text-gray-500 mt-1">
+                              Availability: {doc.availability}
+                            </p>
+                            <p className="text-sm text-gray-600 mt-2">{doc.description}</p>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-950 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-500 to-blue-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Need to Schedule an Appointment?</h2>
           <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
@@ -188,4 +226,4 @@ const Departments = () => {
   );
 };
 
-export default Departments; 
+export default Departments;

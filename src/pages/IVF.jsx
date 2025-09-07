@@ -153,8 +153,8 @@ const IVF = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-950 text-white py-20">
-        <div className="absolute inset-0 bg-black/30"></div>
+      <section className="relative bg-blue-500 text-white py-20">
+        <div className="absolute inset-0"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -186,11 +186,11 @@ const IVF = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-900 mb-2">500+</div>
+              <div className="text-4xl font-bold text-blue-900 mb-2">7000+</div>
               <div className="text-gray-600">Successful Pregnancies</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-900 mb-2">75%</div>
+              <div className="text-4xl font-bold text-blue-900 mb-2">60%</div>
               <div className="text-gray-600">Success Rate</div>
             </div>
             <div className="text-center">
@@ -198,7 +198,7 @@ const IVF = () => {
               <div className="text-gray-600">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-900 mb-2">1000+</div>
+              <div className="text-4xl font-bold text-blue-900 mb-2">10000+</div>
               <div className="text-gray-600">Happy Families</div>
             </div>
           </div>
@@ -629,7 +629,7 @@ const IVF = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-950 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-500 to-blue-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Start Your Fertility Journey?</h2>
           <p className="text-xl text-blue-200 mb-8 max-w-3xl mx-auto">

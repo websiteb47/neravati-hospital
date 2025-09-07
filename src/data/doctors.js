@@ -63,9 +63,12 @@ export const doctors = [
     rating: 4.9,
     patients: 1600,
     description: "Specialist in diabetes, thyroid, hypertension, heart diseases, chest infections, viral fevers, dengue, typhoid, joint pains, asthma, and more. Also treats gynec, pediatric, and geriatric cases with expert care in both inpatient and outpatient settings."
-  }
+  },
+  
 ]
 ;
+
+
 
 export const departments = [
   {
@@ -75,6 +78,7 @@ export const departments = [
     image: "/images/departments/ivf-infertility.svg",
     description: "Advanced fertility treatment and reproductive medicine",
     doctors: 1,
+    specialization: "IVF",
     services: ["IVF Treatment", "IUI Treatment", "Fertility Assessment", "Hormone Therapy", "Egg Freezing", "Surrogacy Consultation"]
   },
   {
@@ -106,7 +110,7 @@ export const departments = [
   },
   {
     id: 5,
-    name: "Orthopaedic",
+    name: "Orthopedics",
     icon: "bone",
     image: "/images/departments/orthopaedic.svg",
     description: "Treatment for bone and joint diseases, trauma, and joint replacements",
@@ -115,7 +119,7 @@ export const departments = [
   },
   {
     id: 6,
-    name: "MD General",
+    name: "General Medicine",
     icon: "heart",
     image: "/images/departments/md-general.svg",
     description: "Comprehensive medical care for adults with focus on chronic diseases",

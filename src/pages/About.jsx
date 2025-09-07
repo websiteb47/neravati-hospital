@@ -89,7 +89,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-950 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-500 to-blue-500 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">About Neravati</h1>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto">
@@ -233,16 +233,16 @@ const About = () => {
               Dr. A. Aruna Kumari - A pioneer in reproductive medicine and women's health
             </p>
           </div>
-          
+
           <div className="max-w-6xl mx-auto">
             <div className="bg-white rounded-lg shadow-xl overflow-hidden">
               <div className="md:flex">
-                <div className="md:w-1/3 bg-gradient-to-br from-blue-900 to-blue-700 p-8 text-white">
+                <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-blue-500 p-8 text-white">
                   <div className="text-center">
                     <div className="w-40 h-40 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
-                      <img 
-                        src="/images/doctor-aruna.jpeg" 
-                        alt="Dr. A. Aruna Kumari Araveeti" 
+                      <img
+                        src="/images/doctor-aruna.jpeg"
+                        alt="Dr. A. Aruna Kumari Araveeti"
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
@@ -252,7 +252,7 @@ const About = () => {
                     <p className="text-blue-200">Reproductive Medicine</p>
                   </div>
                 </div>
-                
+
                 <div className="md:w-2/3 p-8">
                   <div className="mb-8">
                     <h4 className="text-xl font-semibold text-gray-900 mb-4">Professional Journey</h4>
@@ -292,7 +292,11 @@ const About = () => {
                         </div>
                         <div className="bg-blue-50 p-3 rounded-lg">
                           <h5 className="font-semibold text-blue-900">Multiple Fellowships</h5>
-                          <p className="text-sm text-gray-600">Cosmetic Gynaecology, Embryology, IMA-AMS</p>
+                          <ul className="list-disc list-inside text-sm text-gray-600">
+                            <li>Cosmetic Gynaecology</li>
+                            <li>Embryology</li>
+                            <li>IMA-AMS</li>
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -338,6 +342,153 @@ const About = () => {
         </div>
       </section>
 
+      {/* Dr. Vinod Kumar Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Leading Specialist</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Dr. Vinod Kumar – A pioneer in ENT surgeries and advanced otorhinolaryngology care
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+              <div className="md:flex">
+                {/* Left Profile Card */}
+                <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-blue-500 p-8 text-white">
+                  <div className="text-center">
+                    <div className="w-40 h-40 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                      <img
+                        src="/images/doctor-vinod.jpeg"
+                        alt="Dr. Vinod Kumar"
+                        className="w-full h-full object-cover rounded-full"
+                      />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2">Dr. Vinod Kumar</h3>
+                    <p className="text-blue-200 mb-4">Senior Consultant</p>
+                    <p className="text-blue-200">ENT & Head-Neck Surgery</p>
+                    <p className="text-blue-200">Otorhinolaryngology Specialist</p>
+                  </div>
+                </div>
+
+                {/* Right Content */}
+                <div className="md:w-2/3 p-8">
+                  {/* Professional Journey */}
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Professional Journey</h4>
+                    <div className="space-y-3 text-gray-600">
+                      <p>• MBBS from Osmania Medical College (1991–1997) – State Rank 74</p>
+                      <p>• Postgraduation in ENT (Otorhinolaryngology) from Kakatiya Medical College, Warangal</p>
+                      <p>• Worked as Surgical Registrar in KKR Hospital, Chennai</p>
+                      <p>• Served as Assistant Professor in Mamatha Medical College, Khammam</p>
+                      <p>• Established Department of ENT at Neravati Hospitals in 2004 and Audiology in 2005</p>
+                      <p>• Over 22+ years of experience in advanced ENT surgeries with 10,000+ successful cases</p>
+                      <p>• Expert in advanced endoscopic sinus surgery and microscopic ear surgeries</p>
+                      <p>• Introduced Zeiss oto-microscope and Storz endoscope (2004), Microdebrider (2008), Coblator (2018)</p>
+                      <p>• In 2025, established first-of-its-kind Vertigo & Allergy Clinic in Nandyal District</p>
+                      <p>• Extending ENT services to peripheries (Giddalur & Khammam) every 1st Sunday for the last 22 years</p>
+                      <p>• Conducted multiple free health camps for underprivileged communities</p>
+                    </div>
+                  </div>
+
+                  {/* Educational Qualifications */}
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Educational Qualifications</h4>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-blue-900">MBBS</h5>
+                          <p className="text-sm text-gray-600">Osmania Medical College (1991–97)</p>
+                        </div>
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-blue-900">M.S. (ENT)</h5>
+                          <p className="text-sm text-gray-600">Kakatiya Medical College, Warangal</p>
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-blue-900">MRSH</h5>
+                          <p className="text-sm text-gray-600">Member, Royal Society for Public Health</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Areas of Interest */}
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Areas of Interest</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        'Advanced Endoscopic Sinus Surgery',
+                        'Microscopic Ear Surgery',
+                        'Vertigo Management',
+                        'Allergy Testing & Immunotherapy',
+                      ].map((area, index) => (
+                        <span
+                          key={index}
+                          className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                        >
+                          {area}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Available Services */}
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Available Services</h4>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-900">Surgical Services</h5>
+                        <ul className="space-y-2 text-sm text-gray-600">
+                          <li>• Microdebrider & Coblator-assisted Adenoidectomy, Tonsillectomy, Turbinectomy</li>
+                          <li>• Correction of Deviated Nasal Septum (SMR, Septoplasty)</li>
+                          <li>• Myringoplasty & Tympanoplasty</li>
+                          <li>• Dacrocystorhinostomy</li>
+                          <li>• Cortical & Radical Mastoidectomy</li>
+                          <li>• Thyroidectomy</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-900">Specialized Clinics</h5>
+                        <ul className="space-y-2 text-sm text-gray-600">
+                          <li>• Vertigo Diagnostics & Rehabilitation</li>
+                          <li>• Allergy Testing (Patch & Prick Test)</li>
+                          <li>• Immunotherapy Services</li>
+                          <li>• Medical Management of Common ENT Diseases</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Advanced Instruments */}
+                  <div>
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Advanced ENT Instruments</h4>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                      {[
+                        { name: 'Zeiss Microscope', img: '/images/zeiss-microscope.jpg' },
+                        { name: 'Carl Storz Surgical System', img: '/images/storz-system.jpg' },
+                        { name: 'Microdebrider', img: '/images/microdebrider.jpg' },
+                        { name: 'Coblator', img: '/images/coblator.jpg' },
+                      ].map((item, idx) => (
+                        <div key={idx} className="text-center">
+                          {/* <div className="w-24 h-24 mx-auto mb-2 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center">
+                            <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
+                          </div> */}
+                          <p className="text-sm text-gray-700 font-medium">{item.name}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Testimonials Section */}
       <section className="py-16 bg-gradient-to-r from-blue-100 to-blue-200">
         <div className="container mx-auto px-4">
@@ -364,7 +515,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-900 text-white">
+      <section className="py-16 bg-blue-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Experience Quality Healthcare?</h2>
           <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">

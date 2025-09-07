@@ -182,7 +182,7 @@ const Gallery = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-950 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-500 to-blue-500 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Hospital Gallery</h1>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto">

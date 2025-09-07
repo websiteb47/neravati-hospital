@@ -29,11 +29,11 @@ const Services = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-950 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-500 to-blue-500 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Our Services</h1>
           <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-            Comprehensive healthcare services designed to meet all your medical needs. 
+            Comprehensive healthcare services designed to meet all your medical needs.
             From routine check-ups to specialized treatments, we're here for you.
           </p>
         </div>
@@ -57,13 +57,86 @@ const Services = () => {
         </div>
       </section>
 
+       {/* Special Clinics Section */}
+       <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Special Clinics</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore our specialized clinics that offer advanced treatments and collaborations for better care.
+            </p>
+          </div>
+
+          {/* Vertigo Clinic */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Vertigo Clinic</h3>
+            <p className="text-gray-600 max-w-3xl mx-auto mb-8 text-center">
+              Our dedicated Vertigo Clinic offers advanced diagnostic and therapeutic solutions for patients
+              experiencing dizziness, imbalance, or vestibular disorders.
+            </p>
+
+            {/* Images Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+              <img src="/images/vertigo1.jpeg" alt="Vertigo Clinic 1" className="rounded-xl shadow-lg w-full  object-cover" />
+              <img src="/images/vertigo2.jpeg" alt="Vertigo Clinic 2" className="rounded-xl shadow-lg w-full object-cover" />
+              <img src="/images/vertigo3.jpeg" alt="Vertigo Clinic 3" className="rounded-xl shadow-lg w-full  object-cover" />
+              <img src="/images/vertigo4.jpeg" alt="Vertigo Clinic 4" className="rounded-xl shadow-lg w-full  object-cover" />
+              <img src="/images/vertigo6.jpeg" alt="Vertigo Clinic 6" className="rounded-xl shadow-lg w-full  object-cover" />
+              <img src="/images/vertigo7.jpeg" alt="Vertigo Clinic 7" className="rounded-xl shadow-lg w-full  object-cover" />
+              <img src="/images/vertigo8.jpeg" alt="Vertigo Clinic 7" className="rounded-xl shadow-lg w-full  object-cover" />
+
+            </div>
+
+            {/* Video */}
+            <div className="max-w-4xl mx-auto">
+              <video controls className="w-full rounded-xl shadow-lg">
+                <source src="/videos/vertigo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+         {/* Allergy Clinic */}
+<div>
+  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+    Allergy Clinic (in collaboration with Evexia)
+  </h3>
+  <p className="text-gray-600 max-w-3xl mx-auto mb-8 text-center">
+    In partnership with Evexia, our Allergy Clinic provides expert consultation, testing,
+    and treatment for a wide range of allergies with state-of-the-art technology.
+  </p>
+
+  {/* Image + Video Side by Side */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+    {/* Image */}
+    <div className="flex justify-center">
+      <img
+        src="/images/allergy.jpeg"
+        alt="Allergy Clinic"
+        className="rounded-xl shadow-lg w-full max-w-lg object-cover"
+      />
+    </div>
+
+    {/* Video */}
+    <div>
+      <video controls className="w-full rounded-xl shadow-lg">
+        <source src="/videos/allergy.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our Services?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We are committed to providing the highest quality healthcare services 
+              We are committed to providing the highest quality healthcare services
               with a focus on patient comfort and positive outcomes.
             </p>
           </div>
@@ -95,12 +168,12 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Primary Care */}
             <div className="bg-white rounded-xl shadow-lg p-8">
-                              <div className="w-16 h-16 bg-blue-200 rounded-xl flex items-center justify-center mb-6">
-                  <span className="text-2xl font-bold text-blue-900">PC</span>
-                </div>
+              <div className="w-16 h-16 bg-blue-200 rounded-xl flex items-center justify-center mb-6">
+                <span className="text-2xl font-bold text-blue-900">PC</span>
+              </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Primary Care</h3>
               <p className="text-gray-600 mb-6">
-                Comprehensive health care for all ages, including routine check-ups, 
+                Comprehensive health care for all ages, including routine check-ups,
                 preventive care, and treatment of common illnesses.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -118,7 +191,7 @@ const Services = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Specialist Care</h3>
               <p className="text-gray-600 mb-6">
-                Expert consultation and treatment from specialists in various medical fields 
+                Expert consultation and treatment from specialists in various medical fields
                 for complex health conditions.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -136,7 +209,7 @@ const Services = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Diagnostic Services</h3>
               <p className="text-gray-600 mb-6">
-                Advanced imaging and laboratory services for accurate diagnosis 
+                Advanced imaging and laboratory services for accurate diagnosis
                 and treatment planning.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -154,7 +227,7 @@ const Services = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Emergency Care</h3>
               <p className="text-gray-600 mb-6">
-                24/7 emergency medical services for urgent health situations 
+                24/7 emergency medical services for urgent health situations
                 requiring immediate attention.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -172,7 +245,7 @@ const Services = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Rehabilitation</h3>
               <p className="text-gray-600 mb-6">
-                Physical therapy and rehabilitation services to help patients 
+                Physical therapy and rehabilitation services to help patients
                 recover and regain function after injury or surgery.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -190,7 +263,7 @@ const Services = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Preventive Care</h3>
               <p className="text-gray-600 mb-6">
-                Proactive health services focused on preventing illness and 
+                Proactive health services focused on preventing illness and
                 maintaining optimal health and wellness.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -254,12 +327,15 @@ const Services = () => {
         </div>
       </section> */}
 
+     
+
+
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-950 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-500 to-blue-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
-            Contact us today to learn more about our services or schedule an appointment 
+            Contact us today to learn more about our services or schedule an appointment
             with one of our healthcare professionals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
