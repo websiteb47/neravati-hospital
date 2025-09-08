@@ -96,36 +96,29 @@ const Services = () => {
             </div>
           </div>
 
-         {/* Allergy Clinic */}
-<div>
-  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-    Allergy Clinic (in collaboration with Evexia)
-  </h3>
-  <p className="text-gray-600 max-w-3xl mx-auto mb-8 text-center">
-    In partnership with Evexia, our Allergy Clinic provides expert consultation, testing,
-    and treatment for a wide range of allergies with state-of-the-art technology.
-  </p>
+ {/* Allergy Clinic */}
+ <div>
+      <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+        Allergy Clinic (in collaboration with Evexia)
+      </h3>
+      <p className="text-gray-600 max-w-3xl mx-auto mb-8 text-center">
+        In partnership with Evexia, our Allergy Clinic provides expert consultation, testing,
+        and treatment for a wide range of allergies with state-of-the-art technology.
+      </p>
 
-  {/* Image + Video Side by Side */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-    {/* Image */}
-    <div className="flex justify-center">
-      <img
-        src="/images/allergy.jpeg"
-        alt="Allergy Clinic"
-        className="rounded-xl shadow-lg w-full max-w-lg object-cover"
-      />
-    </div>
+      {/* Image */}
+      <div className="flex justify-center mb-8">
+        <img src="/images/allergy.jpeg" alt="Allergy Clinic" className="rounded-xl shadow-lg w-full max-w-lg object-cover" />
+      </div>
 
-    {/* Video */}
-    <div>
-      <video controls className="w-full rounded-xl shadow-lg">
-        <source src="/videos/allergy.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {/* Video */}
+      <div className="max-w-4xl mx-auto">
+        <video controls className="w-full rounded-xl shadow-lg">
+          <source src="/videos/allergy.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
-  </div>
-</div>
 
         </div>
       </section>

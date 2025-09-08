@@ -1,8 +1,93 @@
 import { useState, useEffect } from 'react';
 import DepartmentCard from '../components/DepartmentCard';
 import { departments } from '../data/doctors';
-import { doctors } from '../data/doctors';   // ✅ import doctors
+
 import { Search } from 'lucide-react';
+
+
+const doctors = [
+  {
+    id: 1,
+    name: "Dr. N. Vinod Kumar",
+    specialty: "ENT Specialist",
+    department: "ENT",
+    image: "/images/doctor-vinod.jpeg",
+    experience: "Ex. Surgical Registrar, K.K.R ENT Hospital, Chennai",
+    education: "MBBS (OSM), MS (ENT), MRSH",
+    availability: "Mon-Sat, 9AM-5PM",
+    rating: 4.8,
+    patients: 950,
+    description: "Expert in ear, nose, and throat problems. Former Asst. Professor at Mamata Medical College."
+  },
+  {
+    id: 2,
+    name: "Dr. A. Aruna Kumari",
+    specialty: "Gynecology & IVF",
+    department: "Gynecology",
+    image: "/images/doctor-aruna.jpeg",
+    experience: "Fellow in IVF, Cosmetic Gynecology & Laparoscopic Surgery",
+    education: "MBBS, DGO, FAGE",
+    availability: "Mon-Sat, 10AM-4PM",
+    rating: 4.9,
+    patients: 1300,
+    description: "Gold Medalist. Specialist in IVF, cosmetic gynecology, and hysteroscopic surgery. Former Asst. Professor at Mamata Medical College."
+  },
+  {
+    id: 3,
+    name: "Dr. D. Fatima Bee",
+    specialty: "Gynecology & Laparoscopy",
+    department: "Gynecology",
+    image: "/images/doctor-fatima.jpeg",
+    experience: "Laparoscopic & NDVH Surgeon",
+    education: "MBBS, MS (OBG), FMAS",
+    availability: "Mon-Sat, 9AM-3PM",
+    rating: 4.8,
+    patients: 900,
+    description: "Expert in laparoscopic procedures and normal delivery without hysterectomy (NDVH)."
+  },
+  {
+    id: 4,
+    name: "Dr. K. Suman Kumar",
+    specialty: "Orthopedics",
+    department: "Orthopedics",
+    image: "/images/doctor-suman.jpeg",
+    experience: "Specialist in trauma and joint replacements",
+    education: "MBBS, MS (Ortho), CCPM, MRCS (UK)",
+    availability: "Mon-Sat, 9AM-5PM",
+    rating: 4.7,
+    patients: 1000,
+    description: "Consultant Orthopaedician with expertise in trauma care and joint replacement surgeries."
+  },
+  {
+    id: 5,
+    name: "Dr. Y. Devendra Nayak",
+    specialty: "General Physician & Internal Medicine",
+    department: "General Medicine",
+    image: "/images/doctor-devendra.jpeg",
+    experience: "Trained at VMMC & Safdarjung Hospital, New Delhi",
+    education: "MBBS, MD (General Medicine)",
+    availability: "24/7 Emergency Service Available",
+    rating: 4.9,
+    patients: 1600,
+    description: "Specialist in diabetes, thyroid, hypertension, heart diseases, chest infections, viral fevers, dengue, typhoid, joint pains, asthma, and more. Also treats gynec, pediatric, and geriatric cases with expert care in both inpatient and outpatient settings."
+  },
+  {
+    id: 6,
+    name: "Dr. A. Aruna Kumari",
+    specialty: "IVF Specialist",
+    department: "IVF Infertility",
+    image: "/images/doctor-aruna.jpeg",
+    experience: "Fellow in IVF, Cosmetic Gynecology & Laparoscopic Surgery",
+    education: "MBBS, DGO, FAGE",
+    availability: "Mon-Sat, 10AM-4PM",
+    rating: 4.9,
+    patients: 1300,
+    description: "Gold Medalist. Specialist in IVF, cosmetic gynecology, and hysteroscopic surgery."
+  }
+  
+]
+;
+
 
 const Departments = () => {
   const [searchTerm, setSearchTerm] = useState('');
