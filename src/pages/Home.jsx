@@ -102,7 +102,7 @@ const Home = () => {
       </section>
 
       {/* Departments Section */}
-      <section className="py-20">
+     {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Departments</h2>
@@ -161,7 +161,7 @@ const Home = () => {
       <section className="py-20 bg-blue-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl  text-white-200 mb-8 max-w-2xl mx-auto">
             Book your appointment today and take the first step towards better health. 
             Our team is here to help you on your wellness journey.
           </p>

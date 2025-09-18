@@ -20,7 +20,7 @@ const Doctors = () => {
       <section className="bg-gradient-to-r from-blue-500 to-blue-500 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Our Doctors</h1>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto">
+          <p className="text-xl text-white-200 max-w-3xl mx-auto">
             Meet our team of experienced and compassionate doctors who are dedicated to 
             providing you with the highest quality medical care.
           </p>

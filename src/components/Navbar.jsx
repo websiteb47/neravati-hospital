@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-blue-500 text-white flex justify-center items-center">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-green-400 text-white flex justify-center items-center">
         <div className="container m-2 px-2 sm:m-3 sm:px-4">
           <div className="flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm">
             <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-6 mb-1 sm:mb-0 w-full sm:w-auto">

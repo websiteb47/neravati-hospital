@@ -1,37 +1,10 @@
-import { Star, Clock, Users, MapPin } from 'lucide-react';
+import { Clock, Users, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import DoctorModal from './DoctorModal';
 
 const DoctorCard = ({ doctor }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const renderStars = (rating) => {
-    const stars = [];
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 !== 0;
-
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(
-        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-      );
-    }
-
-    if (hasHalfStar) {
-      stars.push(
-        <Star key="half" className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-      );
-    }
-
-    const emptyStars = 5 - Math.ceil(rating);
-    for (let i = 0; i < emptyStars; i++) {
-      stars.push(
-        <Star key={`empty-${i}`} className="w-4 h-4 text-gray-300" />
-      );
-    }
-
-    return stars;
-  };
 
   return (
     <>
@@ -45,26 +18,20 @@ const DoctorCard = ({ doctor }) => {
             loading="lazy"
           />
           <div className="absolute bottom-4 right-4 bg-white rounded-full px-3 py-1 shadow-md">
-            <span className="text-sm font-semibold text-blue-900">{doctor.specialty}</span>
+            <span className="text-sm font-semibold text-blue-600">{doctor.specialty}</span>
           </div>
         </div>
 
         {/* Doctor Info */}
         <div className="p-6 space-y-4 flex-1 flex flex-col">
-          {/* Name and Rating */}
+          {/* Name */}
           <div className="space-y-2">
             <h3 className="text-xl font-bold text-gray-900 leading-tight">{doctor.name}</h3>
-            <div className="flex items-center space-x-2">
-              <div className="flex items-center space-x-1">
-                {renderStars(doctor.rating)}
-              </div>
-              <span className="text-sm text-gray-600">({doctor.rating})</span>
-            </div>
           </div>
 
           {/* Specialty and Education */}
           <div className="space-y-2">
-            <p className="text-blue-900 font-medium">{doctor.specialty}</p>
+            <p className="text-blue-600 font-semibold text-lg">{doctor.specialty}</p>
             <p className="text-sm text-gray-600">{doctor.education}</p>
           </div>
 

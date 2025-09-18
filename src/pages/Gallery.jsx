@@ -97,7 +97,7 @@ const Gallery = () => {
       description: "Comfortable waiting area for patients and visitors"
     },
     {
-      id: 10,
+      id: 11,
       src: "/images/gallery/patientarea2.jpeg",
       alt: "Waiting Area",
       category: "facility",
@@ -105,7 +105,7 @@ const Gallery = () => {
       description: "Comfortable waiting area for patients and visitors"
     },
     {
-      id: 10,
+      id: 12,
       src: "/images/gallery/patientarea3.jpeg",
       alt: "Waiting Area",
       category: "facility",
@@ -113,54 +113,54 @@ const Gallery = () => {
       description: "Comfortable waiting area for patients and visitors"
     },
     {
-      id: 10,
+      id: 13,
       src: "/images/gallery/patientarea4.jpeg",
       alt: "Waiting Area",
       category: "facility",
       title: "Patient Waiting Area",
       description: "Comfortable waiting area for patients and visitors"
     },
-    {
-      id: 11,
-      src: "/images/gallery/staff1.jpg",
-      alt: "Medical Team",
-      category: "staff",
-      title: "Medical Team",
-      description: "Our dedicated team of healthcare professionals"
-    },
-    {
-      id: 12,
-      src: "/images/gallery/staff2.jpg",
-      alt: "Doctor Consultation",
-      category: "staff",
-      title: "Doctor Consultation",
-      description: "Expert doctor providing patient consultation"
-    },
-    {
-      id: 13,
-      src: "/images/gallery/staff3.jpg",
-      alt: "Nursing Staff",
-      category: "staff",
-      title: "Nursing Staff",
-      description: "Caring nursing staff providing patient care"
-    },
- 
-    {
-      id: 23,
-      src: "/images/gallery/patient1.jpg",
-      alt: "Patient Care",
-      category: "patient-care",
-      title: "Patient Care",
-      description: "Compassionate care for our patients"
-    },
-    {
-      id: 24,
-      src: "/images/gallery/patient2.jpg",
-      alt: "Child Care",
-      category: "patient-care",
-      title: "Pediatric Care",
-      description: "Specialized care for children"
-    },
+    // Commented out cards without images
+    // {
+    //   id: 11,
+    //   src: "/images/gallery/staff1.jpg",
+    //   alt: "Medical Team",
+    //   category: "staff",
+    //   title: "Medical Team",
+    //   description: "Our dedicated team of healthcare professionals"
+    // },
+    // {
+    //   id: 12,
+    //   src: "/images/gallery/staff2.jpg",
+    //   alt: "Doctor Consultation",
+    //   category: "staff",
+    //   title: "Doctor Consultation",
+    //   description: "Expert doctor providing patient consultation"
+    // },
+    // {
+    //   id: 13,
+    //   src: "/images/gallery/staff3.jpg",
+    //   alt: "Nursing Staff",
+    //   category: "staff",
+    //   title: "Nursing Staff",
+    //   description: "Caring nursing staff providing patient care"
+    // },
+    // {
+    //   id: 23,
+    //   src: "/images/gallery/patient1.jpg",
+    //   alt: "Patient Care",
+    //   category: "patient-care",
+    //   title: "Patient Care",
+    //   description: "Compassionate care for our patients"
+    // },
+    // {
+    //   id: 24,
+    //   src: "/images/gallery/patient2.jpg",
+    //   alt: "Child Care",
+    //   category: "patient-care",
+    //   title: "Pediatric Care",
+    //   description: "Specialized care for children"
+    // },
     {
       id: 25,
       src: "/images/services/emergency-care.jpeg",

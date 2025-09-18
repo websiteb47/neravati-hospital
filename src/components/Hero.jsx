@@ -11,10 +11,8 @@ const Hero = () => {
   const bannerImages = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      alt: "Modern Hospital Building",
-      title: "నెరవటి మల్టిస్పెషాలిటీ హాస్పిటల్‌",
-      subtitle: "Excellence in Healthcare"
+      image: "/images/banner5.jpg",
+      
     },
     // {
     //   id: 2,
@@ -23,23 +21,23 @@ const Hero = () => {
     //   title: "Advanced IVF & Fertility Care",
     //   subtitle: "Specialized Reproductive Medicine"
     // },
-    {
+    /*{
       id: 3,
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/banner1.jpg",
       alt: "ENT Specialist Consultation",
       title: "Expert ENT Care",
       subtitle: "Ear, Nose & Throat Specialists"
-    },
+    },*/
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/banner4.jpg",
       alt: "Gynecology Care",
       title: "Comprehensive Gynecology",
       subtitle: "Women's Health & Wellness"
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/banner3.jpg",
       alt: "Emergency Care",
       title: "24/7 Emergency Care",
       subtitle: "Always Here When You Need Us"
@@ -95,10 +93,10 @@ const Hero = () => {
                 }}
               />
               {/* Rich overlay with gradient for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div> */}
               
               {/* Content overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
+             {/* <div className="absolute inset-0 flex items-center justify-center">
                 <div className="container mx-auto px-4 md:px-16 lg:px-20">
                   <div className="max-w-2xl relative z-20 text-center sm:text-left">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-2 sm:mb-4 leading-tight">
@@ -123,7 +121,7 @@ const Hero = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>*/}
             </div>
           </SwiperSlide>
         ))}
