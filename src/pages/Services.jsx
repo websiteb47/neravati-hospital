@@ -1,6 +1,6 @@
 import ServiceCard from '../components/ServiceCard';
 import { services } from '../data/doctors';
-import { CheckCircle, Clock, Shield, Users, Filter, X } from 'lucide-react';\nimport { useState } from 'react';
+import { CheckCircle, Clock, Shield, Users, Filter, X } from 'lucide-react';import { useState } from 'react';
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(null);
