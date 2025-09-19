@@ -10,7 +10,7 @@ const DoctorCard = ({ doctor }) => {
     <>
       <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col h-full">
         {/* Doctor Image */}
-        <div className="relative h-72 bg-gradient-to-br from-blue-50 to-green-50 flex-shrink-0 overflow-hidden">
+        <div className="relative h-72 bg-gradient-to-br from-green-50 to-green-50 flex-shrink-0 overflow-hidden">
           <img
             src={doctor.image}
             alt={doctor.name}
@@ -18,7 +18,7 @@ const DoctorCard = ({ doctor }) => {
             loading="lazy"
           />
           <div className="absolute bottom-4 right-4 bg-white rounded-full px-3 py-1 shadow-md">
-            <span className="text-sm font-semibold text-blue-600">{doctor.specialty}</span>
+            <span className="text-sm font-semibold text-green-600">{doctor.specialty}</span>
           </div>
         </div>
 
@@ -31,20 +31,14 @@ const DoctorCard = ({ doctor }) => {
 
           {/* Specialty and Education */}
           <div className="space-y-2">
-            <p className="text-blue-600 font-semibold text-lg">{doctor.specialty}</p>
+            <p className="text-green-600 font-semibold text-lg">{doctor.specialty}</p>
             <p className="text-sm text-gray-600">{doctor.education}</p>
           </div>
 
-          {/* Stats */}
+          {/* Experience */}
           <div className="flex items-center space-x-2">
             <Clock className="w-4 h-4 text-gray-400" />
             <span className="text-sm text-gray-600">{doctor.experience}</span>
-          </div>
-          <div className="grid grid-cols-2 gap-4 py-3 border-t border-gray-100">
-            <div className="flex items-center space-x-2">
-              <Users className="w-4 h-4 text-gray-400" />
-              <span className="text-sm text-gray-600">{doctor.patients}+ patients</span>
-            </div>
           </div>
 
           {/* Availability */}
@@ -60,7 +54,7 @@ const DoctorCard = ({ doctor }) => {
           <div className="flex space-x-3 pt-4 mt-auto">
             <Link
               to={`/appointment?doctor=${doctor.id}`}
-              className="flex-1 bg-blue-900 hover:bg-blue-950 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors duration-200"
+              className="flex-1 bg-green-900 hover:bg-green-950 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors duration-200"
             >
               Book Appointment
             </Link>

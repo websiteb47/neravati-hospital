@@ -17,14 +17,14 @@ const Accordion = ({ items }) => {
         >
           <button
             onClick={() => toggleAccordion(index)}
-            className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-inset"
+            className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-900 focus:ring-inset"
           >
             <h3 className="text-lg font-semibold text-gray-900 pr-4">
               {item.question}
             </h3>
             <div className="flex-shrink-0">
               {openIndex === index ? (
-                <ChevronUp className="w-5 h-5 text-blue-900" />
+                <ChevronUp className="w-5 h-5 text-green-900" />
               ) : (
                 <ChevronDown className="w-5 h-5 text-gray-400" />
               )}

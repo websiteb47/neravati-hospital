@@ -89,7 +89,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-500 to-blue-500 text-white py-20">
+      <section className="bg-gradient-to-r from-green-400 to-green-400 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">About Neravati</h1>
           <p className="text-xl  text-white max-w-3xl mx-auto">
@@ -105,7 +105,7 @@ const About = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="flex justify-center mb-4">
-                  <stat.icon className="w-12 h-12 text-blue-900" />
+                  <stat.icon className="w-12 h-12 text-green-700" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.label}</div>
@@ -180,7 +180,7 @@ const About = () => {
             {values.map((value, index) => (
               <div key={index} className="text-center p-6 bg-white rounded-lg shadow-lg">
                 <div className="flex justify-center mb-4">
-                  <value.icon className="w-12 h-12 text-blue-900" />
+                  <value.icon className="w-12 h-12 text-green-700" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
@@ -203,17 +203,17 @@ const About = () => {
             {timeline.map((item, index) => (
               <div key={index} className="flex items-start space-x-8 mb-12">
                 <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-blue-900 rounded-full flex items-center justify-center text-white">
+                  <div className="w-20 h-20 bg-green-700 rounded-full flex items-center justify-center text-white">
                     <item.icon className="w-8 h-8" />
                   </div>
                   <div className="text-center mt-2">
-                    <div className="text-sm font-semibold text-blue-900">{item.year}</div>
+                    <div className="text-sm font-semibold text-green-700">{item.year}</div>
                   </div>
                 </div>
-                <div className="flex-1 bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-900">
+                <div className="flex-1 bg-white p-6 rounded-lg shadow-lg border-l-4 border-green-700">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
                   <p className="text-gray-600 mb-3">{item.description}</p>
-                  <div className="flex items-center text-sm text-blue-600">
+                  <div className="flex items-center text-sm text-green-600">
                     <MapPin className="w-4 h-4 mr-1" />
                     <span>{item.location}</span>
                   </div>
@@ -225,123 +225,6 @@ const About = () => {
       </section>
 
       {/* Dr. Aruna Kumari Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Leading Specialist</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Dr. A. Aruna Kumari - A pioneer in reproductive medicine and women's health
-            </p>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
-              <div className="md:flex">
-                <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-blue-500 p-8 text-white">
-                  <div className="text-center">
-                    <div className="w-40 h-40 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
-                      <img
-                        src="/images/doctor-aruna.jpeg"
-                        alt="Dr. A. Aruna Kumari Araveeti"
-                        className="w-full h-full object-cover rounded-full"
-                      />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-2">Dr. A. Aruna Kumari Araveeti</h3>
-                    <p className="text-blue-200 mb-4">Senior Consultant</p>
-                    <p className="text-blue-200">Obstetrics & Gynaecology</p>
-                    <p className="text-blue-200">Reproductive Medicine</p>
-                  </div>
-                </div>
-
-                <div className="md:w-2/3 p-8">
-                  <div className="mb-8">
-                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Professional Journey</h4>
-                    <div className="space-y-3 text-gray-600">
-                      <p>• Working as Senior Consultant in Obstetrics and Gynaecology since 2004 at Neravati Hospital, Gandhi Chowk, Nandyal</p>
-                      <p>• Started Department of Reproductive Medicine at Neravati Hospital in 2015</p>
-                      <p>• Providing fertility treatments for the last 10+ years</p>
-                      <p>• Successfully helped around 10,000 families fulfill their dream of motherhood</p>
-                    </div>
-                  </div>
-
-                  <div className="mb-8">
-                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Educational Qualifications</h4>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <div className="bg-blue-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-blue-900">MBBS (1993-99)</h5>
-                          <p className="text-sm text-gray-600">Guntur Medical College, Guntur</p>
-                        </div>
-                        <div className="bg-blue-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-blue-900">DGO (1999-2001)</h5>
-                          <p className="text-sm text-gray-600">Diploma in Obstetrics & Gynaecology</p>
-                        </div>
-                        <div className="bg-blue-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-blue-900">ICOG Fellowship</h5>
-                          <p className="text-sm text-gray-600">Reproductive Medicine (AIR-1 Topper)</p>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="bg-blue-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-blue-900">Masters in Reproductive Medicine</h5>
-                          <p className="text-sm text-gray-600">Homerton University Hospital (UK), 2019</p>
-                        </div>
-                        <div className="bg-blue-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-blue-900">Advanced Diploma in ART</h5>
-                          <p className="text-sm text-gray-600">University of Schleswig Holstein-Kiel (Germany), 2022</p>
-                        </div>
-                        <div className="bg-blue-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-blue-900">Multiple Fellowships</h5>
-                          <ul className="list-disc list-inside text-sm text-gray-600">
-                            <li>Cosmetic Gynaecology</li>
-                            <li>Embryology</li>
-                            <li>IMA-AMS</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mb-8">
-                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Areas of Interest</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {['Fertility Treatment', 'Operative Laparoscopy', 'Operative Hysteroscopy', 'Adolescent Health Education'].map((area, index) => (
-                        <span key={index} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                          {area}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Available Services</h4>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-900">Fertility Treatments</h5>
-                        <ul className="space-y-2 text-sm text-gray-600">
-                          <li>• IUI (Intrauterine Insemination)</li>
-                          <li>• IVF (In Vitro Fertilization)</li>
-                          <li>• ICSI (Intracytoplasmic Sperm Injection)</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-900">Advanced Procedures</h5>
-                        <ul className="space-y-2 text-sm text-gray-600">
-                          <li>• Operative Laparoscopy</li>
-                          <li>• Operative Hysteroscopy</li>
-                          <li>• Cosmetic Gynaecology</li>
-                          <li>• Obstetric & Gynaecology Services</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Dr. Vinod Kumar Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -356,7 +239,7 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-xl overflow-hidden">
               <div className="md:flex">
                 {/* Left Profile Card */}
-                <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-blue-500 p-8 text-white">
+                <div className="md:w-1/3 bg-gradient-to-br from-green-400 to-green-400 p-8 text-white">
                   <div className="text-center">
                     <div className="w-40 h-40 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                       <img
@@ -366,9 +249,9 @@ const About = () => {
                       />
                     </div>
                     <h3 className="text-2xl font-bold mb-2">Dr. Vinod Kumar</h3>
-                    <p className="text-blue-200 mb-4">Senior Consultant</p>
-                    <p className="text-blue-200">ENT & Head-Neck Surgery</p>
-                    <p className="text-blue-200">Otorhinolaryngology Specialist</p>
+                    <p className="text-white-200 mb-4">Senior Consultant</p>
+                    <p className="text-white-200">ENT & Head-Neck Surgery</p>
+                    <p className="text-white-200">Otorhinolaryngology Specialist</p>
                   </div>
                 </div>
 
@@ -397,18 +280,18 @@ const About = () => {
                     <h4 className="text-xl font-semibold text-gray-900 mb-4">Educational Qualifications</h4>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <div className="bg-blue-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-blue-900">MBBS</h5>
+                        <div className="bg-green-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-green-700">MBBS</h5>
                           <p className="text-sm text-gray-600">Osmania Medical College (1991–97)</p>
                         </div>
-                        <div className="bg-blue-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-blue-900">M.S. (ENT)</h5>
+                        <div className="bg-green-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-green-700">M.S. (ENT)</h5>
                           <p className="text-sm text-gray-600">Kakatiya Medical College, Warangal</p>
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <div className="bg-blue-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-blue-900">MRSH</h5>
+                        <div className="bg-green-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-green-700">MRSH</h5>
                           <p className="text-sm text-gray-600">Member, Royal Society for Public Health</p>
                         </div>
                       </div>
@@ -427,7 +310,7 @@ const About = () => {
                       ].map((area, index) => (
                         <span
                           key={index}
-                          className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                          className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
                         >
                           {area}
                         </span>
@@ -440,7 +323,7 @@ const About = () => {
                     <h4 className="text-xl font-semibold text-gray-900 mb-4">Available Services</h4>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-900">Surgical Services</h5>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Surgical Services</h5>
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li>• Microdebrider & Coblator-assisted Adenoidectomy, Tonsillectomy, Turbinectomy</li>
                           <li>• Correction of Deviated Nasal Septum (SMR, Septoplasty)</li>
@@ -451,7 +334,7 @@ const About = () => {
                         </ul>
                       </div>
                       <div>
-                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-900">Specialized Clinics</h5>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Specialized Clinics</h5>
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li>• Vertigo Diagnostics & Rehabilitation</li>
                           <li>• Allergy Testing (Patch & Prick Test)</li>
@@ -489,8 +372,124 @@ const About = () => {
       </section>
 
 
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Leading Specialist</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Dr. A. Aruna Kumari - A pioneer in reproductive medicine and women's health
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+              <div className="md:flex">
+                <div className="md:w-1/3 bg-gradient-to-br from-green-400 to-green-400 p-8 text-white">
+                  <div className="text-center">
+                    <div className="w-40 h-40 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                      <img
+                        src="/images/doctor-aruna.jpeg"
+                        alt="Dr. A. Aruna Kumari Araveeti"
+                        className="w-full h-full object-cover rounded-full"
+                      />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2">Dr. A. Aruna Kumari Araveeti</h3>
+                    <p className="text-white-200 mb-4">Senior Consultant</p>
+                    <p className="text-white-200">Obstetrics & Gynaecology</p>
+                    <p className="text-white-200">Reproductive Medicine</p>
+                  </div>
+                </div>
+
+                <div className="md:w-2/3 p-8">
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Professional Journey</h4>
+                    <div className="space-y-3 text-gray-600">
+                      <p>• Working as Senior Consultant in Obstetrics and Gynaecology since 2004 at Neravati Hospital, Gandhi Chowk, Nandyal</p>
+                      <p>• Started Department of Reproductive Medicine at Neravati Hospital in 2015</p>
+                      <p>• Providing fertility treatments for the last 10+ years</p>
+                      <p>• Successfully helped around 10,000 families fulfill their dream of motherhood</p>
+                    </div>
+                  </div>
+
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Educational Qualifications</h4>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <div className="bg-green-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-green-700">MBBS (1993-99)</h5>
+                          <p className="text-sm text-gray-600">Guntur Medical College, Guntur</p>
+                        </div>
+                        <div className="bg-green-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-green-700">DGO (1999-2001)</h5>
+                          <p className="text-sm text-gray-600">Diploma in Obstetrics & Gynaecology</p>
+                        </div>
+                        <div className="bg-green-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-green-700">ICOG Fellowship</h5>
+                          <p className="text-sm text-gray-600">Reproductive Medicine (AIR-1 Topper)</p>
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="bg-green-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-green-700">Masters in Reproductive Medicine</h5>
+                          <p className="text-sm text-gray-600">Homerton University Hospital (UK), 2019</p>
+                        </div>
+                        <div className="bg-green-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-green-700">Advanced Diploma in ART</h5>
+                          <p className="text-sm text-gray-600">University of Schleswig Holstein-Kiel (Germany), 2022</p>
+                        </div>
+                        <div className="bg-green-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-green-700">Multiple Fellowships</h5>
+                          <ul className="list-disc list-inside text-sm text-gray-600">
+                            <li>Cosmetic Gynaecology</li>
+                            <li>Embryology</li>
+                            <li>IMA-AMS</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Areas of Interest</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {['Fertility Treatment', 'Operative Laparoscopy', 'Operative Hysteroscopy', 'Adolescent Health Education'].map((area, index) => (
+                        <span key={index} className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                          {area}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Available Services</h4>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Fertility Treatments</h5>
+                        <ul className="space-y-2 text-sm text-gray-600">
+                          <li>• IUI (Intrauterine Insemination)</li>
+                          <li>• IVF (In Vitro Fertilization)</li>
+                          <li>• ICSI (Intracytoplasmic Sperm Injection)</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Advanced Procedures</h5>
+                        <ul className="space-y-2 text-sm text-gray-600">
+                          <li>• Operative Laparoscopy</li>
+                          <li>• Operative Hysteroscopy</li>
+                          <li>• Cosmetic Gynaecology</li>
+                          <li>• Obstetric & Gynaecology Services</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Testimonials Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-100 to-blue-200">
+      <section className="py-16 bg-gradient-to-r from-green-100 to-green-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Patients Say</h2>
@@ -506,7 +505,7 @@ const About = () => {
           </div>
 
           <div className="text-center mt-12">
-            <div className="inline-flex items-center space-x-2 bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold shadow-lg">
+            <div className="inline-flex items-center space-x-2 bg-white text-green-700 px-8 py-3 rounded-lg font-semibold shadow-lg">
               <Star className="w-5 h-5 text-yellow-400 fill-current" />
               <span>4.9/5 Average Rating from 1000+ Patients</span>
             </div>
@@ -515,22 +514,22 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-500 text-white">
+      <section className="py-16 bg-green-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Experience Quality Healthcare?</h2>
-          <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-green-200 mb-8 max-w-2xl mx-auto">
             Book an appointment with our expert medical team and take the first step towards better health.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/appointment"
-              className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
               Book Appointment
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-colors"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-700 transition-colors"
             >
               Contact Us
             </Link>

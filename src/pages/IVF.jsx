@@ -153,26 +153,26 @@ const IVF = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-blue-500 text-white py-20">
+      <section className="relative bg-green-400 text-white py-20">
         <div className="absolute inset-0"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Advanced IVF & Fertility Care
             </h1>
-            <p className="text-xl md:text-2xl text-blue-200 mb-8">
+            <p className="text-xl md:text-2xl text-white-200 mb-8">
               Expert fertility treatments with state-of-the-art technology and compassionate care
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/appointment"
-                className="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
+                className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
               >
                 Book Consultation
               </Link>
               <a
                 href="#treatments"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-700 transition-colors"
               >
                 View Treatments
               </a>
@@ -186,19 +186,19 @@ const IVF = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-900 mb-2">7000+</div>
+              <div className="text-4xl font-bold text-green-700 mb-2">7000+</div>
               <div className="text-gray-600">Successful Pregnancies</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-900 mb-2">60%</div>
+              <div className="text-4xl font-bold text-green-700 mb-2">60%</div>
               <div className="text-gray-600">Success Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-900 mb-2">10+</div>
+              <div className="text-4xl font-bold text-green-700 mb-2">10+</div>
               <div className="text-gray-600">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-900 mb-2">10000+</div>
+              <div className="text-4xl font-bold text-green-700 mb-2">10000+</div>
               <div className="text-gray-600">Happy Families</div>
             </div>
           </div>
@@ -218,8 +218,8 @@ const IVF = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {treatments.map((treatment, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <treatment.icon className="w-8 h-8 text-blue-900" />
+                <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                  <treatment.icon className="w-8 h-8 text-green-700" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{treatment.title}</h3>
                 <p className="text-gray-600 mb-4">{treatment.description}</p>
@@ -253,7 +253,7 @@ const IVF = () => {
             {processSteps.map((step, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">
+                  <div className="w-12 h-12 bg-green-700 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">
                     {step.step}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
@@ -282,8 +282,8 @@ const IVF = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {facilities.map((facility, index) => (
               <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <facility.icon className="w-10 h-10 text-blue-900" />
+                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <facility.icon className="w-10 h-10 text-green-700" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{facility.title}</h3>
                 <p className="text-gray-600">{facility.description}</p>
@@ -316,7 +316,7 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">IVF Workstation Elite Series</h3>
                 <p className="text-gray-600 mb-3">Advanced IVF workstation by HYTEK SCIENTIFICS INC for precise fertility treatments</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   IVF Equipment
                 </span>
               </div>
@@ -326,14 +326,14 @@ const IVF = () => {
               <div className="aspect-square overflow-hidden">
                 <img
                   src="/images/equipment/equipment4.jpeg"
-                  alt="Laminar Flow Hood"
+                  alt="Sperm Analyser Unit"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Laminar Flow Hood</h3>
-                <p className="text-gray-600 mb-3">Specialized laboratory workstation with laminar flow for sterile IVF procedures</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Sperm Analyser Unit</h3>
+                <p className="text-gray-600 mb-3">Specialized laboratory workstation with sperm analyser for sterile IVF procedures</p>
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Sterile Environment
                 </span>
               </div>
@@ -350,7 +350,7 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Labotect Incubator C16</h3>
                 <p className="text-gray-600 mb-3">Advanced incubator maintaining optimal conditions for embryo development</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Embryo Culture
                 </span>
               </div>
@@ -367,7 +367,7 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Advanced Medical Microscope</h3>
                 <p className="text-gray-600 mb-3">High-precision microscope for detailed embryo analysis and selection</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Embryo Analysis
                 </span>
               </div>
@@ -384,7 +384,7 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">IVF Laboratory</h3>
                 <p className="text-gray-600 mb-3">Spacious laboratory with multiple workstations for comprehensive IVF procedures</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Laboratory
                 </span>
               </div>
@@ -401,7 +401,7 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Gynecology Examination Room</h3>
                 <p className="text-gray-600 mb-3">Specialized examination room with modern equipment for women's fertility assessment</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Consultation
                 </span>
               </div>
@@ -418,7 +418,7 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Embryo Transfer Room</h3>
                 <p className="text-gray-600 mb-3">Specialized room equipped for safe and precise embryo transfer procedures</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Embryo Transfer
                 </span>
               </div>
@@ -435,7 +435,7 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Advanced Ultrasound Machine</h3>
                 <p className="text-gray-600 mb-3">High-resolution ultrasound for monitoring follicle development and embryo transfer</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Monitoring
                 </span>
               </div>
@@ -452,45 +452,13 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Cryopreservation Unit</h3>
                 <p className="text-gray-600 mb-3">Advanced freezing technology for preserving eggs, sperm, and embryos</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Cryopreservation
                 </span>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src="/images/ivf/ivf1.jpeg"
-                  alt="Sperm Analysis Equipment"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Sperm Analysis Equipment</h3>
-                <p className="text-gray-600 mb-3">Computerized sperm analysis system for comprehensive male fertility assessment</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
-                  Male Fertility
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src="/images/ivf/ivf2.jpeg"
-                  alt="IVF Laboratory Control Room"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Laboratory Control Room</h3>
-                <p className="text-gray-600 mb-3">Centralized monitoring and control system for all IVF laboratory operations</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
-                  Control Center
-                </span>
-              </div>
-            </div>
+            
 
             {/* <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="aspect-square overflow-hidden">
@@ -503,7 +471,7 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
                 <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Patient Care
                 </span>
               </div>
@@ -520,7 +488,7 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
                 <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Patient Care
                 </span>
               </div>
@@ -536,7 +504,7 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
                 <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Patient Care
                 </span>
               </div>
@@ -552,7 +520,7 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
                 <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Patient Care
                 </span>
               </div>
@@ -568,7 +536,7 @@ const IVF = () => {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
                 <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
-                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
                   Patient Care
                 </span>
               </div>
@@ -576,19 +544,7 @@ const IVF = () => {
          
           </div>
 
-          <div className="text-center mt-12">
-            <p className="text-gray-600 mb-4">
-              Our IVF center is equipped with the latest technology and staffed by experienced professionals
-            </p>
-            <Link
-              to="/gallery"
-              className="inline-flex items-center px-6 py-3 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-800 transition-colors"
-            >
-              View Full Gallery
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-          </div>
-        </div>
+            </div>
       </section>
 
       {/* Success Stories */}
@@ -613,7 +569,7 @@ const IVF = () => {
                   <div>
                     <h3 className="font-bold text-gray-900">{story.name}</h3>
                     <p className="text-sm text-gray-500">Age: {story.age}</p>
-                    <p className="text-sm text-blue-900 font-semibold">{story.treatment}</p>
+                    <p className="text-sm text-green-700 font-semibold">{story.treatment}</p>
                   </div>
                 </div>
                 <p className="text-gray-600 mb-4">{story.story}</p>
@@ -629,23 +585,23 @@ const IVF = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-500 to-blue-500 text-white">
+      <section className="py-20 bg-gradient-to-r from-green-400 to-green-400 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Start Your Fertility Journey?</h2>
-          <p className="text-xl text-blue-200 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-green-200 mb-8 max-w-3xl mx-auto">
             Schedule a consultation with our fertility experts and take the first step towards parenthood
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/appointment"
-              className="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center"
+              className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center"
             >
               Book Consultation
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
             <a
               href={`tel:${contactInfo.phoneNumbers[0]}`}
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors inline-flex items-center"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-700 transition-colors inline-flex items-center"
             >
               <Phone className="mr-2 w-5 h-5" />
               Call Now
@@ -658,8 +614,6 @@ const IVF = () => {
 };
 
 export default IVF; 
-
-
 
 
 
@@ -736,3 +690,5 @@ export default IVF;
   //   title: "Laboratory Freezer",
   //   description: "Professional laboratory freezer with digital temperature control system"
   // },
+
+

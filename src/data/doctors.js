@@ -7,9 +7,9 @@ export const doctors = [
     image: "/images/doctor-vinod.jpeg",
     experience: "Ex. Surgical Registrar, K.K.R ENT Hospital, Chennai",
     education: "MBBS (OSM), MS (ENT), MRSH",
-    availability: "Mon-Sat, 9AM-5PM",
+    availability: "9AM - 3PM & 6PM - 10PM",
     rating: 4.8,
-    patients: 950,
+    //patients: 950,
     description: "Expert in ear, nose, and throat problems. Former Asst. Professor at Mamata Medical College."
   },
   {
@@ -20,9 +20,9 @@ export const doctors = [
     image: "/images/doctor-aruna.jpeg",
     experience: "Fellow in IVF, Cosmetic Gynecology & Laparoscopic Surgery",
     education: "MBBS, DGO, FAGE",
-    availability: "Mon-Sat, 10AM-4PM",
+    availability: "9AM - 3PM & 6PM - 10PM",
     rating: 4.9,
-    patients: 1300,
+    //patients: 1300,
     description: "Gold Medalist. Specialist in IVF, cosmetic gynecology, and hysteroscopic surgery. Former Asst. Professor at Mamata Medical College."
   },
   {
@@ -33,9 +33,9 @@ export const doctors = [
     image: "/images/doctor-fatima.jpeg",
     experience: "Laparoscopic & NDVH Surgeon",
     education: "MBBS, MS (OBG), FMAS",
-    availability: "Mon-Sat, 9AM-3PM",
+    availability: "9AM - 3PM & 6PM - 10PM",
     rating: 4.8,
-    patients: 900,
+    //patients: 900,
     description: "Expert in laparoscopic procedures and normal delivery without hysterectomy (NDVH)."
   },
   {
@@ -46,7 +46,7 @@ export const doctors = [
     image: "/images/doctor-suman.jpeg",
     experience: "Specialist in trauma and joint replacements",
     education: "MBBS, MS (Ortho), CCPM, MRCS (UK)",
-    availability: "Mon-Sat, 9AM-5PM",
+    availability: "9AM - 3PM & 6PM - 10PM",
     rating: 4.7,
     patients: 1000,
     description: "Consultant Orthopaedician with expertise in trauma care and joint replacement surgeries."
@@ -59,20 +59,27 @@ export const doctors = [
     image: "/images/doctor-devendra.jpeg",
     experience: "Trained at VMMC & Safdarjung Hospital, New Delhi",
     education: "MBBS, MD (General Medicine)",
-    availability: "24/7 Emergency Service Available",
+    availability: "9AM - 3PM & 6PM - 10PM",
     rating: 4.9,
-    patients: 1600,
+    //patients: 1600,
     description: "Specialist in diabetes, thyroid, hypertension, heart diseases, chest infections, viral fevers, dengue, typhoid, joint pains, asthma, and more. Also treats gynec, pediatric, and geriatric cases with expert care in both inpatient and outpatient settings."
   },
-  
-]
-;
-
-
+];
 
 export const departments = [
+ 
   {
-    id: 1,
+    id: 1 ,
+    name: "ENT",
+    icon: "ear",
+    image: "/images/departments/ent.svg",
+    description: "Specialized treatment for ear, nose, and throat disorders",
+    doctors: 1,
+    services: ["Hearing Loss Treatment", "Sinus Surgery", "Tonsillectomy", "Voice Disorders", "Allergic Rhinitis", "Sleep Apnea Treatment"]
+  },
+
+  {
+    id: 2,
     name: "IVF Infertility",
     icon: "baby",
     image: "/images/departments/ivf-infertility.svg",
@@ -82,25 +89,7 @@ export const departments = [
     services: ["IVF Treatment", "IUI Treatment", "Fertility Assessment", "Hormone Therapy", "Egg Freezing", "Surrogacy Consultation"]
   },
   {
-    id: 2,
-    name: "ENT",
-    icon: "ear",
-    image: "/images/departments/ent.svg",
-    description: "Specialized treatment for ear, nose, and throat disorders",
-    doctors: 1,
-    services: ["Hearing Loss Treatment", "Sinus Surgery", "Tonsillectomy", "Voice Disorders", "Allergic Rhinitis", "Sleep Apnea Treatment"]
-  },
-  {
     id: 3,
-    name: "Gynecology",
-    icon: "baby",
-    image: "/images/departments/gynecology.svg",
-    description: "Comprehensive women's health care and reproductive medicine",
-    doctors: 2,
-    services: ["Pregnancy Care", "Laparoscopic Surgery", "Hysteroscopic Surgery", "Normal Delivery", "C-Section", "Menstrual Disorders", "PCOS Treatment"]
-  },
-  {
-    id: 4,
     name: "Cosmetic Gynecology",
     icon: "scissors",
     image: "/images/departments/cosmetic-gynecology.svg",
@@ -108,6 +97,16 @@ export const departments = [
     doctors: 1,
     services: ["Vaginal Rejuvenation", "Labiaplasty", "Hymenoplasty", "G-Spot Enhancement", "Laser Treatment", "Intimate Surgery"]
   },
+  {
+    id: 4,
+    name: "Gynecology",
+    icon: "baby",
+    image: "/images/departments/gynecology.svg",
+    description: "Comprehensive women's health care and reproductive medicine",
+    doctors: 1,
+    services: ["Pregnancy Care", "Laparoscopic Surgery", "Hysteroscopic Surgery", "Normal Delivery", "C-Section", "Menstrual Disorders", "PCOS Treatment"]
+  },
+  
   {
     id: 5,
     name: "Orthopedics",

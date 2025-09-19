@@ -36,10 +36,10 @@ const Appointment = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <section className="bg-gradient-to-r from-green-400 to-green-600 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Book an Appointment</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-green-200 max-w-3xl mx-auto">
             Schedule your visit with our expert doctors. We're here to provide you with 
             the best possible healthcare experience.
           </p>
@@ -66,8 +66,8 @@ const Appointment = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {appointmentInfo.map((info, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <info.icon className="w-8 h-8 text-blue-600" />
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <info.icon className="w-8 h-8 text-green-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{info.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{info.description}</p>
@@ -103,12 +103,9 @@ const Appointment = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-2 border-b border-gray-200">
                     <span className="font-medium">Monday - Friday</span>
-                    <span className="text-gray-600">8:00 AM - 6:00 PM</span>
+                    <span className="text-gray-600">9:00 AM - 3:00 PM & 6:00 PM - 10:00 PM</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                    <span className="font-medium">Saturday</span>
-                    <span className="text-gray-600">9:00 AM - 2:00 PM</span>
-                  </div>
+              
                   <div className="flex justify-between items-center py-2 border-b border-gray-200">
                     <span className="font-medium">Sunday</span>
                     <span className="text-gray-600">Closed</span>
@@ -119,9 +116,9 @@ const Appointment = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 p-4 bg-blue-50 rounded-lg">
+                <div className="mt-8 p-4 bg-green-50 rounded-lg">
                   <h4 className="font-semibold text-gray-900 mb-2">Emergency Contact</h4>
-                  <p className="text-blue-600 font-bold text-lg">97041 30234</p>
+                  <p className="text-green-600 font-bold text-lg">97041 30234</p>
                   <p className="text-sm text-gray-600">Available 24/7 for emergencies</p>
                 </div>
               </div>
@@ -187,10 +184,10 @@ const Appointment = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-20 bg-gradient-to-r from-green-400 to-green-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Need Help?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-green-200 mb-8 max-w-2xl mx-auto">
             If you have any questions about booking an appointment or need assistance, 
             our team is here to help you.
           </p>
@@ -203,7 +200,7 @@ const Appointment = () => {
             </a>
             <a
               href="/contact"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
             >
               Contact Us
             </a>

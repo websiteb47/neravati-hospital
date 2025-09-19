@@ -3,19 +3,6 @@ import { services } from '../data/doctors';
 import { CheckCircle, Clock, Shield, Users, Filter, X } from 'lucide-react';\nimport { useState } from 'react';
 
 const Services = () => {
-  const [selectedService, setSelectedService] = useState(null);
-
-  const filteredServices = selectedService 
-    ? services.filter(service => service.id === selectedService)
-    : services;
-
-  const handleServiceFilter = (serviceId) => {
-    setSelectedService(serviceId === selectedService ? null : serviceId);
-  };
-
-  const clearFilter = () => {
-    setSelectedService(null);
-  };
   const features = [
     {
       icon: Shield,

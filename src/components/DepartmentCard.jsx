@@ -24,7 +24,7 @@ const DepartmentCard = ({ department }) => {
   return (
     <div className="bg-white rounded-xl shadow-xl  transition-all duration-300 overflow-hidden group flex flex-col h-full">
       {/* Header with Image */}
-      <div className="relative bg-blue-500 p-6 text-white min-h-[120px] flex items-center overflow-hidden">
+      <div className="relative bg-green-500 p-6 text-white min-h-[120px] flex items-center overflow-hidden">
         {/* Background Image */}
         {/* <div className="absolute inset-0 opacity-20">
           <img
@@ -47,7 +47,7 @@ const DepartmentCard = ({ department }) => {
           </div>
           <div className="flex-1">
             <h3 className="text-xl font-bold leading-tight">{department.name}</h3>
-            <p className="text-blue-100 text-sm mt-1">{department.doctors} Doctors</p>
+            <p className="text-green-100 text-sm mt-1">{department.doctors} Doctors</p>
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@ const DepartmentCard = ({ department }) => {
           <div className="grid grid-cols-2 gap-2">
             {department.services.map((service, index) => (
               <div key={index} className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-blue-900 rounded-full flex-shrink-0"></div>
+                <div className="w-2 h-2 bg-green-900 rounded-full flex-shrink-0"></div>
                 <span className="text-sm text-gray-600">{service}</span>
               </div>
             ))}
@@ -73,7 +73,7 @@ const DepartmentCard = ({ department }) => {
         <div className="pt-4 border-t border-gray-100 mt-auto">
           <Link
             to={`/departments#${department.name.toLowerCase().replace(/\s+/g, '-')}`}
-            className="inline-flex items-center justify-center w-full  text-blue-700 py-2 px-4 rounded-lg font-medium transition-colors duration-200"
+            className="inline-flex items-center justify-center w-full  text-green-700 py-2 px-4 rounded-lg font-medium transition-colors duration-200"
             onClick={() => {
               // Force scroll to section after navigation
               setTimeout(() => {

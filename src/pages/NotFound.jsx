@@ -16,7 +16,7 @@ const NotFound = () => {
         {/* 404 Content */}
         <div className="max-w-2xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-9xl font-bold text-blue-600 mb-4">404</h1>
+            <h1 className="text-9xl font-bold text-green-600 mb-4">404</h1>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Page Not Found</h2>
             <p className="text-xl text-gray-600 mb-8">
               Sorry, the page you're looking for doesn't exist. It might have been moved, 
@@ -28,7 +28,7 @@ const NotFound = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link
               to="/"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center space-x-2"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center space-x-2"
             >
               <Home className="w-5 h-5" />
               <span>Go Home</span>
@@ -50,10 +50,10 @@ const NotFound = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="flex flex-col items-center p-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 group"
+                  className="flex flex-col items-center p-4 rounded-lg hover:bg-green-50 transition-colors duration-200 group"
                 >
-                  <link.icon className="w-6 h-6 text-blue-600 mb-2 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-medium text-gray-700 group-hover:text-blue-600">
+                  <link.icon className="w-6 h-6 text-green-600 mb-2 group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-medium text-gray-700 group-hover:text-green-600">
                     {link.name}
                   </span>
                 </Link>
@@ -62,16 +62,16 @@ const NotFound = () => {
           </div>
 
           {/* Help Section */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl p-8">
+          <div className="bg-gradient-to-r from-green-400 to-green-600 text-white rounded-xl p-8">
             <h3 className="text-2xl font-bold mb-4">Need Help?</h3>
-            <p className="text-blue-100 mb-6">
+            <p className="text-green-200 mb-6">
               If you're looking for something specific or need assistance, 
               our team is here to help you find what you need.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="bg-white text-green-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center space-x-2"
               >
                 <Search className="w-5 h-5" />
                 <span>Contact Us</span>

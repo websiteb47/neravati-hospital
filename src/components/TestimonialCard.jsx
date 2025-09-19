@@ -19,7 +19,7 @@ const TestimonialCard = ({ testimonial }) => {
           <img
             src={testimonial.avatar}
             alt={testimonial.name}
-            className="w-12 h-12 rounded-full object-cover border-2 border-blue-200"
+            className="w-12 h-12 rounded-full object-cover border-2 border-green-200"
           />
         </div>
         <div className="flex-1">
@@ -29,7 +29,7 @@ const TestimonialCard = ({ testimonial }) => {
           <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
           <p className="text-sm text-gray-600">{testimonial.location}</p>
         </div>
-        <Quote className="w-6 h-6 text-blue-300 flex-shrink-0" />
+        <Quote className="w-6 h-6 text-green-300 flex-shrink-0" />
       </div>
       
       <p className="text-gray-700 leading-relaxed mb-4">
@@ -37,7 +37,7 @@ const TestimonialCard = ({ testimonial }) => {
       </p>
       
       <div className="flex items-center justify-between">
-        <span className="text-sm text-blue-900 font-medium">
+        <span className="text-sm text-green-900 font-medium">
           {testimonial.treatment}
         </span>
         <span className="text-xs text-gray-500">

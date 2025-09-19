@@ -41,9 +41,8 @@ const Footer = () => {
           {/* Hospital Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center">
-                {/* <span className="text-white font-bold">N</span> */}
-                <img src="./logo.jpeg" alt="logo" className="w-10 h-10 rounded-full" />
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+                <img src="/logo.png" alt="Neravati Multi Speciality Hospital Logo" className="w-10 h-10 object-cover rounded-full" />
               </div>
               <div>
                 <h3 className="text-lg font-bold">Neravati</h3>
@@ -59,7 +58,7 @@ const Footer = () => {
                 href="https://www.facebook.com/neravatimultispecialityhospital/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-green-400 transition-colors"
               >
                 <Facebook className="w-5 h-5" />
               </a>
@@ -67,7 +66,7 @@ const Footer = () => {
                 href="https://x.com/NeravatiC42987" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-green-400 transition-colors"
               >
                 <Twitter className="w-5 h-5" />
               </a>
@@ -75,7 +74,7 @@ const Footer = () => {
                 href="https://www.instagram.com/neravati_testtube_babycentre/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-green-400 transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -83,7 +82,7 @@ const Footer = () => {
                 href="https://www.google.com/search?q=Neravati+Hospitals" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-green-400 transition-colors"
               >
                 <Chrome  className="w-5 h-5" />
               </a>
@@ -98,7 +97,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-300 hover:text-blue-300 transition-colors text-sm"
+                    className="text-gray-300 hover:text-green-300 transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -115,7 +114,7 @@ const Footer = () => {
                 <li key={dept}>
                   <Link
                     to={`/departments#${dept.toLowerCase()}`}
-                    className="text-gray-300 hover:text-blue-300 transition-colors text-sm"
+                    className="text-gray-300 hover:text-green-300 transition-colors text-sm"
                   >
                     {dept}
                   </Link>
@@ -129,7 +128,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold">Contact Info</h4>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-blue-300 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-green-300 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">
                     {contactInfo.address}
@@ -137,18 +136,18 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-blue-300 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-green-300 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">{contactInfo.phoneNumbers[0]}</p>
                   <p className="text-gray-400 text-xs">Emergency: {contactInfo.emergencyNumber}</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-blue-300 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-green-300 flex-shrink-0" />
                 <p className="text-gray-300 text-sm">{contactInfo.email}</p>
               </div>
               <div className="flex items-center space-x-3">
-                <Clock className="w-5 h-5 text-blue-300 flex-shrink-0" />
+                <Clock className="w-5 h-5 text-green-300 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">Mon-Fri: 8AM-6PM</p>
                   <p className="text-gray-400 text-xs">Emergency: 24/7</p>
@@ -165,13 +164,13 @@ const Footer = () => {
               © {currentYear} Neravati Multispeciality Hospital. All rights reserved.
             </p>
             {/* <div className="flex space-x-6 text-sm">
-              <Link to="/privacy" className="text-gray-400 hover:text-blue-300 transition-colors">
+              <Link to="/privacy" className="text-gray-400 hover:text-green-300 transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-gray-400 hover:text-blue-300 transition-colors">
+              <Link to="/terms" className="text-gray-400 hover:text-green-300 transition-colors">
                 Terms of Service
               </Link>
-              <Link to="/sitemap" className="text-gray-400 hover:text-blue-300 transition-colors">
+              <Link to="/sitemap" className="text-gray-400 hover:text-green-300 transition-colors">
                 Sitemap
               </Link>
             </div> */}

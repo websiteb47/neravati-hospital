@@ -59,15 +59,17 @@ const Navbar = () => {
       <nav className={`fixed left-0 right-0 z-50 transition-all duration-300 top-12 ${isScrolled ? 'bg-white' : 'bg-white/95 backdrop-blur-sm'
         }`}>
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center h-24">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg overflow-hidden">
-                <img src="/logo.png" alt="Neravati Multi Speciality Hospital Logo" className="w-18 h-18 object-cover rounded-full" />
+              <div className="w-18 h-18 bg-blue-900 rounded-full flex items-center justify-center">
+                {/* <span className="text-white font-bold text-lg">N</span> */}
+                <img src="./logo.jpeg" alt="logo" className="w-18 h-18" />
+                {/* <img src="./logo.jpeg" alt="logo" className="w-10 h-10 rounded-full" /> */}
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">NERAVATI</h1>
-                <p className="text-xs font-bold text-gray-600">Multispeciality Hospital</p>
+                <h1 className="text-xl font-bold text-gray-900">Neravati</h1>
+                <p className="text-xs text-gray-600">Multispeciality Hospital</p>
               </div>
             </Link>
 
@@ -87,8 +89,8 @@ const Navbar = () => {
                       <Link
                         to={item.href}
                         className={`text-sm font-bold transition-colors flex items-center space-x-1 ${location.pathname === item.href
-                          ? 'text-green-700'
-                          : 'text-gray-700 hover:text-green-700'
+                          ? 'text-blue-900'
+                          : 'text-gray-700 hover:text-blue-900'
                           }`}
                       >
                         <span>{item.name}</span>
@@ -105,7 +107,7 @@ const Navbar = () => {
                                 <div key={dept.id}>
                                   <Link
                                     to={`/departments#${dept.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                    className="px-4 py-3 hover:bg-green-50 transition-colors text-gray-700 hover:text-green-700 font-medium block"
+                                    className="px-4 py-3 hover:bg-blue-50 transition-colors text-gray-700 hover:text-blue-900 font-medium block"
                                   >
                                     {dept.name}
                                   </Link>
@@ -123,7 +125,7 @@ const Navbar = () => {
                                 <div key={service.id}>
                                   <Link
                                     to={`/services#${service.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                    className="px-4 py-3 hover:bg-green-50 transition-colors text-gray-700 hover:text-green-700 font-medium block"
+                                    className="px-4 py-3 hover:bg-blue-50 transition-colors text-gray-700 hover:text-blue-900 font-medium block"
                                   >
                                     {service.name}
                                   </Link>
@@ -145,8 +147,8 @@ const Navbar = () => {
                     key={item.name}
                     to={item.href}
                     className={`text-sm font-bold transition-colors ${location.pathname === item.href
-                      ? 'text-green-700'
-                      : 'text-gray-700 hover:text-green-700'
+                      ? 'text-blue-900'
+                      : 'text-gray-700 hover:text-blue-900'
                       }`}
                   >
                     {item.name}
@@ -155,7 +157,7 @@ const Navbar = () => {
               })}
               <Link
                 to="/appointment"
-                className="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+                className="bg-blue-900 hover:bg-blue-950 text-white px-6 py-2 rounded-lg font-medium transition-colors"
               >
                 Book Appointment
               </Link>
@@ -165,7 +167,7 @@ const Navbar = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-700 hover:text-green-700 transition-colors"
+                className="text-gray-700 hover:text-blue-900 transition-colors"
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -186,8 +188,8 @@ const Navbar = () => {
                       <Link
                         to={item.href}
                         className={`flex items-center justify-between text-base font-bold transition-colors ${location.pathname === item.href
-                          ? 'text-green-700'
-                          : 'text-gray-700 hover:text-green-700'
+                          ? 'text-blue-900'
+                          : 'text-gray-700 hover:text-blue-900'
                           }`}
                         onClick={() => setIsOpen(false)}
                       >
@@ -196,12 +198,12 @@ const Navbar = () => {
                       </Link>
 
                       {/* Mobile Dropdown Content */}
-                      <div className="ml-4 space-y-3 border-l-2 border-green-100 pl-4">
+                      <div className="ml-4 space-y-3 border-l-2 border-blue-100 pl-4">
                         {item.name === 'Departments' && departments.slice(0, 4).map((dept) => (
                           <Link
                             key={dept.id}
                             to={`/departments#${dept.name.toLowerCase().replace(/\s+/g, '-')}`}
-                            className="block text-sm text-gray-600 hover:text-green-700 transition-colors"
+                            className="block text-sm text-gray-600 hover:text-blue-900 transition-colors"
                             onClick={() => setIsOpen(false)}
                           >
                             {dept.name}
@@ -212,7 +214,7 @@ const Navbar = () => {
                           <Link
                             key={service.id}
                             to={`/services#${service.name.toLowerCase().replace(/\s+/g, '-')}`}
-                            className="block text-sm text-gray-600 hover:text-green-700 transition-colors"
+                            className="block text-sm text-gray-600 hover:text-blue-900 transition-colors"
                             onClick={() => setIsOpen(false)}
                           >
                             {service.name}
@@ -221,7 +223,7 @@ const Navbar = () => {
 
                         <Link
                           to={item.href}
-                          className="block text-sm text-green-700 font-semibold hover:text-green-800 transition-colors"
+                          className="block text-sm text-blue-900 font-semibold hover:text-blue-950 transition-colors"
                           onClick={() => setIsOpen(false)}
                         >
                           View All {item.name}
@@ -236,8 +238,8 @@ const Navbar = () => {
                     key={item.name}
                     to={item.href}
                     className={`block text-base font-bold transition-colors ${location.pathname === item.href
-                      ? 'text-green-700'
-                      : 'text-gray-700 hover:text-green-700'
+                      ? 'text-blue-900'
+                      : 'text-gray-700 hover:text-blue-900'
                       }`}
                     onClick={() => setIsOpen(false)}
                   >
@@ -247,7 +249,7 @@ const Navbar = () => {
               })}
               <Link
                 to="/appointment"
-                className="block bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors"
+                className="block bg-blue-900 hover:bg-blue-950 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Book Appointment
