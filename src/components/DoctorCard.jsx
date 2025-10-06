@@ -1,7 +1,7 @@
 import { Clock, Users, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import DoctorModal from './DoctorModal';
+// import DoctorModal from './DoctorModal';
 
 const DoctorCard = ({ doctor }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -69,11 +69,11 @@ const DoctorCard = ({ doctor }) => {
       </div>
 
       {/* Doctor Modal */}
-      <DoctorModal 
+      {/* <DoctorModal 
         doctor={doctor}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-      />
+      /> */}
     </>
   );
 };

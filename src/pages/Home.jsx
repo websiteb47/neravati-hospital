@@ -6,8 +6,11 @@ import { departments, services } from '../data/doctors';
 import { testimonials } from '../data/testimonials';
 import { Heart, Shield, Users, Clock, Award, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import LanguageToggle from '../components/LanguageToggle';
+import { useLanguage } from '../context/LanguageContext';
 
 const Home = () => {
+  const { currentLanguage } = useLanguage();
   const features = [
     {
       icon: Heart,
@@ -43,7 +46,23 @@ const Home = () => {
 
   return (
     <div>
+
       <Hero />
+
+
+      {/* Mobile-only Book Appointment Button */}
+      <div className="block md:hidden py-8 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <Link
+              to="/appointment"
+              className="inline-flex items-center justify-center w-full max-w-sm mx-auto bg-green-700 hover:bg-green-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 shadow-lg"
+            >
+              <span>{currentLanguage === 'en' ? 'Book Appointment' : 'అపాయింట్‌మెంట్ బుక్ చేయండి'}</span>
+            </Link>
+          </div>
+        </div>
+      </div>
 
       {/* Features Section - Commented Out */}
       {/* <section className="py-20 bg-gray-50">
@@ -70,14 +89,21 @@ const Home = () => {
         </div>
       </section> */}
 
+
+
       {/* Services Section */}
       <section className="py-20 bg-gray-50">
+
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              {currentLanguage === 'en' ? 'Our Services' : 'మా సేవలు'}
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From routine check-ups to specialized treatments, we offer a wide range 
-              of medical services to meet your healthcare needs.
+              {currentLanguage === 'en' 
+           
+           ? 'From routine check-ups to specialized treatments, we offer a wide range of medical services to meet your healthcare needs.'
+                : 'సాధారణ తనిఖీల నుండి ప్రత్యేక చికిత్సల వరకు, మీ ఆరోగ్య సంరక్షణ అవసరాలను తీర్చడానికి మేము విస్తృతమైన వైద్య సేవలను అందిస్తాము.'}
             </p>
           </div>
 
@@ -92,7 +118,7 @@ const Home = () => {
               to="/services"
               className="inline-flex items-center space-x-2 bg-green-700 hover:bg-green-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
             >
-              <span>View All Services</span>
+              <span>{currentLanguage === 'en' ? 'View All Services' : 'అన్ని సేవలను చూడండి'}</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -102,7 +128,7 @@ const Home = () => {
       </section>
 
       {/* Departments Section */}
-     {/* <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Departments</h2>
@@ -136,9 +162,13 @@ const Home = () => {
       <section className="py-20 bg-gradient-to-r from-green-100 to-green-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Patient Testimonials</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              {currentLanguage === 'en' ? 'Patient Testimonials' : 'రోగుల ప్రశంసలు'}
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Hear from our satisfied patients about their experience at Neravati Multispeciality Hospital
+              {currentLanguage === 'en' 
+                ? 'Hear from our satisfied patients about their experience at Neravati Multispeciality Hospital'
+                : 'నెరావతి మల్టీస్పెషాలిటీ హాస్పిటల్‌లో వారి అనుభవం గురించి మా సంతృప్తి చెందిన రోగుల నుండి వినండి'}
             </p>
           </div>
 
@@ -151,7 +181,11 @@ const Home = () => {
           <div className="text-center mt-12">
             <div className="inline-flex items-center space-x-2 bg-white text-green-700 px-8 py-3 rounded-lg font-semibold shadow-lg">
               <Star className="w-5 h-5 text-yellow-400 fill-current" />
-              <span>4.9/5 Average Rating from 1000+ Patients</span>
+              <span>
+                {currentLanguage === 'en'
+                  ? '4.9/5 Average Rating from 1000+ Patients'
+                  : '1000+ రోగుల నుండి 4.9/5 సగటు రేటింగ్'}
+              </span>
             </div>
           </div>
         </div>
@@ -159,24 +193,30 @@ const Home = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-green-400 text-white">
+        <div className="container mx-auto px-4 mt-4 flex justify-end">
+          <LanguageToggle />
+        </div>
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+          <h2 className="text-4xl font-bold mb-6">
+            {currentLanguage === 'en' ? 'Ready to Get Started?' : 'ప్రారంభించడానికి సిద్ధంగా ఉన్నారా?'}
+          </h2>
           <p className="text-xl  text-white-200 mb-8 max-w-2xl mx-auto">
-            Book your appointment today and take the first step towards better health. 
-            Our team is here to help you on your wellness journey.
+            {currentLanguage === 'en'
+              ? 'Book your appointment today and take the first step towards better health. Our team is here to help you on your wellness journey.'
+              : 'ఈరోజే మీ అపాయింట్‌మెంట్ బుక్ చేసుకోండి మరియు మెరుగైన ఆరోగ్యానికి మొదటి అడుగు వేయండి. మీ వెల్‌నెస్ ప్రయాణంలో మేము మీకు తోడుగా ఉంటాము.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/appointment"
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
             >
-              Book Appointment
+              {currentLanguage === 'en' ? 'Book Appointment' : 'అపాయింట్‌మెంట్ బుక్ చేయండి'}
             </Link>
             <Link
               to="/contact"
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
             >
-              Contact Us
+              {currentLanguage === 'en' ? 'Contact Us' : 'మమ్మల్ని సంప్రదించండి'}
             </Link>
           </div>
         </div>

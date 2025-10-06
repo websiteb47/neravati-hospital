@@ -7,42 +7,43 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
+const bannerImages = [
+  {
+    id: 1,
+    image: "/images/banner5.jpg",
+    
+  },
+  // {
+  //   id: 2,
+  //   image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  //   alt: "IVF Laboratory Equipment",
+  //   title: "Advanced IVF & Fertility Care",
+  //   subtitle: "Specialized Reproductive Medicine"
+  // },
+  /*{
+    id: 3,
+    image: "/images/banner1.jpg",
+    alt: "ENT Specialist Consultation",
+    title: "Expert ENT Care",
+    subtitle: "Ear, Nose & Throat Specialists"
+  },*/
+  {
+    id: 4,
+    image: "/images/banner4.jpg",
+    alt: "Gynecology Care",
+    title: "Comprehensive Gynecology",
+    subtitle: "Women's Health & Wellness"
+  },
+  {
+    id: 5,
+    image: "/images/banner3.jpg",
+    alt: "Emergency Care",
+    title: "24/7 Emergency Care",
+    subtitle: "Always Here When You Need Us"
+  }
+];
 const Hero = () => {
-  const bannerImages = [
-    {
-      id: 1,
-      image: "/images/banner5.jpg",
-      
-    },
-    // {
-    //   id: 2,
-    //   image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    //   alt: "IVF Laboratory Equipment",
-    //   title: "Advanced IVF & Fertility Care",
-    //   subtitle: "Specialized Reproductive Medicine"
-    // },
-    /*{
-      id: 3,
-      image: "/images/banner1.jpg",
-      alt: "ENT Specialist Consultation",
-      title: "Expert ENT Care",
-      subtitle: "Ear, Nose & Throat Specialists"
-    },*/
-    {
-      id: 4,
-      image: "/images/banner4.jpg",
-      alt: "Gynecology Care",
-      title: "Comprehensive Gynecology",
-      subtitle: "Women's Health & Wellness"
-    },
-    {
-      id: 5,
-      image: "/images/banner3.jpg",
-      alt: "Emergency Care",
-      title: "24/7 Emergency Care",
-      subtitle: "Always Here When You Need Us"
-    }
-  ];
+  
 
   return (
     <section className="relative overflow-hidden">
@@ -56,7 +57,7 @@ const Hero = () => {
         </div>
       </div>
       
-      <Swiper
+        <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         effect="fade"
         navigation={{
@@ -76,7 +77,7 @@ const Hero = () => {
       >
         {bannerImages.map((banner) => (
           <SwiperSlide key={banner.id}>
-            <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] overflow-hidden">
+           <div className="relative w-full sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] overflow-hidden">
               <img
                 src={banner.image}
                 alt={banner.alt}
@@ -123,14 +124,13 @@ const Hero = () => {
                 </div>
               </div>*/}
             </div>
+            
           </SwiperSlide>
         ))}
       </Swiper>
-
+    
       {/* Custom Navigation Buttons */}
-      <div className="swiper-button-prev"></div>
-      <div className="swiper-button-next"></div>
-      
+          
       {/* Custom Pagination */}
       <div className="swiper-pagination"></div>
     </section>

@@ -2,98 +2,151 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, Award, Users, Heart, Shield, Clock, Star, Calendar, MapPin, Stethoscope } from 'lucide-react';
 import TestimonialCard from '../components/TestimonialCard';
 import { testimonials } from '../data/testimonials';
+import { useLanguage } from '../context/LanguageContext';
 
 const About = () => {
+  const { currentLanguage } = useLanguage();
+  
   const stats = [
-    { number: '50+', label: 'Hospital Beds', icon: Users },
-    { number: '10k+', label: 'Families Conceived', icon: Heart },
-    { number: '20+', label: 'Years Experience', icon: Award },
-    { number: '24/7', label: 'Emergency Care', icon: Clock },
+    { 
+      number: '50+', 
+      label: currentLanguage === 'en' ? 'Hospital Beds' : 'హాస్పిటల్ బెడ్లు', 
+      icon: Users 
+    },
+    { 
+      number: '10k+', 
+      label: currentLanguage === 'en' ? 'Families Conceived' : 'కుటుంబాలు గర్భవతులయ్యాయి', 
+      icon: Heart 
+    },
+    { 
+      number: '20+', 
+      label: currentLanguage === 'en' ? 'Years Experience' : 'సంవత్సరాల అనుభవం', 
+      icon: Award 
+    },
+    { 
+      number: '24/7', 
+      label: currentLanguage === 'en' ? 'Emergency Care' : 'అత్యవసర సంరక్షణ', 
+      icon: Clock 
+    },
   ];
 
   const values = [
     {
       icon: Heart,
-      title: 'Compassion',
-      description: 'Leading our medical team with over 15 years of experience in healthcare management.'
+      title: currentLanguage === 'en' ? 'Compassion' : 'కరుణ',
+      description: currentLanguage === 'en' 
+        ? 'Leading our medical team with over 15 years of experience in healthcare management.'
+        : '15 సంవత్సరాలకు పైగా ఆరోగ్య సంరక్షణ నిర్వహణ అనుభవంతో మా వైద్య బృందానికి నాయకత్వం వహిస్తున్నాము.'
     },
     {
       icon: Shield,
-      title: 'Excellence',
-      description: 'We maintain the highest standards of medical care and patient safety.'
+      title: currentLanguage === 'en' ? 'Excellence' : 'ఉత్తమత్వం',
+      description: currentLanguage === 'en' 
+        ? 'We maintain the highest standards of medical care and patient safety.'
+        : 'మేము అత్యున్నత వైద్య సంరక్షణ మరియు రోగి భద్రతా ప్రమాణాలను నిర్వహిస్తాము.'
     },
     {
       icon: Users,
-      title: 'Teamwork',
-      description: 'Our multidisciplinary team works together for optimal patient outcomes.'
+      title: currentLanguage === 'en' ? 'Teamwork' : 'సహకారం',
+      description: currentLanguage === 'en' 
+        ? 'Our multidisciplinary team works together for optimal patient outcomes.'
+        : 'అత్యుత్తమ రోగి ఫలితాల కోసం మా బహుళ-విభాగ బృందం కలిసి పని చేస్తుంది.'
     },
     {
       icon: Award,
-      title: 'Innovation',
-      description: 'We embrace the latest medical technologies and treatment methods.'
+      title: currentLanguage === 'en' ? 'Innovation' : 'నవీకరణ',
+      description: currentLanguage === 'en' 
+        ? 'We embrace the latest medical technologies and treatment methods.'
+        : 'మేము తాజా వైద్య సాంకేతికతలు మరియు చికిత్సా పద్ధతులను స్వీకరిస్తాము.'
     },
   ];
 
   const timeline = [
     {
       year: '2004',
-      title: 'Foundation & Establishment',
-      description: 'Neravati Hospitals was established on November 1, 2004, opposite Head Post Office in Gandhi Chowk, Nandyal. Started with two departments (ENT, OG) as a 15-bedded hospital with functioning OT services and emergency services.',
+      title: currentLanguage === 'en' ? 'Foundation & Establishment' : 'స్థాపన మరియు ప్రారంభం',
+      description:
+        currentLanguage === 'en'
+          ? 'Neravati Hospitals was established on November 1, 2004, opposite Head Post Office in Gandhi Chowk, Nandyal. Started with two departments (ENT, OG) as a 15-bedded hospital with OT and emergency services.'
+          : 'నెరావతి హాస్పిటల్స్ 2004 నవంబర్ 1న నంద్యాలలోని గాంధీ చౌక్ వద్ద హెడ్ పోస్ట్ ఆఫీస్ ఎదురుగా స్థాపించబడింది. 15 బెడ్ల ఆసుపత్రిగా (ENT, OG) రెండు విభాగాలతో OT మరియు అత్యవసర సేవలతో ప్రారంభించబడింది.',
       icon: Calendar,
-      location: 'Gandhi Chowk, Nandyal'
+      location: 'Gandhi Chowk, Nandyal',
     },
     {
       year: '2005',
-      title: 'Service Expansion',
-      description: 'Added X-ray and audiology services to enhance diagnostic capabilities. In 2004, Zies Oto-microscope and Storz endoscope were already available for ENT services.',
+      title: currentLanguage === 'en' ? 'Service Expansion' : 'సేవల విస్తరణ',
+      description:
+        currentLanguage === 'en'
+          ? 'Added X-ray and audiology services to enhance diagnostic capabilities.'
+          : 'నిర్ధారణ సామర్థ్యాలను పెంచడానికి X-ray మరియు ఆడియాలజీ సేవలను జోడించారు.',
       icon: Stethoscope,
-      location: 'Nandyal'
+      location: 'Nandyal',
     },
     {
       year: '2008',
-      title: 'Advanced ENT Technology',
-      description: 'Micro-debridor was made available for advanced ENT surgeries, marking a significant technological advancement in our ENT department.',
+      title: currentLanguage === 'en' ? 'Advanced ENT Technology' : 'అధునాతన ENT సాంకేతికత',
+      description:
+        currentLanguage === 'en'
+          ? 'Micro-debrider was introduced for advanced ENT surgeries, marking a major technological step.'
+          : 'అధునాతన ENT శస్త్రచికిత్సల కోసం మైక్రో-డెబ్రిడర్ ప్రవేశపెట్టబడింది, ఇది ఒక ముఖ్యమైన సాంకేతిక మైలురాయి.',
       icon: Award,
-      location: 'Nandyal'
+      location: 'Nandyal',
     },
     {
       year: '2010',
-      title: 'Laparoscopy & Hysteroscopy Services',
-      description: 'Dr. Aruna Kumari established state-of-the-art laparoscopy and hysteroscopy services at NH. We became the 1st hospital in Kurnool district to start colposcopy guided cervical cancer screening services.',
+      title: currentLanguage === 'en' ? 'Laparoscopy & Hysteroscopy Services' : 'లాపరోస్కోపీ & హిస్టరోస్కోపీ సేవలు',
+      description:
+        currentLanguage === 'en'
+          ? 'Dr. Aruna Kumari established laparoscopy and hysteroscopy services and initiated colposcopy-based cervical cancer screening in Kurnool district.'
+          : 'డా. అరుణ కుమారి లాపరోస్కోపీ మరియు హిస్టరోస్కోపీ సేవలను ప్రారంభించి, కర్నూల్ జిల్లాలో కొల్పోస్కోపీ ఆధారిత గర్భాశయ గ్రీవా క్యాన్సర్ స్క్రీనింగ్ ప్రారంభించారు.',
       icon: Heart,
-      location: 'Kurnool District'
+      location: 'Kurnool District',
     },
     {
       year: '2014',
-      title: 'Reproductive Medicine Excellence',
-      description: 'Dr. Aruna Kumari achieved ICOG TOPPER in reproductive medicine and established the Department of Reproductive Medicine at NH. With state-of-the-art embryology and IVF labs, we became the pioneers and 1st hospital to start fertility services in Nandyal district.',
+      title: currentLanguage === 'en' ? 'Reproductive Medicine Excellence' : 'ప్రజన వైద్య శాస్త్రంలో ప్రావీణ్యం',
+      description:
+        currentLanguage === 'en'
+          ? 'Dr. Aruna Kumari established the Reproductive Medicine department with IVF and embryology labs, pioneering fertility care in Nandyal.'
+          : 'డా. అరుణ కుమారి IVF మరియు ఎంబ్రియాలజీ ల్యాబ్‌లతో ప్రజన వైద్య విభాగాన్ని స్థాపించి, నంద్యాలలో ఫెర్టిలిటీ సేవలను ప్రారంభించారు.',
       icon: Award,
-      location: 'Nandyal District'
+      location: 'Nandyal District',
     },
     {
       year: '2014+',
-      title: 'IVF Success & Growth',
-      description: 'The 1st IVF baby of Nandyal, KARISHMA, was born at our hospital. Till now, around 10,000 families have conceived at our hospital and fulfilled their dreams.',
+      title: currentLanguage === 'en' ? 'IVF Success & Growth' : 'IVF విజయాలు మరియు అభివృద్ధి',
+      description:
+        currentLanguage === 'en'
+          ? 'The first IVF baby of Nandyal, Karishma, was born at our hospital. Till date, 10,000+ families have conceived successfully.'
+          : 'నంద్యాలలో తొలి IVF బిడ్డ, కరిష్మా, మా ఆసుపత్రిలో జన్మించింది. ఇప్పటివరకు 10,000కు పైగా కుటుంబాలు గర్భవతులయ్యాయి.',
       icon: Heart,
-      location: 'Nandyal'
+      location: 'Nandyal',
     },
     {
-      year: 'Present',
-      title: '50-Bedded Multispeciality Hospital',
-      description: 'Now established at Padmavathi Nagar with state-of-art corporate hospital services at affordable prices. New departments include Orthopaedics and General Medicine. Features world-class laminar OT, post-op recovery rooms, embryology and IVF labs. Under Dr. Vinod Kumar\'s ENT department, we have the 1st vertigo and allergy labs in Nandyal district. Dr. Suman\'s orthopaedics department offers joint replacement services and spine surgeries.',
+      year: currentLanguage === 'en' ? 'Present' : 'ప్రస్తుతం',
+      title: currentLanguage === 'en' ? '50-Bedded Multispeciality Hospital' : '50 బెడ్ల బహుళ వైద్య విభాగ ఆసుపత్రి',
+      description:
+        currentLanguage === 'en'
+          ? 'Now at Padmavathi Nagar with advanced corporate-level facilities and new departments like Orthopaedics & General Medicine.'
+          : 'ప్రస్తుతం పద్మావతి నగరంలో, ఆర్థోపెడిక్స్ మరియు జనరల్ మెడిసిన్ వంటి కొత్త విభాగాలతో అధునాతన కార్పొరేట్ స్థాయి సౌకర్యాలతో ఉంది.',
       icon: MapPin,
-      location: 'Padmavathi Nagar'
-    }
+      location: 'Padmavathi Nagar',
+    },
   ];
+
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-400 to-green-400 text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">About Neravati</h1>
+          <h1 className="text-5xl font-bold mb-6">
+            {currentLanguage === 'en' ? 'About Neravati' : 'నెరావతి గురించి'}
+          </h1>
           <p className="text-xl  text-white max-w-3xl mx-auto">
-            Providing exceptional healthcare services with compassion, innovation, and excellence
+            {currentLanguage === 'en' 
+              ? 'Providing exceptional healthcare services with compassion, innovation, and excellence'
+              : 'కరుణ, నవీకరణ మరియు ఉత్తమత్వంతో అనుపమ ఆరోగ్య సంరక్షణ సేవలను అందిస్తాము'}
           </p>
         </div>
       </section>
@@ -120,45 +173,62 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                {currentLanguage === 'en' ? 'Our Mission' : 'మా లక్ష్యం'}
+              </h2>
               <p className="text-lg text-gray-600 mb-6">
-                To provide exceptional healthcare services that improve the quality of life
-                for our patients and their families through compassionate care, medical
-                excellence, and innovative treatments.
+                {currentLanguage === 'en' 
+                  ? 'To provide exceptional healthcare services that improve the quality of life for our patients and their families through compassionate care, medical excellence, and innovative treatments.'
+                  : 'కరుణ, వైద్య ఉత్తమత్వం మరియు నవీన చికిత్సల ద్వారా మా రోగులు మరియు వారి కుటుంబాల జీవన నాణ్యతను మెరుగుపరచే అనుపమ ఆరోగ్య సంరక్షణ సేవలను అందించడం.'}
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">Patient-centered care approach</span>
+                  <span className="text-gray-700">
+                    {currentLanguage === 'en' ? 'Patient-centered care approach' : 'రోగి-కేంద్రీకృత సంరక్షణ విధానం'}
+                  </span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">State-of-the-art medical facilities</span>
+                  <span className="text-gray-700">
+                    {currentLanguage === 'en' ? 'State-of-the-art medical facilities' : 'ఆధునిక వైద్య సౌకర్యాలు'}
+                  </span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">Experienced medical professionals</span>
+                  <span className="text-gray-700">
+                    {currentLanguage === 'en' ? 'Experienced medical professionals' : 'అనుభవజ్ఞులైన వైద్య నిపుణులు'}
+                  </span>
                 </div>
               </div>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                {currentLanguage === 'en' ? 'Our Vision' : 'మా దృష్టి'}
+              </h2>
               <p className="text-lg text-gray-600 mb-6">
-                To be the leading healthcare provider known for excellence, innovation, and
-                compassionate care, setting the standard for medical services in our region.
+                {currentLanguage === 'en' 
+                  ? 'To be the leading healthcare provider known for excellence, innovation, and compassionate care, setting the standard for medical services in our region.'
+                  : 'ఉత్తమత్వం, నవీకరణ మరియు కరుణగల సంరక్షణకు ప్రసిద్ధి చెందిన ప్రముఖ ఆరోగ్య సంరక్షణ ప్రదాతగా ఉండి, మా ప్రాంతంలో వైద్య సేవలకు ప్రమాణాలను నిర్ణయించడం.'}
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">Advanced medical technology</span>
+                  <span className="text-gray-700">
+                    {currentLanguage === 'en' ? 'Advanced medical technology' : 'అధునాతన వైద్య సాంకేతికత'}
+                  </span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">Comprehensive healthcare solutions</span>
+                  <span className="text-gray-700">
+                    {currentLanguage === 'en' ? 'Comprehensive healthcare solutions' : 'సమగ్ర ఆరోగ్య సంరక్షణ పరిష్కారాలు'}
+                  </span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">Community health improvement</span>
+                  <span className="text-gray-700">
+                    {currentLanguage === 'en' ? 'Community health improvement' : 'సమాజ ఆరోగ్య మెరుగుదల'}
+                  </span>
                 </div>
               </div>
             </div>
@@ -170,10 +240,13 @@ const About = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              {currentLanguage === 'en' ? 'Our Core Values' : 'మా ప్రధాన విలువలు'}
+            </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Meet the dedicated professionals who lead our medical center and ensure
-              the highest standards of patient care.
+              {currentLanguage === 'en' 
+                ? 'Meet the dedicated professionals who lead our medical center and ensure the highest standards of patient care.'
+                : 'మా వైద్య కేంద్రానికి నాయకత్వం వహించి అత్యున్నత రోగి సంరక్షణ ప్రమాణాలను నిర్ధారించే అంకితభావంతో కూడిన నిపుణులను కలవండి.'}
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -194,9 +267,13 @@ const About = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Journey</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              {currentLanguage === 'en' ? 'Our Journey' : 'మా ప్రయాణం'}
+            </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A remarkable journey of growth, innovation, and commitment to healthcare excellence
+              {currentLanguage === 'en' 
+                ? 'A remarkable journey of growth, innovation, and commitment to healthcare excellence'
+                : 'వృద్ధి, నవీకరణ మరియు ఆరోగ్య సంరక్షణ ఉత్తమత్వానికి అంకితభావం యొక్క అద్భుతమైన ప్రయాణం'}
             </p>
           </div>
           <div className="max-w-5xl mx-auto">
@@ -229,9 +306,13 @@ const About = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Leading Specialist</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              {currentLanguage === 'en' ? 'Meet Our Leading Specialist' : 'మా ప్రముఖ నిపుణుడిని కలవండి'}
+            </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Dr. Vinod Kumar – A pioneer in ENT surgeries and advanced otorhinolaryngology care
+              {currentLanguage === 'en' 
+                ? 'Dr. Vinod Kumar – A pioneer in ENT surgeries and advanced otorhinolaryngology care'
+                : 'డా. వినోద్ కుమార్ – ENT శస్త్రచికిత్సలు మరియు అధునాతన ఓటోరినోలారింగాలజీ సంరక్షణలో పయనీర్'}
             </p>
           </div>
 
@@ -488,50 +569,60 @@ const About = () => {
           </div>
         </div>
       </section>
-      {/* Testimonials Section */}
-      <section className="py-16 bg-gradient-to-r from-green-100 to-green-200">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Patients Say</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Real stories from our patients about their experience at Neravati Multispeciality Hospital
-            </p>
-          </div>
+     {/* Testimonials */}
+     <section className="py-16 bg-gradient-to-r from-green-100 to-green-200">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            {currentLanguage === 'en' ? 'What Our Patients Say' : 'మా రోగులు ఏమంటున్నారు'}
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+            {currentLanguage === 'en'
+              ? 'Real stories from our patients about their experiences at Neravati Multispeciality Hospital.'
+              : 'నెరావతి మల్టీస్పెషాలిటీ హాస్పిటల్‌లో వారి అనుభవాల గురించి మా రోగుల నిజమైన కథలు.'}
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.slice(0, 3).map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+            {testimonials.slice(0, 3).map((t) => (
+              <TestimonialCard key={t.id} testimonial={t} />
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <div className="inline-flex items-center space-x-2 bg-white text-green-700 px-8 py-3 rounded-lg font-semibold shadow-lg">
-              <Star className="w-5 h-5 text-yellow-400 fill-current" />
-              <span>4.9/5 Average Rating from 1000+ Patients</span>
-            </div>
+          <div className="mt-12 inline-flex items-center space-x-2 bg-white text-green-700 px-8 py-3 rounded-lg font-semibold shadow-lg">
+            <Star className="w-5 h-5 text-yellow-400 fill-current" />
+            <span>
+              {currentLanguage === 'en'
+                ? '4.9/5 Average Rating from 1000+ Patients'
+                : '1000+ రోగుల నుండి 4.9/5 సగటు రేటింగ్'}
+            </span>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-500 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Experience Quality Healthcare?</h2>
+      <section className="py-16 bg-green-500 text-white text-center">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-4">
+            {currentLanguage === 'en'
+              ? 'Ready to Experience Quality Healthcare?'
+              : 'ఉత్తమ ఆరోగ్య సేవలను అనుభవించడానికి సిద్ధంగా ఉన్నారా?'}
+          </h2>
           <p className="text-xl text-green-200 mb-8 max-w-2xl mx-auto">
-            Book an appointment with our expert medical team and take the first step towards better health.
+            {currentLanguage === 'en'
+              ? 'Book an appointment with our expert medical team and take the first step toward better health.'
+              : 'మా నిపుణుల వైద్య బృందంతో అపాయింట్‌మెంట్ బుక్ చేసుకుని మెరుగైన ఆరోగ్యానికి తొలి అడుగు వేయండి.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/appointment"
               className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-              Book Appointment
+              {currentLanguage === 'en' ? 'Book Appointment' : 'అపాయింట్‌మెంట్ బుక్ చేయండి'}
             </Link>
             <Link
               to="/contact"
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-700 transition-colors"
             >
-              Contact Us
+              {currentLanguage === 'en' ? 'Contact Us' : 'మమ్మల్ని సంప్రదించండి'}
             </Link>
           </div>
         </div>

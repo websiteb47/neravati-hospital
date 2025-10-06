@@ -1,6 +1,9 @@
 import { Star, Quote } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const TestimonialCard = ({ testimonial }) => {
+  const { currentLanguage } = useLanguage();
+  
   const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
@@ -33,12 +36,12 @@ const TestimonialCard = ({ testimonial }) => {
       </div>
       
       <p className="text-gray-700 leading-relaxed mb-4">
-        "{testimonial.testimonial}"
+        "{testimonial.testimonial[currentLanguage] || testimonial.testimonial}"
       </p>
       
       <div className="flex items-center justify-between">
         <span className="text-sm text-green-900 font-medium">
-          {testimonial.treatment}
+          {testimonial.treatment[currentLanguage] || testimonial.treatment}
         </span>
         <span className="text-xs text-gray-500">
           {testimonial.date}

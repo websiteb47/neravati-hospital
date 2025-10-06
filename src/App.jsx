@@ -13,6 +13,7 @@ import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Gallery from './pages/Gallery';
 import IVF from './pages/IVF';
+// import IndividualDoctor from './pages/IndividualDoctor';
 import NotFound from './pages/NotFound';
 
 // ScrollToTop component to handle scroll restoration
@@ -38,6 +39,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/departments" element={<Departments />} />
             <Route path="/doctors" element={<Doctors />} />
+            {/* <Route path="/doctor/:doctorId" element={<IndividualDoctor />} /> */}
             <Route path="/services" element={<Services />} />
             <Route path="/ivf" element={<IVF />} />
             <Route path="/appointment" element={<Appointment />} />

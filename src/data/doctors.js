@@ -8,7 +8,6 @@ export const doctors = [
     experience: "Ex. Surgical Registrar, K.K.R ENT Hospital, Chennai",
     education: "MBBS (OSM), MS (ENT), MRSH",
     availability: "9AM - 3PM & 6PM - 10PM",
-    rating: 4.8,
     //patients: 950,
     description: "Expert in ear, nose, and throat problems. Former Asst. Professor at Mamata Medical College."
   },
@@ -16,12 +15,11 @@ export const doctors = [
     id: 2,
     name: "Dr. A. Aruna Kumari",
     specialty: "Gynecology & IVF",
-    department: "Gynecology",
+    department: "IVF Infertility",
     image: "/images/doctor-aruna.jpeg",
     experience: "Fellow in IVF, Cosmetic Gynecology & Laparoscopic Surgery",
     education: "MBBS, DGO, FAGE",
     availability: "9AM - 3PM & 6PM - 10PM",
-    rating: 4.9,
     //patients: 1300,
     description: "Gold Medalist. Specialist in IVF, cosmetic gynecology, and hysteroscopic surgery. Former Asst. Professor at Mamata Medical College."
   },
@@ -29,12 +27,11 @@ export const doctors = [
     id: 3,
     name: "Dr. D. Fatima Bee",
     specialty: "Gynecology & Laparoscopy",
-    department: "Gynecology",
+    department: "IVF Infertility",
     image: "/images/doctor-fatima.jpeg",
     experience: "Laparoscopic & NDVH Surgeon",
     education: "MBBS, MS (OBG), FMAS",
     availability: "9AM - 3PM & 6PM - 10PM",
-    rating: 4.8,
     //patients: 900,
     description: "Expert in laparoscopic procedures and normal delivery without hysterectomy (NDVH)."
   },
@@ -47,7 +44,6 @@ export const doctors = [
     experience: "Specialist in trauma and joint replacements",
     education: "MBBS, MS (Ortho), CCPM, MRCS (UK)",
     availability: "9AM - 3PM & 6PM - 10PM",
-    rating: 4.7,
     patients: 1000,
     description: "Consultant Orthopaedician with expertise in trauma care and joint replacement surgeries."
   },
@@ -60,7 +56,6 @@ export const doctors = [
     experience: "Trained at VMMC & Safdarjung Hospital, New Delhi",
     education: "MBBS, MD (General Medicine)",
     availability: "9AM - 3PM & 6PM - 10PM",
-    rating: 4.9,
     //patients: 1600,
     description: "Specialist in diabetes, thyroid, hypertension, heart diseases, chest infections, viral fevers, dengue, typhoid, joint pains, asthma, and more. Also treats gynec, pediatric, and geriatric cases with expert care in both inpatient and outpatient settings."
   },
@@ -130,64 +125,112 @@ export const departments = [
 export const services = [
   {
     id: 1,
-    name: "General Physician Consultation",
-    description: "Comprehensive medical care for diabetes, BP, thyroid, heart diseases, and more",
+    name: {
+      en: "General Physician Consultation",
+      te: "సాధారణ వైద్య సలహా"
+    },
+    description: {
+      en: "Comprehensive medical care for diabetes, BP, thyroid, heart diseases, and more",
+      te: "మధుమేహం, బిపి, థైరాయిడ్, గుండె వ్యాధులు మరియు మరిన్నింటికి సమగ్ర వైద్య సంరక్షణ"
+    },
     icon: "stethoscope",
     price: "₹500",
     duration: "30-45 min"
   },
   {
     id: 2,
-    name: "ENT Specialist Consultation",
-    description: "Expert treatment for ear, nose, and throat problems",
+    name: {
+      en: "ENT Specialist Consultation",
+      te: "ENT విశేషజ్ఞ సలహా"
+    },
+    description: {
+      en: "Expert treatment for ear, nose, and throat problems",
+      te: "చెవి, ముక్కు మరియు గొంతు సమస్యలకు నిపుణ చికిత్స"
+    },
     icon: "ear",
     price: "₹800",
     duration: "45 min"
   },
   {
     id: 3,
-    name: "Gynecology & IVF Treatment",
-    description: "Advanced fertility treatment and women's health care",
+    name: {
+      en: "Gynecology & IVF Treatment",
+      te: "స్త్రీరోగవిజ్ఞానం & ఐవిఎఫ్ చికిత్స"
+    },
+    description: {
+      en: "Advanced fertility treatment and women's health care",
+      te: "అధునాతన సంతానోత్పత్తి చికిత్స మరియు మహిళల ఆరోగ్య సంరక్షణ"
+    },
     icon: "baby",
     price: "₹1500",
     duration: "60 min"
   },
   {
     id: 4,
-    name: "Orthopedic Consultation",
-    description: "Specialized care for bone and joint problems, trauma, and joint replacements",
+    name: {
+      en: "Orthopedic Consultation",
+      te: "అస్థిపంజర సలహా"
+    },
+    description: {
+      en: "Specialized care for bone and joint problems, trauma, and joint replacements",
+      te: "ఎముకలు మరియు కీళ్ళ సమస్యలు, గాయాలు మరియు కీళ్ళ భర్తీలకు ప్రత్యేక సంరక్షణ"
+    },
     icon: "bone",
     price: "₹1000",
     duration: "45 min"
   },
   {
     id: 5,
-    name: "Laparoscopic Surgery",
-    description: "Minimally invasive surgical procedures for various conditions",
+    name: {
+      en: "Laparoscopic Surgery",
+      te: "లాపరోస్కోపిక్ శస్త్రచికిత్స"
+    },
+    description: {
+      en: "Minimally invasive surgical procedures for various conditions",
+      te: "వివిధ పరిస్థితులకు కనీసంగా ఇన్వేసివ్ శస్త్రచికిత్స ప్రక్రియలు"
+    },
     icon: "scissors",
     price: "₹25,000+",
     duration: "Varies"
   },
   {
     id: 6,
-    name: "Emergency Care",
-    description: "24/7 emergency medical services and IPD facility",
+    name: {
+      en: "Emergency Care",
+      te: "అత్యవసర సంరక్షణ"
+    },
+    description: {
+      en: "24/7 emergency medical services and IPD facility",
+      te: "24/7 అత్యవసర వైద్య సేవలు మరియు IPD సౌకర్యం"
+    },
     icon: "ambulance",
     price: "Emergency",
     duration: "24/7"
   },
   {
     id: 7,
-    name: "Diagnostic Services",
-    description: "Blood tests, imaging, and comprehensive diagnostic workup",
+    name: {
+      en: "Diagnostic Services",
+      te: "నిర్ధారణ సేవలు"
+    },
+    description: {
+      en: "Blood tests, imaging, and comprehensive diagnostic workup",
+      te: "రక్త పరీక్షలు, చిత్రీకరణ మరియు సమగ్ర నిర్ధారణ పని"
+    },
     icon: "flask",
     price: "₹200-2000",
     duration: "15-60 min"
   },
   {
     id: 8,
-    name: "Fever & Infection Treatment",
-    description: "Treatment for malaria, typhoid, dengue, viral fevers, and infections",
+    name: {
+      en: "Fever & Infection Treatment",
+      te: "జ్వరం & ఇన్ఫెక్షన్ చికిత్స"
+    },
+    description: {
+      en: "Treatment for malaria, typhoid, dengue, viral fevers, and infections",
+      te: "మలేరియా, టైఫాయిడ్, డెంగ్యూ, వైరల్ జ్వరాలు మరియు ఇన్ఫెక్షన్లకు చికిత్స"
+    },
     icon: "thermometer",
     price: "₹800",
     duration: "30 min"

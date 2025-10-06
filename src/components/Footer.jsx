@@ -1,37 +1,39 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Chrome  } from 'lucide-react';
 import { contactInfo } from '../config/contact';
+import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { currentLanguage } = useLanguage();
 
   const quickLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Departments', href: '/departments' },
-    { name: 'Doctors', href: '/doctors' },
-    { name: 'Services', href: '/services' },
-    { name: 'Gallery', href: '/gallery' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'FAQ', href: '/faq' },
+    { name: currentLanguage === 'en' ? 'Home' : 'హోమ్', href: '/' },
+    { name: currentLanguage === 'en' ? 'About Us' : 'మా గురించి', href: '/about' },
+    { name: currentLanguage === 'en' ? 'Departments' : 'విభాగాలు', href: '/departments' },
+    { name: currentLanguage === 'en' ? 'Doctors' : 'వైద్యులు', href: '/doctors' },
+    { name: currentLanguage === 'en' ? 'Services' : 'సేవలు', href: '/services' },
+    { name: currentLanguage === 'en' ? 'Gallery' : 'గ్యాలరీ', href: '/gallery' },
+    { name: currentLanguage === 'en' ? 'Contact' : 'సంప్రదించండి', href: '/contact' },
+    { name: currentLanguage === 'en' ? 'FAQ' : 'ప్రశ్నలు', href: '/faq' },
   ];
 
   const departments = [
-    'IVF Infertility',
+    currentLanguage === 'en' ? 'IVF Infertility' : 'ఐవిఎఫ్ బంధ్యత్వం',
     'ENT',
-    'Gynecology',
-    'Cosmetic Gynecology',
-    'Orthopaedic',
-    'MD General',
+    currentLanguage === 'en' ? 'Gynecology' : 'స్త్రీరోగవిజ్ఞానం',
+    currentLanguage === 'en' ? 'Cosmetic Gynecology' : 'కాస్మెటిక్ స్త్రీరోగవిజ్ఞానం',
+    currentLanguage === 'en' ? 'Orthopaedic' : 'అస్థిపంజర',
+    currentLanguage === 'en' ? 'MD General' : 'ఎండీ జనరల్',
   ];
 
   const services = [
-    'Primary Care',
-    'Specialist Consultation',
-    'Diagnostic Imaging',
-    'Laboratory Services',
-    'Physical Therapy',
-    'Surgery',
+    currentLanguage === 'en' ? 'Primary Care' : 'ప్రాథమిక సంరక్షణ',
+    currentLanguage === 'en' ? 'Specialist Consultation' : 'విశేషజ్ఞ సలహా',
+    currentLanguage === 'en' ? 'Diagnostic Imaging' : 'నిర్ధారణ చిత్రీకరణ',
+    currentLanguage === 'en' ? 'Laboratory Services' : 'ప్రయోగశాల సేవలు',
+    currentLanguage === 'en' ? 'Physical Therapy' : 'భౌతిక చికిత్స',
+    currentLanguage === 'en' ? 'Surgery' : 'శస్త్రచికిత్స',
   ];
 
   return (
@@ -50,8 +52,9 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Providing exceptional healthcare services with compassion, innovation, and excellence. 
-              Your health is our priority.
+              {currentLanguage === 'en' 
+                ? 'Providing exceptional healthcare services with compassion, innovation, and excellence. Your health is our priority.'
+                : 'కరుణ, నవీకరణ మరియు ఉత్తమత్వంతో అనుపమ ఆరోగ్య సంరక్షణ సేవలను అందిస్తాము. మీ ఆరోగ్యం మా ప్రాధాన్యత.'}
             </p>
             <div className="flex space-x-4">
               <a 
@@ -91,7 +94,9 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Quick Links</h4>
+            <h4 className="text-lg font-semibold">
+              {currentLanguage === 'en' ? 'Quick Links' : 'త్వరిత లింకులు'}
+            </h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -108,7 +113,9 @@ const Footer = () => {
 
           {/* Departments */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Departments</h4>
+            <h4 className="text-lg font-semibold">
+              {currentLanguage === 'en' ? 'Departments' : 'విభాగాలు'}
+            </h4>
             <ul className="space-y-2">
               {departments.map((dept) => (
                 <li key={dept}>
@@ -125,7 +132,9 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Contact Info</h4>
+            <h4 className="text-lg font-semibold">
+              {currentLanguage === 'en' ? 'Contact Info' : 'సంప్రదింపు సమాచారం'}
+            </h4>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-green-300 mt-0.5 flex-shrink-0" />
@@ -139,7 +148,9 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-green-300 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">{contactInfo.phoneNumbers[0]}</p>
-                  <p className="text-gray-400 text-xs">Emergency: {contactInfo.emergencyNumber}</p>
+                  <p className="text-gray-400 text-xs">
+                    {currentLanguage === 'en' ? 'Emergency:' : 'అత్యవసర:'} {contactInfo.emergencyNumber}
+                  </p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
@@ -149,8 +160,12 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Clock className="w-5 h-5 text-green-300 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300 text-sm">Mon-Fri: 8AM-6PM</p>
-                  <p className="text-gray-400 text-xs">Emergency: 24/7</p>
+                  <p className="text-gray-300 text-sm">
+                    {currentLanguage === 'en' ? 'Mon-Fri: 8AM-6PM' : 'సోమ-శుక్ర: 8AM-6PM'}
+                  </p>
+                  <p className="text-gray-400 text-xs">
+                    {currentLanguage === 'en' ? 'Emergency: 24/7' : 'అత్యవసర: 24/7'}
+                  </p>
                 </div>
               </div>
             </div>
@@ -161,7 +176,9 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Neravati Multispeciality Hospital. All rights reserved.
+              © {currentYear} {currentLanguage === 'en' 
+                ? 'Neravati Multispeciality Hospital. All rights reserved.'
+                : 'నెరావతి మల్టీస్పెషాలిటీ హాస్పిటల్. అన్ని హక్కులు ప్రత్యేకించబడ్డాయి.'}
             </p>
             {/* <div className="flex space-x-6 text-sm">
               <Link to="/privacy" className="text-gray-400 hover:text-green-300 transition-colors">

@@ -1,6 +1,9 @@
 import { Stethoscope, User, Scan, Activity, Scissors, ArrowRight, Ear, Baby, Bone, Ambulance, Thermometer } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const ServiceCard = ({ service }) => {
+  const { currentLanguage } = useLanguage();
+  
   const getIcon = (iconName) => {
     const icons = {
       stethoscope: Stethoscope,
@@ -39,8 +42,8 @@ const ServiceCard = ({ service }) => {
       {/* Service Image */}
       <div className="w-full h-48 rounded-xl mb-6 group-hover:scale-105 transition-transform duration-300 flex-shrink-0 relative overflow-hidden">
         <img
-          src={getServiceImage(service.name)}
-          alt={service.name}
+          src={getServiceImage(service.name.en || service.name)}
+          alt={service.name[currentLanguage] || service.name}
           className="w-full h-full object-cover object-center"
           style={{ objectFit: 'cover', objectPosition: 'center' }}
           onError={(e) => {
@@ -58,8 +61,12 @@ const ServiceCard = ({ service }) => {
 
       {/* Content */}
       <div className="space-y-4 flex-1 flex flex-col">
-        <h3 className="text-xl font-bold text-gray-900 leading-tight">{service.name}</h3>
-        <p className="text-gray-600 leading-relaxed flex-1">{service.description}</p>
+        <h3 className="text-xl font-bold text-gray-900 leading-tight">
+          {service.name[currentLanguage] || service.name}
+        </h3>
+        <p className="text-gray-600 leading-relaxed flex-1">
+          {service.description[currentLanguage] || service.description}
+        </p>
 
         {/* Price and Duration */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
