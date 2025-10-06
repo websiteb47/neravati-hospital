@@ -1,9 +1,10 @@
 import { Stethoscope, User, Scan, Activity, Scissors, ArrowRight, Ear, Baby, Bone, Ambulance, Thermometer } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
   const { currentLanguage } = useLanguage();
-  
+
   const getIcon = (iconName) => {
     const icons = {
       stethoscope: Stethoscope,
@@ -15,7 +16,7 @@ const ServiceCard = ({ service }) => {
       baby: Baby,
       bone: Bone,
       ambulance: Ambulance,
-      
+
       thermometer: Thermometer,
     };
     return icons[iconName] || Stethoscope;
@@ -74,7 +75,15 @@ const ServiceCard = ({ service }) => {
             {/* <p className="text-lg font-bold text-green-600">{service.price}</p> */}
           </div>
           <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-green-100 transition-colors duration-200">
-            <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-green-900 transition-colors duration-200" />
+            <Link
+              to={`/services#${service.name.en
+                .toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '')   // Removes &, @, etc.
+                .replace(/\s+/g, '-')           // Replaces spaces with dashes
+                }`}
+            >
+              <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-green-900 transition-colors duration-200" />
+            </Link>
           </div>
         </div>
       </div>

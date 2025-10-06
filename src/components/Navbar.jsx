@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useMemo, useCallback } from 'react';
+﻿import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, MapPin, ChevronDown } from 'lucide-react';
 import { contactInfo } from '../config/contact';
@@ -12,6 +12,9 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
   const { currentLanguage } = useLanguage();
+  const hoverTimeout = useRef(null);
+
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,13 +30,14 @@ const Navbar = () => {
     setActiveDropdown(null);
   }, [currentLanguage]);
 
-  // Stable callback functions
+
   const handleMouseEnter = useCallback((itemName) => {
+    clearTimeout(hoverTimeout.current);
     setActiveDropdown(itemName);
   }, []);
 
   const handleMouseLeave = useCallback(() => {
-    setActiveDropdown(null);
+    hoverTimeout.current = setTimeout(() => setActiveDropdown(null), 150);
   }, []);
 
   // Create stable navigation structure
@@ -41,16 +45,15 @@ const Navbar = () => {
     { id: 'home', nameEn: 'Home', nameTe: 'హోమ్', href: '/' },
     { id: 'about', nameEn: 'About', nameTe: 'గురించి', href: '/about' },
     { id: 'departments', nameEn: 'Departments', nameTe: 'విభాగాలు', href: '/departments' },
-    { id: 'doctors', nameEn: 'Doctors', nameTe: 'వైద్యులు', href: '/doctors' },
-    { id: 'doctorz', nameEn: 'Doctorz', nameTe: 'వైద్యులు', href: '/doctorz' },
-    { id: 'services', nameEn: 'Services', nameTe: 'సేవలు', href: '/services' },
+    { id: 'doctors', nameEn: 'Doctors', nameTe: 'వైద్యులు', href: '/doctors/1' },
+    { id: 'services', nameEn: 'Services', nameTe: 'సేవలు', href: '/services#general-physician-consultation' },
     { id: 'ivf', nameEn: 'IVF', nameTe: 'ఐవిఎఫ్', href: '/ivf' },
     { id: 'gallery', nameEn: 'Gallery', nameTe: 'గ్యాలరీ', href: '/gallery' },
     { id: 'contact', nameEn: 'Contact', nameTe: 'సంప్రదించండి', href: '/contact' },
     { id: 'faq', nameEn: 'FAQ', nameTe: 'ప్రశ్నలు', href: '/faq' },
   ], []);
 
-  const navigation = useMemo(() => 
+  const navigation = useMemo(() =>
     navigationItems.map(item => ({
       ...item,
       name: currentLanguage === 'en' ? item.nameEn : item.nameTe
@@ -58,7 +61,7 @@ const Navbar = () => {
   );
 
   // Memoize services with current language for dropdowns
-  const servicesWithLanguage = useMemo(() => 
+  const servicesWithLanguage = useMemo(() =>
     services.map(service => ({
       ...service,
       displayName: service.name[currentLanguage] || service.name
@@ -67,7 +70,7 @@ const Navbar = () => {
 
   // Memoize doctors for dropdowns (doctors data is static, but memoize to prevent re-renders)
   const doctorsMemoized = useMemo(() => doctors, []);
-  
+
   // Memoize departments for dropdowns (departments data is static, but memoize to prevent re-renders)
   const departmentsMemoized = useMemo(() => departments, []);
 
@@ -114,7 +117,7 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navigation.map((item) => {
-                const hasDropdown = item.id === 'departments' || item.id === 'services' || item.id === 'doctorz';
+                const hasDropdown = item.id === 'departments' || item.id === 'services' || item.id === 'doctors';
 
                 if (hasDropdown) {
                   return (
@@ -137,7 +140,7 @@ const Navbar = () => {
                       </Link>
 
                       {/* Dropdown Menu */}
-                    {activeDropdown === item.name && (
+                      {activeDropdown === item.name && (
                         <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                           {item.id === 'departments' && (
                             <div className="grid grid-cols-1">
@@ -162,10 +165,12 @@ const Navbar = () => {
                               {servicesWithLanguage.slice(0, 8).map((service, index) => (
                                 <div key={service.id}>
                                   <Link
-                                    to={`/services#${(service.name.en || service.name).toLowerCase().replace(/\s+/g, '-')}`}
+                                    to={`/services#${(service.name.en)
+                                      .toLowerCase()
+                                      .replace(/[^a-z0-9]+/g, '-')}`}
                                     className="px-4 py-3 hover:bg-green-50 transition-colors text-gray-700 hover:text-green-700 font-medium block"
                                   >
-                                    {service.displayName}
+                                    {service.name.en}
                                   </Link>
                                   {index < servicesWithLanguage.slice(0, 8).length - 1 && (
                                     <div className="border-b border-gray-200 mx-4 h-px"></div>
@@ -175,12 +180,12 @@ const Navbar = () => {
                             </div>
                           )}
 
-                          {item.id === 'doctorz' && (
+                          {item.id === 'doctors' && (
                             <div className="grid grid-cols-1">
                               {doctorsMemoized.map((doctor, index) => (
                                 <div key={doctor.id}>
                                   <Link
-                                    to={`/doctor/${doctor.id}`}
+                                    to={`/doctors/${doctor.id}`} // ✅ Dynamic route
                                     className="px-4 py-3 hover:bg-green-50 transition-colors text-gray-700 hover:text-green-700 font-medium block"
                                   >
                                     {doctor.name}
@@ -193,7 +198,7 @@ const Navbar = () => {
                             </div>
                           )}
                         </div>
-                      )} 
+                      )}
                     </div>
                   );
                 }
@@ -240,7 +245,7 @@ const Navbar = () => {
           <div className="md:hidden bg-white border-t border-gray-200 max-h-[80vh] overflow-y-auto mobile-nav-scrollbar">
             <div className="px-4 py-6 space-y-4">
               {navigation.map((item) => {
-                const hasDropdown = item.id === 'departments' || item.id === 'services' || item.id === 'doctorz';
+                const hasDropdown = item.id === 'departments' || item.id === 'services' || item.id === 'doctors';
 
                 if (hasDropdown) {
                   return (
@@ -281,10 +286,10 @@ const Navbar = () => {
                           </Link>
                         ))}
 
-                        {item.id === 'doctorz' && doctorsMemoized.map((doctor) => (
+                        {item.id === 'doctors' && doctorsMemoized.map((doctor) => (
                           <Link
                             key={doctor.id}
-                            to={`/doctor/${doctor.id}`}
+                            to={`/doctors/${doctor.id}`}
                             className="block text-sm text-gray-600 hover:text-green-700 transition-colors"
                             onClick={() => setIsOpen(false)}
                           >

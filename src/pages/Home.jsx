@@ -112,8 +112,9 @@ const Home = () => {
               <ServiceCard key={service.id} service={service} />
             ))}
           </div>
+          
 
-          <div className="text-center mt-12">
+          {/* <div className="text-center mt-12">
             <Link
               to="/services"
               className="inline-flex items-center space-x-2 bg-green-700 hover:bg-green-800 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
@@ -123,7 +124,7 @@ const Home = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
 
