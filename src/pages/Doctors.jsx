@@ -119,6 +119,17 @@ const Doctors = () => {
                     </div>
                   </div>
 
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Visits</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {['Every month 1st Sunday visit in Giddaluru & Khammam at Brahma Reddy Hospital'].map((area, index) => (
+                        <span key={index} className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
+                          {area}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Available Services */}
                   <div className="mb-8">
                     <h4 className="text-xl font-semibold text-gray-900 mb-4">Available Services</h4>
@@ -262,6 +273,17 @@ const Doctors = () => {
                     </div>
                   </div>
 
+                  <div className="mb-8">
+                    <h4 className="text-xl font-semibold text-gray-900 mb-4">Visits</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {['Every month 3rd Sunday visit in Giddaluru at DGR Hospital'].map((area, index) => (
+                        <span key={index} className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
+                          {area}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
                   <div>
                     <h4 className="text-xl font-semibold text-gray-900 mb-4">Available Services</h4>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -274,14 +296,35 @@ const Doctors = () => {
                         </ul>
                       </div>
                       <div>
-                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Advanced Procedures</h5>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Cosmeting Gynecology</h5>
                         <ul className="space-y-2 text-sm text-gray-600">
-                          <li>• Operative Laparoscopy</li>
-                          <li>• Operative Hysteroscopy</li>
-                          <li>• Cosmetic Gynaecology</li>
-                          <li>• Obstetric & Gynaecology Services</li>
+                        <li>• Vaginal Rejuvenation using PRP</li>
+                        <li>• UL-Therapy</li>
+                          <li>• Vaginal Tightening using laser and surgery</li>
+                        <li>• Stress Urinary Incontinence using Laser</li>
                         </ul>
                       </div>
+                      <div>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Operative Laparoscopy</h5>
+                        <ul className="space-y-2 text-sm text-gray-600">
+                        <li>• Lap PCOD Drilling</li>  
+                        <li>• Lap Ovarian Cystectomy</li>   
+                        <li>• Lap Tubal Recanalisation</li>
+                        <li>• Lap Tubectomy</li>  
+                        <li>• Lap Tubal Disconnection</li>  
+                        <li>• Lap Myomectomy</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Operative Hysteroscopy</h5>
+                        <ul className="space-y-2 text-sm text-gray-600">
+                        <li>• Septal Resection</li>
+                        <li>• Lateral Metroplasty</li>
+                        <li>• Polypectomy</li>
+                        </ul>
+                      </div>
+                     
+                     
                     </div>
                   </div>
                 </div>
