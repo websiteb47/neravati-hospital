@@ -14,31 +14,65 @@ import {
   Clock,
   Users
 } from 'lucide-react';
-
+import { useLanguage } from '../context/LanguageContext';
 
 const features = [
-      {
-        icon: Shield,
-        title: "Quality Assurance",
-        description: "All our services meet the highest medical standards and are regularly audited for quality."
-      },
-      {
-        icon: Clock,
-        title: "Quick Service",
-        description: "Minimal wait times with efficient scheduling and streamlined processes."
-      },
-      {
-        icon: Users,
-        title: "Expert Staff",
-        description: "Experienced medical professionals dedicated to providing exceptional care."
-      },
-      {
-        icon: CheckCircle,
-        title: "Comprehensive Care",
-        description: "From diagnosis to treatment and follow-up, we provide complete healthcare solutions."
-      }
-    ];
+  {
+    icon: Shield,
+    title: {
+      en: "Quality Assurance",
+      te: "నాణ్యత హామీ"
+    },
+    description: {
+      en: "All our services meet the highest medical standards and are regularly audited for quality.",
+      te: "మా అన్ని సేవలు అత్యుత్తమ వైద్య ప్రమాణాలను కలిగి ఉంటాయి మరియు నాణ్యత కోసం పర్యవేక్షించబడతాయి."
+    }
+  },
+  {
+    icon: Clock,
+    title: {
+      en: "Quick Service",
+      te: "త్వరిత సేవ"
+    },
+    description: {
+      en: "Minimal wait times with efficient scheduling and streamlined processes.",
+      te: "సమర్థవంతమైన షెడ్యూలింగ్ మరియు సులభమైన ప్రక్రియలతో తక్కువ వేచి ఉండే సమయం."
+    }
+  },
+  {
+    icon: Users,
+    title: {
+      en: "Expert Staff",
+      te: "నిపుణుల సిబ్బంది"
+    },
+    description: {
+      en: "Experienced medical professionals dedicated to providing exceptional care.",
+      te: "అత్యుత్తమ సంరక్షణను అందించడానికి అంకితమైన అనుభవజ్ఞులైన వైద్య నిపుణులు."
+    }
+  },
+  {
+    icon: CheckCircle,
+    title: {
+      en: "Comprehensive Care",
+      te: "సమగ్ర సంరక్షణ"
+    },
+    description: {
+      en: "From diagnosis to treatment and follow-up, we provide complete healthcare solutions.",
+      te: "నిర్ధారణ నుండి చికిత్స మరియు ఫాలో-అప్ వరకు, మేము సంపూర్ణ ఆరోగ్య సంరక్షణ పరిష్కారాలను అందిస్తున్నాము."
+    }
+  }
+];
 
+const iconMap = {
+  stethoscope: Stethoscope,
+  ear: Ear,
+  baby: Baby,
+  bone: Bone,
+  scissors: Scissors,
+  ambulance: Ambulance,
+  flask: FlaskConical,
+  thermometer: Thermometer
+};
 
    const services = [
       {
@@ -279,24 +313,12 @@ const features = [
         image: "/images/services/fever-infection.jpeg"
       }
     ];
-    
-
-const iconMap = {
-  stethoscope: Stethoscope,
-  ear: Ear,
-  baby: Baby,
-  bone: Bone,
-  scissors: Scissors,
-  ambulance: Ambulance,
-  flask: FlaskConical,
-  thermometer: Thermometer
-};
 
 const Services = () => {
+  const { currentLanguage } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
   const [selectedService, setSelectedService] = useState(null);
-  
 
   useEffect(() => {
     const hash = location.hash.replace('#', '');
@@ -311,13 +333,19 @@ const Services = () => {
   if (!selectedService) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center p-10">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Service Not Found</h2>
-        <p className="text-gray-600 mb-6">Please select a valid service from the menu.</p>
+        <h2 className="text-3xl font-bold text-gray-800 mb-4">
+          {currentLanguage === 'en' ? 'Service Not Found' : 'సేవ కనుగొనబడలేదు'}
+        </h2>
+        <p className="text-gray-600 mb-6">
+          {currentLanguage === 'en'
+            ? 'Please select a valid service from the menu.'
+            : 'దయచేసి మెను నుండి సరైన సేవను ఎంచుకోండి.'}
+        </p>
         <button
           onClick={() => navigate('/')}
           className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition"
         >
-          Go Back Home
+          {currentLanguage === 'en' ? 'Go Back Home' : 'హోమ్‌కు తిరిగి వెళ్ళండి'}
         </button>
       </div>
     );
@@ -330,33 +358,38 @@ const Services = () => {
       {/* Header */}
       <section className="bg-gradient-to-r from-green-400 to-green-400 text-white py-16 text-center">
         <div className="container mx-auto px-4">
-          <h1 className="text-2xl md:text-3xl lg:text-5xl  font-bold">{selectedService?.name?.en}</h1>
-          {/* <p className="text-lg text-white/90 max-w-3xl mx-auto">{selectedService?.overview?.en}</p> */}
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+            {selectedService?.name?.[currentLanguage]}
+          </h1>
         </div>
       </section>
 
       {/* Service Details */}
       <section className="py-10 bg-gray-50">
         <div className="container mx-auto px-6 md:px-10 max-w-5xl bg-white shadow-xl rounded-2xl p-10">
-          <div className="flex flex-col items-center mb-10">
-            
-            {selectedService?.image && (
-              <img
-                src={selectedService?.image}
-                alt={selectedService?.name?.en}
-                className="rounded-xl mb-8 w-full max-h-96 object-cover shadow-md"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
-            )}
-          </div>
+          {/* Image */}
+          {selectedService?.image && (
+            <img
+              src={selectedService?.image}
+              alt={selectedService?.name?.[currentLanguage]}
+              className="rounded-xl mb-8 w-full max-h-96 object-cover shadow-md"
+            />
+          )}
 
-          {/* Conditions */}
+          {/* Overview */}
+          {selectedService?.overview && (
+            <p className="text-gray-700 mb-8 text-lg leading-relaxed">
+              {selectedService?.overview?.[currentLanguage]}
+            </p>
+          )}
+
+          {/* Conditions Treated */}
           <div className="mb-10">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Conditions Treated</h3>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-1">
-                {selectedService?.conditionsTreated?.map((item, i) => (
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+              {currentLanguage === 'en' ? 'Conditions Treated' : 'చికిత్స చేయబడిన పరిస్థితులు'}
+            </h3>
+            <ul className="list-disc pl-6 text-gray-700 space-y-1">
+              {selectedService?.conditionsTreated?.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
             </ul>
@@ -364,8 +397,12 @@ const Services = () => {
 
           {/* Procedures */}
           <div className="mb-10">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Procedures & Treatments</h3>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-1">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+              {currentLanguage === 'en'
+                ? 'Procedures & Treatments'
+                : 'పద్ధతులు మరియు చికిత్సలు'}
+            </h3>
+            <ul className="list-disc pl-6 text-gray-700 space-y-1">
               {selectedService?.procedures?.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
@@ -374,127 +411,547 @@ const Services = () => {
 
           {/* Benefits */}
           <div className="mb-10">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Benefits</h3>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-1">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+              {currentLanguage === 'en' ? 'Benefits' : 'ప్రయోజనాలు'}
+            </h3>
+            <ul className="list-disc pl-6 text-gray-700 space-y-1">
               {selectedService?.benefits?.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
             </ul>
           </div>
-
-          {/* Doctors */}
-          {/* {selectedService?.doctorSpecialists && (
-            <div className="mb-10">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Available Specialists</h3>
-              <ul className="list-disc pl-6 text-gray-700 space-y-1">
-                {selectedService?.doctorSpecialists?.map((doc, i) => (
-                  <li key={i}>{doc}</li>
-                ))}
-              </ul>
-            </div>
-          )}           */}
         </div>
 
+        {/* Features Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                {currentLanguage === 'en'
+                  ? 'Why Choose Our Services?'
+                  : 'మా సేవలను ఎందుకు ఎంచుకోవాలి?'}
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                {currentLanguage === 'en'
+                  ? 'We are committed to providing the highest quality healthcare services with a focus on patient comfort and positive outcomes.'
+                  : 'రోగి సౌకర్యం మరియు సానుకూల ఫలితాలపై దృష్టి సారించి, అత్యుత్తమ నాణ్యత గల ఆరోగ్య సంరక్షణ సేవలను అందించడానికి మేము కట్టుబడి ఉన్నాము.'}
+              </p>
+            </div>
 
-            {/* Special Clinics Section */}
-
-            {selectedService.id === 2 &&   
-            <section className="py-20 bg-gray-50">
-         <div className="container mx-auto px-4">
-           <div className="text-center mb-16">
-             <h2 className="text-4xl font-bold text-gray-900 mb-4">Special Clinics</h2>
-             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-               Explore our specialized clinics that offer advanced treatments and collaborations for better care.
-             </p>
-           </div>
-
-           {/* Vertigo Clinic */}
-           <div className="mb-20">
-             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Vertigo Clinic</h3>
-             <p className="text-gray-600 max-w-3xl mx-auto mb-8 text-center">
-               Our dedicated Vertigo Clinic offers advanced diagnostic and therapeutic solutions for patients
-               experiencing dizziness, imbalance, or vestibular disorders.
-             </p>
-
-             {/* Images Grid */}
-             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-               <img src="/images/vertigo1.jpeg" alt="Vertigo Clinic 1" className="rounded-xl shadow-lg w-full  object-cover" />
-               <img src="/images/vertigo2.jpeg" alt="Vertigo Clinic 2" className="rounded-xl shadow-lg w-full object-cover" />
-               <img src="/images/vertigo3.jpeg" alt="Vertigo Clinic 3" className="rounded-xl shadow-lg w-full  object-cover" />
-               <img src="/images/vertigo4.jpeg" alt="Vertigo Clinic 4" className="rounded-xl shadow-lg w-full  object-cover" />
-               <img src="/images/vertigo6.jpeg" alt="Vertigo Clinic 6" className="rounded-xl shadow-lg w-full  object-cover" />
-               <img src="/images/vertigo7.jpeg" alt="Vertigo Clinic 7" className="rounded-xl shadow-lg w-full  object-cover" />
-               <img src="/images/vertigo8.jpeg" alt="Vertigo Clinic 7" className="rounded-xl shadow-lg w-full  object-cover" />
-
-             </div>
-
-             {/* Video */}
-             <div className="max-w-4xl mx-auto">
-               <video controls className="w-full rounded-xl shadow-lg">
-                 <source src="/videos/vertigo.mp4" type="video/mp4" />
-                 Your browser does not support the video tag.
-               </video>
-             </div>
-           </div>
-
-           {/* Allergy Clinic */}
-           <div>
-             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-               Allergy Clinic (in collaboration with Evexia)
-             </h3>
-             <p className="text-gray-600 max-w-3xl mx-auto mb-8 text-center">
-               In partnership with Evexia, our Allergy Clinic provides expert consultation, testing,
-               and treatment for a wide range of allergies with state-of-the-art technology.
-             </p>
-
-             {/* Image */}
-             <div className="flex justify-center mb-8">
-               <img src="/images/allergy.jpeg" alt="Allergy Clinic" className="rounded-xl shadow-lg w-full max-w-lg object-cover" />
-             </div>
-
-             {/* Video */}
-             <div className="max-w-4xl mx-auto">
-               <video controls className="w-full rounded-xl shadow-lg">
-                 <source src="/videos/allergy.mp4" type="video/mp4" />
-                 Your browser does not support the video tag.
-               </video>
-             </div>
-           </div>
-
-         </div>
-       </section>}
-     
-
-                    {/* Features Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our Services?</h2>
-             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We are committed to providing the highest quality healthcare services
-              with a focus on patient comfort and positive outcomes.
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-green-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <feature.icon className="w-8 h-8 text-green-700" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {feature.title[currentLanguage]}
+                  </h3>
+                  <p className="text-gray-600">{feature.description[currentLanguage]}</p>
+                </div>
+              ))}
+            </div>
           </div>
-
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                      {features.map((feature, index) => (
-               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-green-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <feature.icon className="w-8 h-8 text-green-700" />
-                 </div>
-                 <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
-          </div>        
-          </div>
-       </section>
+        </section>
       </section>
     </div>
   );
 };
 
 export default Services;
+
+
+
+
+
+
+// import { useEffect, useState } from 'react';
+// import { useLocation, useNavigate } from 'react-router-dom';
+// import {
+//   Stethoscope,
+//   Ear,
+//   Baby,
+//   Bone,
+//   Scissors,
+//   Ambulance,
+//   FlaskConical,
+//   Thermometer,
+//   CheckCircle,
+//   Shield,
+//   Clock,
+//   Users
+// } from 'lucide-react';
+
+
+// const features = [
+//       {
+//         icon: Shield,
+//         title: "Quality Assurance",
+//         description: "All our services meet the highest medical standards and are regularly audited for quality."
+//       },
+//       {
+//         icon: Clock,
+//         title: "Quick Service",
+//         description: "Minimal wait times with efficient scheduling and streamlined processes."
+//       },
+//       {
+//         icon: Users,
+//         title: "Expert Staff",
+//         description: "Experienced medical professionals dedicated to providing exceptional care."
+//       },
+//       {
+//         icon: CheckCircle,
+//         title: "Comprehensive Care",
+//         description: "From diagnosis to treatment and follow-up, we provide complete healthcare solutions."
+//       }
+//     ];
+
+
+//    const services = [
+//       {
+//         id: 1,
+//         name: {
+//           en: "General Physician Consultation",
+//           te: "సాధారణ వైద్య సలహా"
+//         },
+//         overview: {
+//           en: "Our General Physicians provide expert diagnosis and treatment for a wide range of health issues, focusing on preventive care, chronic disease management, and lifestyle guidance."
+//         },
+//         conditionsTreated: [
+//           "Diabetes and hypertension",
+//           "Thyroid disorders",
+//           "Heart and respiratory diseases",
+//           "Fever, infections, and viral illnesses",
+//           "Routine health check-ups"
+//         ],
+//         procedures: [
+//           "Physical examination",
+//           "Blood pressure & sugar monitoring",
+//           "Diagnostic test recommendations",
+//           "Personalized treatment plans"
+//         ],
+//         benefits: [
+//           "Early detection of diseases",
+//           "Holistic, continuous medical care",
+//           "Personalized health advice"
+//         ],
+//         doctorSpecialists: ["Dr. Anil Kumar", "Dr. Priya Reddy"],
+//         icon: "stethoscope",
+//         image: "/images/services/general-physician.jpeg"
+//       },
+//       {
+//         id: 2,
+//         name: {
+//           en: "ENT Specialist Consultation",
+//           te: "ENT విశేషజ్ఞ సలహా"
+//         },
+//         overview: {
+//           en: "Our ENT specialists offer comprehensive care for ear, nose, and throat conditions using advanced diagnostic tools and treatment techniques."
+//         },
+//         conditionsTreated: [
+//           "Sinus infections and nasal allergies",
+//           "Ear pain, hearing loss, tinnitus",
+//           "Tonsillitis and throat infections",
+//           "Voice and swallowing problems"
+//         ],
+//         procedures: [
+//           "Endoscopic nasal examination",
+//           "Audiometry & hearing tests",
+//           "Minor ENT procedures",
+//           "Allergy management"
+//         ],
+//         benefits: [
+//           "Specialized ENT care under one roof",
+//           "Minimally invasive diagnosis",
+//           "Faster recovery and personalized attention"
+//         ],
+//         doctorSpecialists: ["Dr. Harika Reddy", "Dr. Suresh Naidu"],
+//         icon: "ear",
+//         image: "/images/services/ent-consultation.jpeg"
+//       },
+//       {
+//         id: 3,
+//         name: {
+//           en: "Gynecology & IVF Treatment",
+//           te: "స్త్రీరోగవిజ్ఞానం & ఐవిఎఫ్ చికిత్స"
+//         },
+//         overview: {
+//           en: "We provide compassionate and comprehensive women’s healthcare, including fertility treatments, antenatal care, and minimally invasive gynecological procedures."
+//         },
+//         conditionsTreated: [
+//           "Irregular periods & PCOS",
+//           "Infertility & IVF",
+//           "Pregnancy care",
+//           "Uterine fibroids and cysts"
+//         ],
+//         procedures: [
+//           "Ultrasound scanning",
+//           "IVF & IUI procedures",
+//           "Laparoscopic gynecology surgeries",
+//           "Antenatal counseling"
+//         ],
+//         benefits: [
+//           "Personalized fertility plans",
+//           "Confidential and compassionate care",
+//           "Advanced reproductive technology"
+//         ],
+//         doctorSpecialists: ["Dr. Kavya Rani", "Dr. Shalini Rao"],
+//         icon: "baby",
+//         image: "/images/services/gynecology-ivf.jpeg"
+//       },
+//       {
+//         id: 4,
+//         name: {
+//           en: "Orthopedic Consultation",
+//           te: "అస్థిపంజర సలహా"
+//         },
+//         overview: {
+//           en: "Specialized orthopedic care for bone, joint, and musculoskeletal conditions, including trauma and joint replacement guidance."
+//         },
+//         conditionsTreated: [
+//           "Bone fractures & injuries",
+//           "Arthritis & joint pain",
+//           "Spinal disorders",
+//           "Sports injuries"
+//         ],
+//         procedures: [
+//           "Physical examination & mobility assessment",
+//           "X-rays and MRI recommendations",
+//           "Joint injections & therapy",
+//           "Pre/post-surgery guidance"
+//         ],
+//         benefits: [
+//           "Relief from pain and improved mobility",
+//           "Expert surgical consultations",
+//           "Personalized rehabilitation plans"
+//         ],
+//         doctorSpecialists: ["Dr. Ramesh Babu", "Dr. Anitha Sharma"],
+//         icon: "bone",
+//         image: "/images/services/orthopedic-consultation.jpeg"
+//       },
+//       {
+//         id: 5,
+//         name: {
+//           en: "Laparoscopic Surgery",
+//           te: "లాపరోస్కోపిక్ శస్త్రచికిత్స"
+//         },
+//         overview: {
+//           en: "Minimally invasive surgical procedures for a variety of conditions, reducing recovery time and surgical risks."
+//         },
+//         conditionsTreated: [
+//           "Gallbladder stones",
+//           "Hernias",
+//           "Appendicitis",
+//           "Gynecological surgeries"
+//         ],
+//         procedures: [
+//           "Laparoscopic examination",
+//           "Keyhole surgical procedures",
+//           "Post-operative care and monitoring"
+//         ],
+//         benefits: [
+//           "Smaller incisions, faster recovery",
+//           "Reduced pain and infection risk",
+//           "Shorter hospital stay"
+//         ],
+//         doctorSpecialists: ["Dr. Sunil Rao", "Dr. Meera Nair"],
+//         icon: "scissors",
+//         image: "/images/services/laparoscopic-surgery.jpeg"
+//       },
+//       {
+//         id: 6,
+//         name: {
+//           en: "Emergency Care",
+//           te: "అత్యవసర సంరక్షణ"
+//         },
+//         overview: {
+//           en: "24/7 emergency medical services with quick response, critical care, and inpatient support."
+//         },
+//         conditionsTreated: [
+//           "Heart attacks and strokes",
+//           "Severe injuries & trauma",
+//           "Acute illnesses",
+//           "Life-threatening emergencies"
+//         ],
+//         procedures: [
+//           "Immediate medical assessment",
+//           "Stabilization & resuscitation",
+//           "Critical care monitoring"
+//         ],
+//         benefits: [
+//           "Rapid response in emergencies",
+//           "Continuous monitoring and care",
+//           "Access to specialists immediately"
+//         ],
+//         doctorSpecialists: ["Dr. Ravi Kumar", "Dr. Shweta Singh"],
+//         icon: "ambulance",
+//         image: "/images/services/emergency-care.jpeg"
+//       },
+//       {
+//         id: 7,
+//         name: {
+//           en: "Diagnostic Services",
+//           te: "నిర్ధారణ సేవలు"
+//         },
+//         overview: {
+//           en: "Comprehensive diagnostic services including blood tests, imaging, and full medical workup."
+//         },
+//         conditionsTreated: [
+//           "Routine health screenings",
+//           "Chronic disease monitoring",
+//           "Pre-surgery assessments",
+//           "Infection & disease diagnosis"
+//         ],
+//         procedures: [
+//           "Blood tests & urine analysis",
+//           "X-ray, CT scan, MRI",
+//           "ECG & echocardiography"
+//         ],
+//         benefits: [
+//           "Accurate and timely diagnosis",
+//           "Advanced laboratory equipment",
+//           "Convenient one-stop diagnostics"
+//         ],
+//         doctorSpecialists: ["Dr. Naveen Kumar", "Dr. Latha Reddy"],
+//         icon: "flask",
+//         image: "/images/services/diagnostic-services.jpeg"
+//       },
+//       {
+//         id: 8,
+//         name: {
+//           en: "Fever & Infection Treatment",
+//           te: "జ్వరం & ఇన్ఫెక్షన్ చికిత్స"
+//         },
+//         overview: {
+//           en: "Treatment for various infections, including viral fevers, malaria, typhoid, dengue, and other acute conditions."
+//         },
+//         conditionsTreated: [
+//           "Malaria & typhoid",
+//           "Dengue & viral infections",
+//           "Fever & chills",
+//           "Bacterial infections"
+//         ],
+//         procedures: [
+//           "Diagnostic testing for infections",
+//           "Medication management",
+//           "Follow-up care & monitoring"
+//         ],
+//         benefits: [
+//           "Rapid relief from fever and infections",
+//           "Personalized treatment plans",
+//           "Prevention of complications"
+//         ],
+//         doctorSpecialists: ["Dr. Arjun Reddy", "Dr. Priya Varma"],
+//         icon: "thermometer",
+//         image: "/images/services/fever-infection.jpeg"
+//       }
+//     ];
+    
+
+// const iconMap = {
+//   stethoscope: Stethoscope,
+//   ear: Ear,
+//   baby: Baby,
+//   bone: Bone,
+//   scissors: Scissors,
+//   ambulance: Ambulance,
+//   flask: FlaskConical,
+//   thermometer: Thermometer
+// };
+
+// const Services = () => {
+//   const location = useLocation();
+//   const navigate = useNavigate();
+//   const [selectedService, setSelectedService] = useState(null);
+  
+
+//   useEffect(() => {
+//     const hash = location.hash.replace('#', '');
+//     if (hash) {
+//       const matched = services.find(
+//         (s) => s.name.en.toLowerCase().replace(/[^a-z0-9]+/g, '-') === hash
+//       );
+//       setSelectedService(matched || null);
+//     }
+//   }, [location]);
+
+//   if (!selectedService) {
+//     return (
+//       <div className="min-h-[60vh] flex flex-col items-center justify-center text-center p-10">
+//         <h2 className="text-3xl font-bold text-gray-800 mb-4">Service Not Found</h2>
+//         <p className="text-gray-600 mb-6">Please select a valid service from the menu.</p>
+//         <button
+//           onClick={() => navigate('/')}
+//           className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition"
+//         >
+//           Go Back Home
+//         </button>
+//       </div>
+//     );
+//   }
+
+//   const Icon = iconMap[selectedService?.icon];
+
+//   return (
+//     <div>
+//       {/* Header */}
+//       <section className="bg-gradient-to-r from-green-400 to-green-400 text-white py-16 text-center">
+//         <div className="container mx-auto px-4">
+//           <h1 className="text-2xl md:text-3xl lg:text-5xl  font-bold">{selectedService?.name?.en}</h1>
+//           {/* <p className="text-lg text-white/90 max-w-3xl mx-auto">{selectedService?.overview?.en}</p> */}
+//         </div>
+//       </section>
+
+//       {/* Service Details */}
+//       <section className="py-10 bg-gray-50">
+//         <div className="container mx-auto px-6 md:px-10 max-w-5xl bg-white shadow-xl rounded-2xl p-10">
+//           <div className="flex flex-col items-center mb-10">
+            
+//             {selectedService?.image && (
+//               <img
+//                 src={selectedService?.image}
+//                 alt={selectedService?.name?.en}
+//                 className="rounded-xl mb-8 w-full max-h-96 object-cover shadow-md"
+//                 onError={(e) => {
+//                   e.currentTarget.style.display = 'none';
+//                 }}
+//               />
+//             )}
+//           </div>
+
+//           {/* Conditions */}
+//           <div className="mb-10">
+//             <h3 className="text-2xl font-semibold text-gray-900 mb-4">Conditions Treated</h3>
+//             <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-1">
+//                 {selectedService?.conditionsTreated?.map((item, i) => (
+//                 <li key={i}>{item}</li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Procedures */}
+//           <div className="mb-10">
+//             <h3 className="text-2xl font-semibold text-gray-900 mb-4">Procedures & Treatments</h3>
+//             <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-1">
+//               {selectedService?.procedures?.map((item, i) => (
+//                 <li key={i}>{item}</li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Benefits */}
+//           <div className="mb-10">
+//             <h3 className="text-2xl font-semibold text-gray-900 mb-4">Benefits</h3>
+//             <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-1">
+//               {selectedService?.benefits?.map((item, i) => (
+//                 <li key={i}>{item}</li>
+//               ))}
+//             </ul>
+//           </div>
+
+//         </div>
+    
+//         {/* Features Section */}
+//         <section className="py-20 bg-gray-50">
+//           <div className="container mx-auto px-4">
+//             <div className="text-center mb-16">
+//               <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our Services?</h2>
+//               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+//                 We are committed to providing the highest quality healthcare services
+//                 with a focus on patient comfort and positive outcomes.
+//               </p>
+//             </div>
+
+//             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+//               {features.map((feature, index) => (
+//                 <div key={index} className="text-center">
+//                   <div className="w-16 h-16 bg-green-200 rounded-full flex items-center justify-center mx-auto mb-6">
+//                     <feature.icon className="w-8 h-8 text-green-700" />
+//                   </div>
+//                   <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+//                   <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </section>
+//       </section>
+//     </div>
+//   );
+// };
+
+// export default Services;
+
+
+
+
+
+   {/* Special Clinics Section */}
+  //  {selectedService.id === 2 &&
+  //   <section className="py-20 bg-gray-50">
+  //     <div className="container mx-auto px-4">
+  //       <div className="text-center mb-16">
+  //         <h2 className="text-4xl font-bold text-gray-900 mb-4">Special Clinics</h2>
+  //         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+  //           Explore our specialized clinics that offer advanced treatments and collaborations for better care.
+  //         </p>
+  //       </div>
+
+  //       {/* Vertigo Clinic */}
+  //       <div className="mb-20">
+  //         <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Vertigo Clinic</h3>
+  //         <p className="text-gray-600 max-w-3xl mx-auto mb-8 text-center">
+  //           Our dedicated Vertigo Clinic offers advanced diagnostic and therapeutic solutions for patients
+  //           experiencing dizziness, imbalance, or vestibular disorders.
+  //         </p>
+
+  //         {/* Images Grid */}
+  //         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+  //           <img src="/images/vertigo1.jpeg" alt="Vertigo Clinic 1" className="rounded-xl shadow-lg w-full  object-cover" />
+  //           <img src="/images/vertigo2.jpeg" alt="Vertigo Clinic 2" className="rounded-xl shadow-lg w-full object-cover" />
+  //           <img src="/images/vertigo3.jpeg" alt="Vertigo Clinic 3" className="rounded-xl shadow-lg w-full  object-cover" />
+  //           <img src="/images/vertigo4.jpeg" alt="Vertigo Clinic 4" className="rounded-xl shadow-lg w-full  object-cover" />
+  //           <img src="/images/vertigo6.jpeg" alt="Vertigo Clinic 6" className="rounded-xl shadow-lg w-full  object-cover" />
+  //           <img src="/images/vertigo7.jpeg" alt="Vertigo Clinic 7" className="rounded-xl shadow-lg w-full  object-cover" />
+  //           <img src="/images/vertigo8.jpeg" alt="Vertigo Clinic 7" className="rounded-xl shadow-lg w-full  object-cover" />
+
+  //         </div>
+
+  //         {/* Video */}
+  //         <div className="max-w-4xl mx-auto">
+  //           <video controls className="w-full rounded-xl shadow-lg">
+  //             <source src="/videos/vertigo.mp4" type="video/mp4" />
+  //             Your browser does not support the video tag.
+  //           </video>
+  //         </div>
+  //       </div>
+
+  //       {/* Allergy Clinic */}
+  //       <div>
+  //         <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+  //           Allergy Clinic (in collaboration with Evexia)
+  //         </h3>
+  //         <p className="text-gray-600 max-w-3xl mx-auto mb-8 text-center">
+  //           In partnership with Evexia, our Allergy Clinic provides expert consultation, testing,
+  //           and treatment for a wide range of allergies with state-of-the-art technology.
+  //         </p>
+
+  //         {/* Image */}
+  //         <div className="flex justify-center mb-8">
+  //           <img src="/images/allergy.jpeg" alt="Allergy Clinic" className="rounded-xl shadow-lg w-full max-w-lg object-cover" />
+  //         </div>
+
+  //         {/* Video */}
+  //         <div className="max-w-4xl mx-auto">
+  //           <video controls className="w-full rounded-xl shadow-lg">
+  //             <source src="/videos/allergy.mp4" type="video/mp4" />
+  //             Your browser does not support the video tag.
+  //           </video>
+  //         </div>
+  //       </div>
+
+  //     </div>
+  //   </section>}
 
 
 
