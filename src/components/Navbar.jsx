@@ -74,6 +74,8 @@ const Navbar = () => {
   // Memoize departments for dropdowns (departments data is static, but memoize to prevent re-renders)
   const departmentsMemoized = useMemo(() => departments, []);
 
+  console.log("memorized departments", departments )
+
   return (
     <>
       <div className="fixed top-0 left-0 right-0 z-50 bg-green-400 text-white flex justify-center items-center">
@@ -144,7 +146,7 @@ const Navbar = () => {
                         <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                           {item.id === 'departments' && (
                             <div className="grid grid-cols-1">
-                              {departmentsMemoized.slice(0, 6).map((dept, index) => (
+                              {departmentsMemoized.slice(0, 7).map((dept, index) => (
                                 <div key={dept.id}>
                                   <Link
                                     to={`/departments#${dept.name.toLowerCase().replace(/\s+/g, '-')}`}

@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Heart, 
-  Baby, 
-  Users, 
-  Award, 
-  Clock, 
-  Shield, 
-  CheckCircle, 
-  Phone, 
-  Mail, 
+import {
+  Heart,
+  Baby,
+  Users,
+  Award,
+  Clock,
+  Shield,
+  CheckCircle,
+  Phone,
+  Mail,
   MapPin,
   ArrowRight,
   Star,
@@ -20,87 +20,131 @@ import {
   Stethoscope
 } from 'lucide-react';
 import { contactInfo } from '../config/contact';
+import { useLanguage } from '../context/LanguageContext'; // ✅ added
 
 const IVF = () => {
   const [activeTab, setActiveTab] = useState('overview');
+  const { currentLanguage } = useLanguage(); // ✅ language hookv
 
   const treatments = [
     {
-      title: "In Vitro Fertilization (IVF)",
-      description: "The most advanced fertility treatment where eggs are fertilized outside the body",
-      duration: "2-3 weeks",
-      successRate: "65-75%",
+      title: {
+        en: "In Vitro Fertilization (IVF)",
+        te: "ఇన్ విట్రో ఫెర్టిలైజేషన్ (IVF)"
+      },
+      description: {
+        en: "The most advanced fertility treatment where eggs are fertilized outside the body",
+        te: "శరీరానికి బయట గుడ్డులను సారవంతం చేసే అధునాతన సంతానోత్పత్తి చికిత్స"
+      },
       icon: TestTube
     },
     {
-      title: "Intrauterine Insemination (IUI)",
-      description: "Placing sperm directly into the uterus during ovulation",
-      duration: "1-2 weeks",
-      successRate: "15-20%",
+      title: {
+        en: "Intrauterine Insemination (IUI)",
+        te: "ఇంట్రాయుటెరైన్ ఇన్సెమినేషన్ (IUI)"
+      },
+      description: {
+        en: "Placing sperm directly into the uterus during ovulation",
+        te: "ఒవ్యూలేషన్ సమయంలో స్పెర్మ్‌ను గర్భాశయంలోకి నేరుగా ప్రవేశపెట్టడం"
+      },
       icon: Heart
     },
     {
-      title: "Intracytoplasmic Sperm Injection (ICSI)",
-      description: "Direct injection of a single sperm into an egg",
-      duration: "2-3 weeks",
-      successRate: "70-80%",
+      title: {
+        en: "Intracytoplasmic Sperm Injection (ICSI)",
+        te: "ఇంట్రాసైటోప్లాస్మిక్ స్పెర్మ్ ఇంజెక్షన్ (ICSI)"
+      },
+      description: {
+        en: "Direct injection of a single sperm into an egg",
+        te: "ఒక స్పెర్మ్‌ను గుడ్డులో నేరుగా ఇంజెక్ట్ చేయడం"
+      },
       icon: Microscope
     },
     {
-      title: "Frozen Embryo Transfer (FET)",
-      description: "Transfer of previously frozen embryos",
-      duration: "1-2 weeks",
-      successRate: "60-70%",
+      title: {
+        en: "Frozen Embryo Transfer (FET)",
+        te: "ఫ్రోజెన్ ఎంబ్రియో ట్రాన్స్‌ఫర్ (FET)"
+      },
+      description: {
+        en: "Transfer of previously frozen embryos",
+        te: "ముందుగా గడ్డకట్టిన ఎంబ్రియోలను గర్భాశయంలోకి మార్చడం"
+      },
       icon: Baby
     }
   ];
 
- const successStories = [
+  const successStories = [
     {
-      name: "Priya & Rajesh",
+      name: { en: "Priya & Rajesh", te: "ప్రియ & రాజేష్" },
       age: "32 & 35",
-      treatment: "IVF",
-      story: "After 5 years of trying, we finally have our beautiful twins through IVF treatment.",
+      treatment: { en: "IVF", te: "ఐవీఎఫ్" },
+      story: {
+        en: "After 5 years of trying, we finally have our beautiful twins through IVF treatment.",
+        te: "5 సంవత్సరాల ప్రయత్నం తర్వాత, ఐవీఎఫ్ చికిత్స ద్వారా మేము చివరికి మా అందమైన కవలలను పొందాము."
+      },
       rating: 5,
-      image: "https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      image:
+        "https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
-      name: "Anjali & Suresh",
+      name: { en: "Anjali & Suresh", te: "అంజలి & సురేష్" },
       age: "28 & 30",
-      treatment: "ICSI",
-      story: "The ICSI treatment was successful on our first attempt. We're grateful to the team.",
+      treatment: { en: "ICSI", te: "ఐసిఎస్ఐ" },
+      story: {
+        en: "The ICSI treatment was successful on our first attempt. We're grateful to the team.",
+        te: "ఐసిఎస్ఐ చికిత్స మా మొదటి ప్రయత్నంలోనే విజయవంతమైంది. బృందానికి కృతజ్ఞతలు."
+      },
       rating: 5,
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      image:
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
-      name: "Meera & Vikram",
+      name: { en: "Meera & Vikram", te: "మీరా & విక్రమ్" },
       age: "35 & 38",
-      treatment: "FET",
-      story: "Frozen embryo transfer gave us our miracle baby after multiple failed attempts.",
+      treatment: { en: "FET", te: "ఎఫ్‌ఇటి" },
+      story: {
+        en: "Frozen embryo transfer gave us our miracle baby after multiple failed attempts.",
+        te: "అనేక విఫల ప్రయత్నాల తర్వాత ఫ్రోజెన్ ఎంబ్రియో ట్రాన్స్‌ఫర్ మాకు ఒక అద్భుత శిశువును ఇచ్చింది."
+      },
       rating: 5,
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+      image:
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     }
-  ]; 
+  ];
+
+
 
   const facilities = [
     {
-      title: "State-of-the-Art Laboratory",
-      description: "Advanced equipment for precise embryo culture and monitoring",
+      title: { en: "State-of-the-Art Laboratory", te: "అధునాతన ప్రయోగశాల" },
+      description: {
+        en: "Advanced equipment for precise embryo culture and monitoring",
+        te: "ఎంబ్రియో సంస్కరణ మరియు పర్యవేక్షణ కోసం ఆధునిక పరికరాలు"
+      },
       icon: Microscope
     },
     {
-      title: "Experienced Team",
-      description: "Specialized fertility experts with years of experience",
+      title: { en: "Experienced Team", te: "అనుభవజ్ఞులైన బృందం" },
+      description: {
+        en: "Specialized fertility experts with years of experience",
+        te: "అనుభవం గల నిపుణులైన సంతానోత్పత్తి వైద్యులు"
+      },
       icon: Users
     },
     {
-      title: "24/7 Monitoring",
-      description: "Round-the-clock care and monitoring during treatment",
+      title: { en: "24/7 Monitoring", te: "24/7 పర్యవేక్షణ" },
+      description: {
+        en: "Round-the-clock care and monitoring during treatment",
+        te: "చికిత్స సమయంలో నిరంతర పర్యవేక్షణ మరియు సంరక్షణ"
+      },
       icon: Clock
     },
     {
-      title: "High Success Rates",
-      description: "Proven track record with excellent pregnancy rates",
+      title: { en: "High Success Rates", te: "అధిక విజయశాతం" },
+      description: {
+        en: "Proven track record with excellent pregnancy rates",
+        te: "ఉత్తమ గర్భధారణ విజయాలతో నిరూపితమైన ఫలితాలు"
+      },
       icon: Award
     }
   ];
@@ -108,75 +152,84 @@ const IVF = () => {
   const processSteps = [
     {
       step: 1,
-      title: "Initial Consultation",
-      description: "Comprehensive fertility assessment and treatment planning",
-      duration: "1-2 hours"
+      title: { en: "Initial Consultation", te: "ప్రారంభ సలహా" },
+      description: {
+        en: "Comprehensive fertility assessment and treatment planning",
+        te: "సంపూర్ణ సంతానోత్పత్తి అంచనా మరియు చికిత్స ప్రణాళిక"
+      }
     },
     {
       step: 2,
-      title: "Ovarian Stimulation",
-      description: "Medication to stimulate multiple egg production",
-      duration: "8-12 days"
+      title: { en: "Ovarian Stimulation", te: "గర్భాశయ ప్రేరణ" },
+      description: {
+        en: "Medication to stimulate multiple egg production",
+        te: "అనేక గుడ్డుల ఉత్పత్తిని ప్రేరేపించడానికి ఔషధం"
+      }
     },
     {
       step: 3,
-      title: "Egg Retrieval",
-      description: "Minimal invasive procedure to collect eggs",
-      duration: "30-45 minutes"
+      title: { en: "Egg Retrieval", te: "గుడ్డులను సేకరించడం" },
+      description: {
+        en: "Minimal invasive procedure to collect eggs",
+        te: "గుడ్డులను సేకరించడానికి సులభమైన పద్ధతి"
+      }
     },
     {
       step: 4,
-      title: "Fertilization",
-      description: "Eggs and sperm are combined in the laboratory",
-      duration: "1 day"
+      title: { en: "Fertilization", te: "సారవంతం చేయడం" },
+      description: {
+        en: "Eggs and sperm are combined in the laboratory",
+        te: "గుడ్డులు మరియు స్పెర్మ్ ల్యాబ్‌లో కలపబడతాయి"
+      }
     },
     {
       step: 5,
-      title: "Embryo Culture",
-      description: "Embryos are cultured for 3-5 days",
-      duration: "3-5 days"
+      title: { en: "Embryo Culture", te: "ఎంబ్రియో సంస్కరణ" },
+      description: {
+        en: "Embryos are cultured for 3-5 days",
+        te: "ఎంబ్రియోలను 3-5 రోజుల పాటు సంస్కరించబడతాయి"
+      }
     },
     {
       step: 6,
-      title: "Embryo Transfer",
-      description: "Best quality embryos are transferred to the uterus",
-      duration: "15-30 minutes"
+      title: { en: "Embryo Transfer", te: "ఎంబ్రియో ట్రాన్స్‌ఫర్" },
+      description: {
+        en: "Best quality embryos are transferred to the uterus",
+        te: "ఉత్తమ నాణ్యత గల ఎంబ్రియోలను గర్భాశయంలోకి మార్చడం"
+      }
     }
   ];
-
-
-
-
-
 
 
   return (
     <div>
       {/* Hero Section */}
       <section className="relative bg-green-400 text-white py-20">
-        <div className="absolute inset-0"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Advanced IVF & Fertility Care
-            </h1>
-            <p className="text-xl md:text-2xl text-white-200 mb-8">
-              Expert fertility treatments with state-of-the-art technology and compassionate care
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/appointment"
-                className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
-              >
-                Book Consultation
-              </Link>
-              <a
-                href="#treatments"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-700 transition-colors"
-              >
-                View Treatments
-              </a>
-            </div>
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            {currentLanguage === 'en'
+              ? 'Advanced IVF & Fertility Care'
+              : 'అధునాతన IVF మరియు సంతానోత్పత్తి సంరక్షణ'}
+          </h1>
+          <p className="text-xl md:text-2xl text-white-200 mb-8">
+            {currentLanguage === 'en'
+              ? 'Expert fertility treatments with state-of-the-art technology and compassionate care'
+              : 'అధునాతన సాంకేతికత మరియు కరుణతో కూడిన సంరక్షణతో నిపుణులైన సంతానోత్పత్తి చికిత్సలు'}
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/appointment"
+              className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
+            >
+              {currentLanguage === 'en' ? 'Book Consultation' : 'కన్సల్టేషన్ బుక్ చేయండి'}
+            </Link>
+            <a
+              href="#treatments"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-700 transition-colors"
+            >
+              {currentLanguage === 'en' ? 'View Treatments' : 'చికిత్సలు చూడండి'}
+            </a>
           </div>
         </div>
       </section>
@@ -207,35 +260,29 @@ const IVF = () => {
 
       {/* Treatments Section */}
       <section id="treatments" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Fertility Treatments</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We offer a comprehensive range of fertility treatments tailored to your specific needs
-            </p>
-          </div>
+        <div className="container mx-auto px-4 text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            {currentLanguage === 'en' ? 'Our Fertility Treatments' : 'మా సంతానోత్పత్తి చికిత్సలు'}
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            {currentLanguage === 'en'
+              ? 'We offer a comprehensive range of fertility treatments tailored to your specific needs.'
+              : 'మీ అవసరాలకు అనుగుణంగా రూపొందించిన విస్తృత సంతానోత్పత్తి చికిత్సలను మేము అందిస్తున్నాము.'}
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {treatments.map((treatment, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                  <treatment.icon className="w-8 h-8 text-green-700" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{treatment.title}</h3>
-                <p className="text-gray-600 mb-4">{treatment.description}</p>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Duration:</span>
-                    <span className="font-semibold">{treatment.duration}</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-500">Success Rate:</span>
-                    <span className="font-semibold text-green-600">{treatment.successRate}</span>
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {treatments.map((treatment, index) => (
+            <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                <treatment.icon className="w-8 h-8 text-green-700" />
               </div>
-            ))}
-          </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                {treatment.title[currentLanguage]}
+              </h3>
+              <p className="text-gray-600">{treatment.description[currentLanguage]}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -256,9 +303,13 @@ const IVF = () => {
                   <div className="w-12 h-12 bg-green-700 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">
                     {step.step}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {step.title[currentLanguage]}
+                  </h3>
                 </div>
-                <p className="text-gray-600 mb-3">{step.description}</p>
+                <p className="text-gray-600 mb-3">
+                  {step.description[currentLanguage]}
+                </p>
                 <div className="flex items-center text-sm text-gray-500">
                   <Clock className="w-4 h-4 mr-2" />
                   {step.duration}
@@ -270,26 +321,28 @@ const IVF = () => {
       </section>
 
       {/* Facilities Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our IVF Center?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              State-of-the-art facilities and experienced professionals for your fertility journey
-            </p>
-          </div>
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            {currentLanguage === 'en' ? 'Why Choose Our IVF Center?' : 'మా IVF సెంటర్ ఎందుకు ఎంచుకోవాలి?'}
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            {currentLanguage === 'en'
+              ? 'State-of-the-art facilities and experienced professionals for your fertility journey.'
+              : 'మీ సంతానోత్పత్తి ప్రయాణానికి అనుభవజ్ఞులైన నిపుణులు మరియు ఆధునాతన సదుపాయాలు.'}
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {facilities.map((facility, index) => (
-              <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <facility.icon className="w-10 h-10 text-green-700" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{facility.title}</h3>
-                <p className="text-gray-600">{facility.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {facilities.map((facility, index) => (
+            <div key={index} className="text-center">
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <facility.icon className="w-10 h-10 text-green-700" />
               </div>
-            ))}
-          </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{facility.title[currentLanguage]}</h3>
+              <p className="text-gray-600">{facility.description[currentLanguage]}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -457,103 +510,23 @@ const IVF = () => {
                 </span>
               </div>
             </div>
-
-            
-
-            {/* <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src="/images/ivf/ivf3.jpeg"
-                  alt="Patient Recovery Room"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
-                <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
-                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
-                  Patient Care
-                </span>
-              </div>
-            </div> */}
-
-            {/* <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src="/images/ivf/ivf4.jpeg"
-                  alt="Patient Recovery Room"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
-                <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
-                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
-                  Patient Care
-                </span>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src="/images/ivf/ivf5.jpeg"
-                  alt="Patient Recovery Room"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
-                <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
-                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
-                  Patient Care
-                </span>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src="/images/ivf/ivf6.jpeg"
-                  alt="Patient Recovery Room"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
-                <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
-                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
-                  Patient Care
-                </span>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src="/images/ivf/ivf7.jpeg"
-                  alt="Patient Recovery Room"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Patient Recovery Room</h3>
-                <p className="text-gray-600 mb-3">Comfortable recovery area for patients after egg retrieval and embryo transfer</p>
-                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">
-                  Patient Care
-                </span>
-              </div>
-            </div> */}
-         
           </div>
 
-            </div>
+        </div>
       </section>
 
+ 
       {/* Success Stories */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              {currentLanguage === "en" ? "Success Stories" : "విజయ కథలు"}
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real stories from couples who achieved their dream of parenthood
+              {currentLanguage === "en"
+                ? "Real stories from couples who achieved their dream of parenthood"
+                : "తల్లిదండ్రుల కలను సాధించిన జంటల నిజమైన కథలు"}
             </p>
           </div>
 
@@ -561,18 +534,25 @@ const IVF = () => {
             {successStories.map((story, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6">
                 <div className="flex items-center mb-4">
+                  {/* Uncomment if you want images */}
                   {/* <img
-                    src={story.image}
-                    alt={story.name}
-                    className="w-16 h-16 rounded-full object-cover mr-4"
-                  /> */}
+              src={story.image}
+              alt={story.name[currentLanguage]}
+              className="w-16 h-16 rounded-full object-cover mr-4"
+            /> */}
                   <div>
-                    <h3 className="font-bold text-gray-900">{story.name}</h3>
-                    <p className="text-sm text-gray-500">Age: {story.age}</p>
-                    <p className="text-sm text-green-700 font-semibold">{story.treatment}</p>
+                    <h3 className="font-bold text-gray-900">
+                      {story.name[currentLanguage]}
+                    </h3>
+                    <p className="text-sm text-gray-500">
+                      {currentLanguage === "en" ? "Age" : "వయస్సు"}: {story.age}
+                    </p>
+                    <p className="text-sm text-green-700 font-semibold">
+                      {story.treatment[currentLanguage]}
+                    </p>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4">{story.story}</p>
+                <p className="text-gray-600 mb-4">{story.story[currentLanguage]}</p>
                 <div className="flex items-center">
                   {[...Array(story.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
@@ -584,19 +564,27 @@ const IVF = () => {
         </div>
       </section>
 
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-green-400 to-green-400 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Start Your Fertility Journey?</h2>
+          <h2 className="text-4xl font-bold mb-6">
+            {currentLanguage === 'en'
+              ? 'Ready to Start Your Fertility Journey?'
+              : 'మీ సంతానోత్పత్తి ప్రయాణాన్ని ప్రారంభించడానికి సిద్ధంగా ఉన్నారా?'}
+          </h2>
           <p className="text-xl text-green-200 mb-8 max-w-3xl mx-auto">
-            Schedule a consultation with our fertility experts and take the first step towards parenthood
+            {currentLanguage === 'en'
+              ? 'Schedule a consultation with our fertility experts and take the first step towards parenthood.'
+              : 'మా నిపుణులతో కన్సల్టేషన్ బుక్ చేసుకుని, తల్లిదండ్రుల దిశగా మొదటి అడుగు వేయండి.'}
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/appointment"
               className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center"
             >
-              Book Consultation
+              {currentLanguage === 'en' ? 'Book Consultation' : 'కన్సల్టేషన్ బుక్ చేయండి'}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
             <a
@@ -604,7 +592,7 @@ const IVF = () => {
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-700 transition-colors inline-flex items-center"
             >
               <Phone className="mr-2 w-5 h-5" />
-              Call Now
+              {currentLanguage === 'en' ? 'Call Now' : 'ఇప్పుడు కాల్ చేయండి'}
             </a>
           </div>
         </div>
@@ -613,82 +601,8 @@ const IVF = () => {
   );
 };
 
-export default IVF; 
+export default IVF;
 
 
-
-
-  // {
-  //   id: 14,
-  //   src: "/images/equipment/equipment1.jpeg",
-  //   alt: "Advanced Medical Microscope",
-  //   category: "equipment",
-  //   title: "Advanced Medical Microscope",
-  //   description: "High-precision microscope setup for detailed medical analysis and research"
-  // },
-  // {
-  //   id: 15,
-  //   src: "/images/equipment/equipment2.jpeg",
-  //   alt: "Laboratory Workstation",
-  //   category: "equipment",
-  //   title: "Laboratory Workstation",
-  //   description: "Spacious laboratory with multiple workstations for comprehensive diagnostics"
-  // },
-  // {
-  //   id: 16,
-  //   src: "/images/equipment/equipment3.jpeg",
-  //   alt: "IVF Workstation Elite Series",
-  //   category: "equipment",
-  //   title: "IVF Workstation Elite Series",
-  //   description: "Advanced IVF workstation by HYTEK SCIENTIFICS INC for fertility treatments"
-  // },
-  // {
-  //   id: 17,
-  //   src: "/images/equipment/equipment4.jpeg",
-  //   alt: "Laminar Flow Hood",
-  //   category: "equipment",
-  //   title: "Laminar Flow Hood",
-  //   description: "Specialized laboratory workstation with laminar flow for sterile procedures"
-  // },  
-  // {
-  //   id: 18,
-  //   src: "/images/equipment/equipment5.jpeg",
-  //   alt: "Gynecology Examination Room",
-  //   category: "equipment",
-  //   title: "Gynecology Examination Room",
-  //   description: "Specialized examination room with modern equipment for women's health"
-  // },
-  // {
-  //   id: 19,
-  //   src: "/images/equipment/equipment6.jpeg",
-  //   alt: "Labotect Incubator C16",
-  //   category: "equipment",
-  //   title: "Labotect Incubator C16",
-  //   description: "Advanced incubator maintaining optimal conditions for medical procedures"
-  // },
-  // {
-  //   id: 20,
-  //   src: "/images/equipment/equipment7.jpeg",
-  //   alt: "Medical Equipment Setup",
-  //   category: "equipment",
-  //   title: "Medical Equipment Setup",
-  //   description: "Professional medical equipment including HYTEK SCIENTIFICS and Labotect Aspirator"
-  // },
-  // {
-  //   id: 21,
-  //   src: "/images/equipment/equipment8.jpeg",
-  //   alt: "Operation Theatre Door",
-  //   category: "equipment",
-  //   title: "Operation Theatre",
-  //   description: "Sterile operation theatre entrance with controlled access for surgical procedures"
-  // },
-  // {
-  //   id: 22,
-  //   src: "/images/equipment/equipment9.jpeg",
-  //   alt: "Laboratory Freezer",
-  //   category: "equipment",
-  //   title: "Laboratory Freezer",
-  //   description: "Professional laboratory freezer with digital temperature control system"
-  // },
 
 

@@ -119,6 +119,23 @@ export const departments = [
     description: "Comprehensive medical care for adults with focus on chronic diseases",
     doctors: 1,
     services: ["Diabetes Management", "Hypertension Treatment", "Thyroid Disorders", "Heart Disease", "Respiratory Problems", "Infectious Diseases", "Liver & Kidney Diseases", "Emergency Care"]
+  },
+  {
+    id: 7,
+    name: "Vertigo",
+    icon: "activity",
+    image: "/images/departments/vertigo.svg",
+    description:
+      "Comprehensive evaluation and treatment for balance disorders, dizziness, and vertigo-related conditions",
+    doctors: 1,
+    services: [
+      "Vertigo Assessment",
+      "Balance Rehabilitation Therapy",
+      "BPPV Treatment (Benign Paroxysmal Positional Vertigo)",
+      "Vestibular Migraine Management",
+      "Inner Ear Function Testing",
+      "Postural Instability Therapy"
+    ]
   }
 ];
 

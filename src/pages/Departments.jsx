@@ -154,7 +154,7 @@ const Departments = () => {
       </section>
 
       {/* Departments Grid */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           {searchTerm && (
             <div className="text-center mb-8">
@@ -176,7 +176,7 @@ const Departments = () => {
             </div>
           )}
         </div>
-      </section>
+      </section> */}
 
       {/* Department Details */}
       <section className="py-20 bg-gray-50">
@@ -282,6 +282,72 @@ const Departments = () => {
           </div>
         </div>
       </section>
+
+
+      <section className="py-20 bg-gray-50">
+         <div className="container mx-auto px-4">
+           <div className="text-center mb-16">
+             <h2 className="text-4xl font-bold text-gray-900 mb-4">Special Clinics</h2>
+             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+               Explore our specialized clinics that offer advanced treatments and collaborations for better care.
+             </p>
+           </div>
+
+           {/* Vertigo Clinic */}
+           <div className="mb-20">
+             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Vertigo Clinic</h3>
+             <p className="text-gray-600 max-w-3xl mx-auto mb-8 text-center">
+               Our dedicated Vertigo Clinic offers advanced diagnostic and therapeutic solutions for patients
+               experiencing dizziness, imbalance, or vestibular disorders.
+             </p>
+
+             {/* Images Grid */}
+             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+               <img src="/images/vertigo1.jpeg" alt="Vertigo Clinic 1" className="rounded-xl shadow-lg w-full  object-cover" />
+               <img src="/images/vertigo2.jpeg" alt="Vertigo Clinic 2" className="rounded-xl shadow-lg w-full object-cover" />
+               <img src="/images/vertigo3.jpeg" alt="Vertigo Clinic 3" className="rounded-xl shadow-lg w-full  object-cover" />
+               <img src="/images/vertigo4.jpeg" alt="Vertigo Clinic 4" className="rounded-xl shadow-lg w-full  object-cover" />
+               <img src="/images/vertigo6.jpeg" alt="Vertigo Clinic 6" className="rounded-xl shadow-lg w-full  object-cover" />
+               <img src="/images/vertigo7.jpeg" alt="Vertigo Clinic 7" className="rounded-xl shadow-lg w-full  object-cover" />
+               <img src="/images/vertigo8.jpeg" alt="Vertigo Clinic 7" className="rounded-xl shadow-lg w-full  object-cover" />
+
+             </div>
+
+             {/* Video */}
+             <div className="max-w-4xl mx-auto">
+               <video controls className="w-full rounded-xl shadow-lg">
+                 <source src="/videos/vertigo.mp4" type="video/mp4" />
+                 Your browser does not support the video tag.
+               </video>
+             </div>
+           </div>
+
+           {/* Allergy Clinic */}
+           <div>
+             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+               Allergy Clinic (in collaboration with Evexia)
+             </h3>
+             <p className="text-gray-600 max-w-3xl mx-auto mb-8 text-center">
+               In partnership with Evexia, our Allergy Clinic provides expert consultation, testing,
+               and treatment for a wide range of allergies with state-of-the-art technology.
+             </p>
+
+             {/* Image */}
+             <div className="flex justify-center mb-8">
+               <img src="/images/allergy.jpeg" alt="Allergy Clinic" className="rounded-xl shadow-lg w-full max-w-lg object-cover" />
+             </div>
+
+             {/* Video */}
+             <div className="max-w-4xl mx-auto">
+               <video controls className="w-full rounded-xl shadow-lg">
+                 <source src="/videos/allergy.mp4" type="video/mp4" />
+                 Your browser does not support the video tag.
+               </video>
+             </div>
+           </div>
+
+         </div>
+       </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-green-400 to-green-400 text-white">

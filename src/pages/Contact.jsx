@@ -1,52 +1,44 @@
 import ContactForm from '../components/ContactForm';
-import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { contactInfo as hospitalContact } from '../config/contact';
+import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
+  const { currentLanguage } = useLanguage();
+
   const contactInfo = [
     {
       icon: Phone,
-      title: "Phone",
+      title: currentLanguage === 'en' ? "Phone" : "ఫోన్",
       details: [
-        { label: "Main Office", value: hospitalContact.phoneNumbers[0] },
-        { label: "Emergency", value: hospitalContact.emergencyNumber },
+        { label: currentLanguage === 'en' ? "Main Office" : "ముఖ్య కార్యాలయం", value: hospitalContact.phoneNumbers[0] },
+        { label: currentLanguage === 'en' ? "Emergency" : "అత్యవసరం", value: hospitalContact.emergencyNumber },
       ]
     },
     {
       icon: Mail,
-      title: "Email",
+      title: currentLanguage === 'en' ? "Email" : "ఇమెయిల్",
       details: [
-        { label: "General Inquiries", value: hospitalContact.email },
-        
-       
+        { label: currentLanguage === 'en' ? "General Inquiries" : "సాధారణ ప్రశ్నలు", value: hospitalContact.email },
       ]
     },
     {
       icon: MapPin,
-      title: "Address",
+      title: currentLanguage === 'en' ? "Address" : "చిరునామా",
       details: [
-        { label: "Main Office", value: hospitalContact.address },
-        { label: "City, State", value: "Nandyala, Andhra Pradesh 518501" },
-        { label: "Country", value: "India" }
+        { label: currentLanguage === 'en' ? "Main Office" : "ముఖ్య కార్యాలయం", value: hospitalContact.address },
+        { label: currentLanguage === 'en' ? "City, State" : "నగరం, రాష్ట్రం", value: "Nandyala, Andhra Pradesh 518501" },
+        { label: currentLanguage === 'en' ? "Country" : "దేశం", value: "India" }
       ]
     },
     {
       icon: Clock,
-      title: "Hours",
+      title: currentLanguage === 'en' ? "Hours" : "సమయాలు",
       details: [
-        { label: "Monday - Sunday", value: "9:00 AM - 3:00 PM & 6:00 PM - 10:00 PM" },
-        { label: "Emergency", value: "Available 24/7" }
+        { label: currentLanguage === 'en' ? "Monday - Sunday" : "సోమవారం - ఆదివారం", value: "9:00 AM - 3:00 PM & 6:00 PM - 10:00 PM" },
+        { label: currentLanguage === 'en' ? "Emergency" : "అత్యవసరం", value: currentLanguage === 'en' ? "Available 24/7" : "24/7 అందుబాటులో ఉంది" }
       ]
     }
-  ];
-
-  const departments = [
-    { name: "Cardiology", phone: "97041 30234" },
-    { name: "Neurology", phone: "97041 30234" },
-    { name: "Pediatrics", phone: "97041 30234" },
-    { name: "Orthopedics", phone: "97041 30234" },
-    { name: "Dermatology", phone: "97041 30234" },
-    { name: "Emergency", phone: "97041 30234" }
   ];
 
   return (
@@ -54,10 +46,13 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-400 to-green-400 text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-white-200 max-w-3xl mx-auto">
-            Get in touch with us for any questions, concerns, or to schedule an appointment. 
-            We're here to help you with all your healthcare needs.
+          <h1 className="text-5xl font-bold mb-6">
+            {currentLanguage === 'en' ? "Contact Us" : "మమ్మల్ని సంప్రదించండి"}
+          </h1>
+          <p className="text-xl text-white max-w-3xl mx-auto">
+            {currentLanguage === 'en'
+              ? "Get in touch with us for any questions, concerns, or to schedule an appointment. We're here to help you with all your healthcare needs."
+              : "ఏవైనా ప్రశ్నలు, ఆందోళనలు లేదా అపాయింట్‌మెంట్‌ను షెడ్యూల్ చేయడానికి మమ్మల్ని సంప్రదించండి. మీ ఆరోగ్య అవసరాలకు మేము సహాయం చేయడానికి సిద్ధంగా ఉన్నాము."}
           </p>
         </div>
       </section>
@@ -66,10 +61,13 @@ const Contact = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              {currentLanguage === 'en' ? "Get in Touch" : "మమ్మల్ని సంప్రదించండి"}
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're here to help. Contact us through any of the following methods or fill out 
-              the form below and we'll get back to you as soon as possible.
+              {currentLanguage === 'en'
+                ? "We're here to help. Contact us through any of the following methods or fill out the form below and we'll get back to you as soon as possible."
+                : "మేము మీకు సహాయం చేయడానికి ఇక్కడ ఉన్నాము. కింది పద్ధతులలో ఏదో ఒకదాని ద్వారా మమ్మల్ని సంప్రదించండి లేదా ఫారమ్ నింపి పంపించండి, మేము వీలైనంత త్వరగా మిమ్మల్ని సంప్రదిస్తాము."}
             </p>
           </div>
 
@@ -94,161 +92,38 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map and Form Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Map */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Find Us</h2>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="h-96 bg-gray-200 relative">
-                  {/* Static Map Image - No API Key Required */}
-                  <img
-                    src={`https://maps.googleapis.com/maps/api/staticmap?center=15.4778,78.4833&zoom=15&size=600x400&markers=color:red%7Clabel:H%7C15.4778,78.4833&maptype=roadmap`}
-                    alt="Hospital Location Map"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      // Fallback to a placeholder map if the API fails
-                      e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' font-family='Arial, sans-serif' font-size='18' fill='%236b7280'%3EHospital Location%3C/text%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-family='Arial, sans-serif' font-size='14' fill='%236b7280'%3ENeravati Hospital, Nandyala%3C/text%3E%3C/svg%3E";
-                    }}
-                  />
-                  {/* Overlay with hospital info */}
-                  <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg p-4 max-w-xs">
-                    <h4 className="font-semibold text-gray-900 mb-2">Neravati Hospital</h4>
-                    <p className="text-sm text-gray-600">{hospitalContact.address}</p>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Getting Here</h3>
-                  <div className="space-y-3 text-sm text-gray-600">
-                    <p><strong>By Car:</strong> Located off Main Street with ample parking available.</p>
-                    <p><strong>By Bus:</strong> Routes 10, 15, and 22 stop directly in front of our building.</p>
-                    <p><strong>By Train:</strong> 10-minute walk from Central Station.</p>
-                  </div>
-                  {/* Direct link to Google Maps */}
-                  <div className="mt-4">
-                    <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hospitalContact.address)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors"
-                    >
-                      <MapPin className="w-4 h-4 mr-2" />
-                      Open in Google Maps
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-              <ContactForm />
-            </div>
-          </div>
+      {/* Map Section */}
+      <section className="p-10">
+        <div className="h-96 md:h-150 bg-gray-200 relative">
+          <iframe
+            title="Neravati Multispeciality Hospital Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1922.506682159715!2d78.48150512883663!3d15.483713309638121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5ad0065304f3b%3A0x1ac591798d88cbc0!2sNeravati%20multispeciality%20hospital!5e0!3m2!1sen!2sin!4v1760636560594!5m2!1sen!2sin"
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-full border-0"
+          ></iframe>
         </div>
       </section>
-
-      {/* Department Contacts */}
-      {/* <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Department Contacts</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Need to contact a specific department? Here are the direct phone numbers 
-              for each of our medical departments.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {departments.map((dept, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-200">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">{dept.name}</h3>
-                      <p className="text-green-600 font-medium">{dept.phone}</p>
-                    </div>
-                    <Phone className="w-5 h-5 text-gray-400" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* FAQ Section - Commented Out */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-              <p className="text-xl text-gray-600">
-                Quick answers to common questions about contacting us.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  What are your office hours?
-                </h3>
-                <p className="text-gray-600">
-                  Our main office is open Monday through Sunday from 9:00 AM to 3:00 PM and 6:00 PM to 10:00 PM. 
-                  Emergency care is available 24/7.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  How quickly will you respond to my message?
-                </h3>
-                <p className="text-gray-600">
-                  We typically respond to all inquiries within 24 hours during business days. 
-                  For urgent matters, please call us directly.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Can I schedule an appointment over the phone?
-                </h3>
-                <p className="text-gray-600">
-                  Yes, you can schedule appointments by calling our main office or using 
-                  our online booking system for your convenience.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Do you have parking available?
-                </h3>
-                <p className="text-gray-600">
-                  Yes, we have ample free parking available for all patients and visitors 
-                  in our dedicated parking lot.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       {/* Emergency Contact */}
       <section className="py-20 bg-red-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-4xl font-bold mb-6">Emergency Contact</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              {currentLanguage === 'en' ? "Emergency Contact" : "అత్యవసర సంప్రదింపు"}
+            </h2>
             <p className="text-xl mb-8">
-              For medical emergencies, please call our emergency hotline immediately.
+              {currentLanguage === 'en'
+                ? "For medical emergencies, please call our emergency hotline immediately."
+                : "వైద్య అత్యవసర పరిస్థితుల కోసం, దయచేసి వెంటనే మా అత్యవసర హాట్‌లైన్‌కు కాల్ చేయండి."}
             </p>
             <div className="bg-white text-red-600 rounded-lg p-8 mb-8">
               <p className="text-3xl font-bold mb-2">{hospitalContact.emergencyNumber}</p>
-              <p className="text-lg">Available 24/7</p>
+              <p className="text-lg">
+                {currentLanguage === 'en' ? "Available 24/7" : "24 గంటలు అందుబాటులో ఉంది"}
+              </p>
             </div>
-            
           </div>
         </div>
       </section>
@@ -256,4 +131,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;
