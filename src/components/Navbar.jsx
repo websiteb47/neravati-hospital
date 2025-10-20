@@ -266,7 +266,7 @@ const Navbar = () => {
 
                       {/* Mobile Dropdown Content */}
                       <div className="ml-4 space-y-3 border-l-2 border-green-100 pl-4">
-                        {item.id === 'departments' && departmentsMemoized.slice(0, 4).map((dept) => (
+                        {item.id === 'departments' && departmentsMemoized.slice(0, 7).map((dept) => (
                           <Link
                             key={dept.id}
                             to={`/departments#${dept.name.toLowerCase().replace(/\s+/g, '-')}`}
@@ -277,10 +277,10 @@ const Navbar = () => {
                           </Link>
                         ))}
 
-                        {item.id === 'services' && servicesWithLanguage.slice(0, 4).map((service) => (
+                        {item.id === 'services' && servicesWithLanguage.slice(0, 8).map((service) => (
                           <Link
                             key={service.id}
-                            to={`/services#${(service.name.en || service.name).toLowerCase().replace(/\s+/g, '-')}`}
+                            to={`/services#${(service.name.en || service.name).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
                             className="block text-sm text-gray-600 hover:text-green-700 transition-colors"
                             onClick={() => setIsOpen(false)}
                           >
@@ -299,13 +299,13 @@ const Navbar = () => {
                           </Link>
                         ))}
 
-                        <Link
+                        {/* <Link
                           to={item.href}
                           className="block text-sm text-green-700 font-semibold hover:text-green-800 transition-colors"
                           onClick={() => setIsOpen(false)}
                         >
                           View All {item.name}
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                   );

@@ -24,7 +24,7 @@ const Gallery = () => {
     { id: 'all', name: { en: 'All Images', te: 'అన్ని చిత్రాలు' }, icon: ImageIcon },
     { id: 'opening', name: { en: 'Hospital Opening', te: 'ఆసుపత్రి ప్రారంభం' }, icon: Calendar },
     { id: 'facility', name: { en: 'Facilities', te: 'సౌకర్యాలు' }, icon: Building },
-    { id: 'staff', name: { en: 'Medical Staff', te: 'వైద్య సిబ్బంది' }, icon: Users },
+    // { id: 'staff', name: { en: 'Medical Staff', te: 'వైద్య సిబ్బంది' }, icon: Users },
     { id: 'patient-care', name: { en: 'Patient Care', te: 'రోగుల సంరక్షణ' }, icon: Heart },
   ];
 
@@ -57,6 +57,71 @@ const Gallery = () => {
       },
     },
     {
+      id: 3,
+      src: '/images/gallery/opening-ceremony-3.jpeg',
+      category: 'opening',
+      title: {
+        en: 'Hospital Opening Ceremony',
+        te: 'ఆసుపత్రి ప్రారంభ వేడుక',
+      },
+      description: {
+        en: 'Grand opening ceremony of Neravati Multispeciality Hospital with dignitaries and staff.',
+        te: 'నేరవాటి మల్టీ స్పెషాలిటీ ఆసుపత్రి ఘనంగా ప్రారంభ వేడుక, ముఖ్య అతిథులు మరియు సిబ్బందితో.',
+      },
+    },
+    {
+      id: 4,
+      src: '/images/gallery/opening-ceremony-4.jpeg',
+      category: 'opening',
+      title: {
+        en: 'Hospital Opening Ceremony',
+        te: 'ఆసుపత్రి ప్రారంభ వేడుక',
+      },
+      description: {
+        en: 'Grand opening ceremony of Neravati Multispeciality Hospital with dignitaries and staff.',
+        te: 'నేరవాటి మల్టీ స్పెషాలిటీ ఆసుపత్రి ఘనంగా ప్రారంభ వేడుక, ముఖ్య అతిథులు మరియు సిబ్బందితో.',
+      },
+    },
+    {
+      id: 5,
+      src: '/images/gallery/opening-ceremony-5.jpeg',
+      category: 'opening',
+      title: {
+        en: 'Hospital Opening Ceremony',
+        te: 'ఆసుపత్రి ప్రారంభ వేడుక',
+      },
+      description: {
+        en: 'Grand opening ceremony of Neravati Multispeciality Hospital with dignitaries and staff.',
+        te: 'నేరవాటి మల్టీ స్పెషాలిటీ ఆసుపత్రి ఘనంగా ప్రారంభ వేడుక, ముఖ్య అతిథులు మరియు సిబ్బందితో.',
+      },
+    },
+    {
+      id: 6,
+      src: '/images/gallery/opening-ceremony-6.jpeg',
+      category: 'opening',
+      title: {
+        en: 'Hospital Opening Ceremony',
+        te: 'ఆసుపత్రి ప్రారంభ వేడుక',
+      },
+      description: {
+        en: 'Grand opening ceremony of Neravati Multispeciality Hospital with dignitaries and staff.',
+        te: 'నేరవాటి మల్టీ స్పెషాలిటీ ఆసుపత్రి ఘనంగా ప్రారంభ వేడుక, ముఖ్య అతిథులు మరియు సిబ్బందితో.',
+      },
+    },
+    {
+      id: 7,
+      src: '/images/gallery/opening-ceremony-7.jpeg',
+      category: 'opening',
+      title: {
+        en: 'Hospital Opening Ceremony',
+        te: 'ఆసుపత్రి ప్రారంభ వేడుక',
+      },
+      description: {
+        en: 'Grand opening ceremony of Neravati Multispeciality Hospital with dignitaries and staff.',
+        te: 'నేరవాటి మల్టీ స్పెషాలిటీ ఆసుపత్రి ఘనంగా ప్రారంభ వేడుక, ముఖ్య అతిథులు మరియు సిబ్బందితో.',
+      },
+    },
+    {
       id: 8,
       src: '/images/gallery/hospotalbuilding.jpeg',
       category: 'facility',
@@ -76,6 +141,38 @@ const Gallery = () => {
         te: 'ప్రొఫెషనల్ సిబ్బందితో ఆహ్వానకరమైన రిసెప్షన్ ప్రాంతం.',
       },
     },
+    {
+      id: 10,
+      src: '/images/gallery/patientarea.jpeg',
+      category: 'facility',
+      title: { en: 'Patient Waiting Area', te: 'రోగుల నిరీక్షణ ప్రాంతం' },
+      description: {
+        en: 'Comfortable and clean waiting area designed for patients and attendants, ensuring a calm environment before consultation.',
+        te: 'రోగులు మరియు సహచరులు సౌకర్యవంతంగా వేచి ఉండేందుకు రూపొందించిన శుభ్రమైన మరియు ప్రశాంతమైన నిరీక్షణ ప్రాంతం.',
+      },
+    },
+    {
+      id: 11,
+      src: '/images/gallery/patientarea2.jpeg',
+      category: 'facility',
+      title: { en: 'Patient Waiting Lounge', te: 'రోగుల నిరీక్షణ లాంజ్' },
+      description: {
+        en: 'Spacious waiting lounge with comfortable seating and a welcoming atmosphere for patients and visitors.',
+        te: 'రోగులు మరియు సందర్శకుల కోసం సౌకర్యవంతమైన కూర్చునే సదుపాయాలతో విశాలమైన మరియు ఆహ్వానకరమైన నిరీక్షణ లాంజ్.',
+      },
+    },
+    {
+      id: 13,
+      src: '/images/gallery/patientarea3.jpeg',
+      category: 'facility',
+      title: { en: 'Patient Seating Area', te: 'రోగుల కూర్చునే ప్రాంతం' },
+      description: {
+        en: 'Neatly arranged seating area providing comfort and convenience for patients before their appointments.',
+        te: 'అపాయింట్‌మెంట్‌కు ముందు రోగులు సౌకర్యంగా ఉండేందుకు రూపొందించిన శుభ్రమైన కూర్చునే ప్రాంతం.',
+      },
+    },
+    
+
     {
       id: 25,
       src: '/images/services/emergency-care.jpeg',
