@@ -130,7 +130,7 @@ const Navbar = () => {
                       onMouseLeave={handleMouseLeave}
                     >
                       <Link
-                        to={item.href}
+                        // to={item.href}
                         className={`text-sm font-bold transition-colors flex items-center space-x-1 ${location.pathname === item.href
                           ? 'text-green-700'
                           : 'text-gray-700 hover:text-green-700'

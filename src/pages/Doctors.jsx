@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import DoctorCard from '../components/DoctorCard';
-import { doctors, departments } from '../data/doctors';
+import { doctors } from '../data/doctors';
 import { Search, Filter } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useParams } from 'react-router-dom';
