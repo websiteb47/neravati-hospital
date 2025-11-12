@@ -78,7 +78,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-green-400 text-white flex justify-center items-center">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-blue-500 text-white flex justify-center items-center">
         <div className="container m-2 px-2 sm:m-3 sm:px-4">
           <div className="flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm">
             <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-6 mb-1 sm:mb-0 w-full sm:w-auto">
@@ -132,8 +132,8 @@ const Navbar = () => {
                       <Link
                         // to={item.href}
                         className={`text-sm font-bold transition-colors flex items-center space-x-1 ${location.pathname === item.href
-                          ? 'text-green-700'
-                          : 'text-gray-700 hover:text-green-700'
+                          ? 'text-blue-700'
+                          : 'text-gray-700 hover:text-blue-700'
                           }`}
                       >
                         <span>{item.name}</span>
@@ -150,7 +150,7 @@ const Navbar = () => {
                                 <div key={dept.id}>
                                   <Link
                                     to={`/departments#${dept.name.toLowerCase().replace(/\s+/g, '-')}`}
-                                    className="px-4 py-3 hover:bg-green-50 transition-colors text-gray-700 hover:text-green-700 font-medium block"
+                                    className="px-4 py-3 hover:bg-blue-50 transition-colors text-gray-700 hover:text-blue-700 font-medium block"
                                   >
                                     {dept.name}
                                   </Link>
@@ -170,7 +170,7 @@ const Navbar = () => {
                                     to={`/services#${(service.name.en)
                                       .toLowerCase()
                                       .replace(/[^a-z0-9]+/g, '-')}`}
-                                    className="px-4 py-3 hover:bg-green-50 transition-colors text-gray-700 hover:text-green-700 font-medium block"
+                                    className="px-4 py-3 hover:bg-blue-50 transition-colors text-gray-700 hover:text-blue-700 font-medium block"
                                   >
                                     {service.name.en}
                                   </Link>
@@ -188,7 +188,7 @@ const Navbar = () => {
                                 <div key={doctor.id}>
                                   <Link
                                     to={`/doctors/${doctor.id}`} // ✅ Dynamic route
-                                    className="px-4 py-3 hover:bg-green-50 transition-colors text-gray-700 hover:text-green-700 font-medium block"
+                                    className="px-4 py-3 hover:bg-blue-50 transition-colors text-gray-700 hover:text-blue-700 font-medium block"
                                   >
                                     {doctor.name}
                                   </Link>
@@ -210,8 +210,8 @@ const Navbar = () => {
                     key={item.name}
                     to={item.href}
                     className={`text-sm font-bold transition-colors ${location.pathname === item.href
-                      ? 'text-green-700'
-                      : 'text-gray-700 hover:text-green-700'
+                      ? 'text-blue-700'
+                      : 'text-gray-700 hover:text-blue-700'
                       }`}
                   >
                     {item.name}
@@ -222,7 +222,7 @@ const Navbar = () => {
                 <LanguageToggle />
                 <Link
                   to="/appointment"
-                  className="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+                  className="bg-blue-900 hover:bg-blue-950 text-white px-6 py-2 rounded-lg font-medium transition-colors"
                 >
                   {currentLanguage === 'en' ? 'Book Appointment' : 'అపాయింట్‌మెంట్ బుక్ చేయండి'}
                 </Link>
@@ -234,7 +234,7 @@ const Navbar = () => {
               <LanguageToggle />
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-700 hover:text-green-700 transition-colors"
+                className="text-gray-700 hover:text-blue-700 transition-colors"
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -255,8 +255,8 @@ const Navbar = () => {
                       <Link
                         to={item.href}
                         className={`flex items-center justify-between text-base font-bold transition-colors ${location.pathname === item.href
-                          ? 'text-green-700'
-                          : 'text-gray-700 hover:text-green-700'
+                          ? 'text-blue-700'
+                          : 'text-gray-700 hover:text-blue-700'
                           }`}
                         onClick={() => setIsOpen(false)}
                       >
@@ -270,7 +270,7 @@ const Navbar = () => {
                           <Link
                             key={dept.id}
                             to={`/departments#${dept.name.toLowerCase().replace(/\s+/g, '-')}`}
-                            className="block text-sm text-gray-600 hover:text-green-700 transition-colors"
+                            className="block text-sm text-gray-600 hover:text-blue-700 transition-colors"
                             onClick={() => setIsOpen(false)}
                           >
                             {dept.name}
@@ -281,7 +281,7 @@ const Navbar = () => {
                           <Link
                             key={service.id}
                             to={`/services#${(service.name.en || service.name).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
-                            className="block text-sm text-gray-600 hover:text-green-700 transition-colors"
+                            className="block text-sm text-gray-600 hover:text-blue-700 transition-colors"
                             onClick={() => setIsOpen(false)}
                           >
                             {service.displayName}
@@ -292,7 +292,7 @@ const Navbar = () => {
                           <Link
                             key={doctor.id}
                             to={`/doctors/${doctor.id}`}
-                            className="block text-sm text-gray-600 hover:text-green-700 transition-colors"
+                            className="block text-sm text-gray-600 hover:text-blue-700 transition-colors"
                             onClick={() => setIsOpen(false)}
                           >
                             {doctor.name}
@@ -316,8 +316,8 @@ const Navbar = () => {
                     key={item.name}
                     to={item.href}
                     className={`block text-base font-bold transition-colors ${location.pathname === item.href
-                      ? 'text-green-700'
-                      : 'text-gray-700 hover:text-green-700'
+                      ? 'text-blue-700'
+                      : 'text-gray-700 hover:text-blue-700'
                       }`}
                     onClick={() => setIsOpen(false)}
                   >
@@ -327,7 +327,7 @@ const Navbar = () => {
               })}
               <Link
                 to="/appointment"
-                className="block bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors"
+                className="block bg-blue-900 hover:bg-blue-950 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {currentLanguage === 'en' ? 'Book Appointment' : 'అపాయింట్‌మెంట్ బుక్ చేయండి'}

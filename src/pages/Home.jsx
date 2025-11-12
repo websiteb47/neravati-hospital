@@ -193,10 +193,8 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-green-400 text-white">
-        <div className="container mx-auto px-4 mt-4 flex justify-end">
-          <LanguageToggle />
-        </div>
+      <section className="py-20 bg-blue-500 text-white">
+       
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">
             {currentLanguage === 'en' ? 'Ready to Get Started?' : 'ప్రారంభించడానికి సిద్ధంగా ఉన్నారా?'}
@@ -209,13 +207,13 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/appointment"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
             >
               {currentLanguage === 'en' ? 'Book Appointment' : 'అపాయింట్‌మెంట్ బుక్ చేయండి'}
             </Link>
             <Link
               to="/contact"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
             >
               {currentLanguage === 'en' ? 'Contact Us' : 'మమ్మల్ని సంప్రదించండి'}
             </Link>

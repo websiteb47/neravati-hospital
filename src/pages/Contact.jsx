@@ -44,7 +44,7 @@ const Contact = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-400 to-green-400 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-500 to-blue-500 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">
             {currentLanguage === 'en' ? "Contact Us" : "మమ్మల్ని సంప్రదించండి"}
@@ -74,8 +74,8 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactInfo.map((info, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-8 text-center">
-                <div className="w-30 h-30 bg-green-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <info.icon className="w-8 h-8 text-green-700" />
+                <div className="w-30 h-30 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <info.icon className="w-8 h-8 text-blue-700" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-6">{info.title}</h3>
                 <div className="space-y-3">

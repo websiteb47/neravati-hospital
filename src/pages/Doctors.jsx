@@ -40,7 +40,7 @@ const Doctors = () => {
             <div className="bg-white rounded-lg shadow-xl overflow-hidden">
               <div className="md:flex">
                 {/* Left Profile Card */}
-                <div className="md:w-1/3 bg-gradient-to-br from-green-400 to-green-400 p-8 text-white">
+                <div className="md:w-1/3 bg-gradient-to-br from-blue-400 to-blue-400 p-8 text-white">
                   <div className="text-center">
                     <div className="w-40 h-40 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                       <img
@@ -81,18 +81,18 @@ const Doctors = () => {
                     <h4 className="text-xl font-semibold text-gray-900 mb-4">Educational Qualifications</h4>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <div className="bg-green-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-green-700">MBBS</h5>
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-blue-700">MBBS</h5>
                           <p className="text-sm text-gray-600">Osmania Medical College (1991–97)</p>
                         </div>
-                        <div className="bg-green-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-green-700">M.S. (ENT)</h5>
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-blue-700">M.S. (ENT)</h5>
                           <p className="text-sm text-gray-600">Kakatiya Medical College, Warangal</p>
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <div className="bg-green-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-green-700">MRSH</h5>
+                        <div className="bg-blue-50 p-3 rounded-lg">
+                          <h5 className="font-semibold text-blue-700">MRSH</h5>
                           <p className="text-sm text-gray-600">Member, Royal Society for Public Health</p>
                         </div>
                       </div>
@@ -111,7 +111,7 @@ const Doctors = () => {
                       ].map((area, index) => (
                         <span
                           key={index}
-                          className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                          className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
                         >
                           {area}
                         </span>
@@ -135,7 +135,7 @@ const Doctors = () => {
                     <h4 className="text-xl font-semibold text-gray-900 mb-4">Available Services</h4>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Surgical Services</h5>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-700">Surgical Services</h5>
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li>• Microdebrider & Coblator-assisted Adenoidectomy, Tonsillectomy, Turbinectomy</li>
                           <li>• Correction of Deviated Nasal Septum (SMR, Septoplasty)</li>
@@ -146,7 +146,7 @@ const Doctors = () => {
                         </ul>
                       </div>
                       <div>
-                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Specialized Clinics</h5>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-700">Specialized Clinics</h5>
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li>• Vertigo Diagnostics & Rehabilitation</li>
                           <li>• Allergy Testing (Patch & Prick Test)</li>
@@ -197,7 +197,7 @@ const Doctors = () => {
           <div className="max-w-6xl mx-auto">
             <div className="bg-white rounded-lg shadow-xl overflow-hidden">
               <div className="md:flex">
-                <div className="md:w-1/3 bg-gradient-to-br from-green-400 to-green-400 p-8 text-white">
+                <div className="md:w-1/3 bg-gradient-to-br from-blue-400 to-blue-400 p-8 text-white">
                   <div className="text-center">
                     <div className="w-40 h-40 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                       <img
@@ -228,29 +228,29 @@ const Doctors = () => {
                     <h4 className="text-xl font-semibold text-gray-900 mb-4">Educational Qualifications</h4>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <div className="bg-green-50 p-3 rounded-lg">
+                        <div className="bg-blue-50 p-3 rounded-lg">
                           <h5 className="font-semibold text-green-700">MBBS (1993-99)</h5>
                           <p className="text-sm text-gray-600">Guntur Medical College, Guntur</p>
                         </div>
-                        <div className="bg-green-50 p-3 rounded-lg">
+                        <div className="bg-blue-50 p-3 rounded-lg">
                           <h5 className="font-semibold text-green-700">DGO (1999-2001)</h5>
                           <p className="text-sm text-gray-600">Diploma in Obstetrics & Gynaecology</p>
                         </div>
-                        <div className="bg-green-50 p-3 rounded-lg">
+                        <div className="bg-blue-50 p-3 rounded-lg">
                           <h5 className="font-semibold text-green-700">ICOG Fellowship</h5>
                           <p className="text-sm text-gray-600">Reproductive Medicine (AIR-1 Topper)</p>
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <div className="bg-green-50 p-3 rounded-lg">
+                        <div className="bg-blue-50 p-3 rounded-lg">
                           <h5 className="font-semibold text-green-700">Masters in Reproductive Medicine</h5>
                           <p className="text-sm text-gray-600">Homerton University Hospital (UK), 2019</p>
                         </div>
-                        <div className="bg-green-50 p-3 rounded-lg">
+                        <div className="bg-blue-50 p-3 rounded-lg">
                           <h5 className="font-semibold text-green-700">Advanced Diploma in ART</h5>
                           <p className="text-sm text-gray-600">University of Schleswig Holstein-Kiel (Germany), 2022</p>
                         </div>
-                        <div className="bg-green-50 p-3 rounded-lg">
+                        <div className="bg-blue-50 p-3 rounded-lg">
                           <h5 className="font-semibold text-green-700">Multiple Fellowships</h5>
                           <ul className="list-disc list-inside text-sm text-gray-600">
                             <li>Cosmetic Gynaecology</li>
@@ -266,7 +266,7 @@ const Doctors = () => {
                     <h4 className="text-xl font-semibold text-gray-900 mb-4">Areas of Interest</h4>
                     <div className="flex flex-wrap gap-2">
                       {['Fertility Treatment', 'Operative Laparoscopy', 'Operative Hysteroscopy', 'Adolescent Health Education'].map((area, index) => (
-                        <span key={index} className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                        <span key={index} className="bg-blue-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
                           {area}
                         </span>
                       ))}
@@ -677,11 +677,11 @@ const Doctors = () => {
                       <h4 className="text-xl font-semibold text-gray-900 mb-4">Educational Qualifications</h4>
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <div className="bg-green-50 p-3 rounded-lg">
+                          <div className="bg-blue-50 p-3 rounded-lg">
                             <h5 className="font-semibold text-green-700">MBBS</h5>
                             <p className="text-sm text-gray-600">Bachelor of Medicine, Bachelor of Surgery</p>
                           </div>
-                          <div className="bg-green-50 p-3 rounded-lg">
+                          <div className="bg-blue-50 p-3 rounded-lg">
                             <h5 className="font-semibold text-green-700">MD (General Medicine)</h5>
                             <p className="text-sm text-gray-600">Specialization in Internal Medicine</p>
                           </div>
@@ -704,7 +704,7 @@ const Doctors = () => {
                         ].map((item, idx) => (
                           <span
                             key={idx}
-                            className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                            className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
                           >
                             {item}
                           </span>
@@ -717,7 +717,7 @@ const Doctors = () => {
                       <h4 className="text-xl font-semibold text-gray-900 mb-4">Available Services</h4>
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
-                          <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Outpatient Services</h5>
+                          <h5 className="font-semibold text-gray-900 mb-3 text-blue-700">Outpatient Services</h5>
                           <ul className="space-y-2 text-sm text-gray-600">
                             <li>• Diagnosis & Treatment of Chronic Conditions</li>
                             <li>• Fever & Viral Infection Management</li>
@@ -726,7 +726,7 @@ const Doctors = () => {
                           </ul>
                         </div>
                         <div>
-                          <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Inpatient Services</h5>
+                          <h5 className="font-semibold text-gray-900 mb-3 text-blue-700">Inpatient Services</h5>
                           <ul className="space-y-2 text-sm text-gray-600">
                             <li>• Emergency Medical Admissions</li>
                             <li>• IV Antibiotic & Fluid Therapy</li>
@@ -766,7 +766,7 @@ const Doctors = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-green-200 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl font-bold text-green-700">15+</span>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Years Average Experience</h3>
@@ -791,23 +791,23 @@ const Doctors = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-400 to-green-400 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-400 to-blue-400 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Meet Your Doctor?</h2>
-          <p className="text-xl text-green-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
             Schedule an appointment with one of our expert doctors and take the first step 
             towards better health today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/appointment"
-              className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
             >
               Book Appointment
             </a>
             <a
               href="/contact"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
             >
               Contact Us
             </a>

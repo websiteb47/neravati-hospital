@@ -197,7 +197,7 @@ const Gallery = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-400 to-green-400 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-400 to-blue-400 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">
             {currentLanguage === 'en' ? 'Hospital Gallery' : 'ఆసుపత్రి గ్యాలరీ'}
@@ -234,7 +234,7 @@ const Gallery = () => {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors ${
                     selectedCategory === category.id
-                      ? 'bg-green-700 text-white'
+                      ? 'bg-blue-700 text-white'
                       : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
                   }`}
                 >
@@ -282,7 +282,7 @@ const Gallery = () => {
                     </h3>
                     <p className="text-sm text-gray-600">{image.description[currentLanguage]}</p>
                     <div className="mt-2">
-                      <span className="inline-block px-2 py-1 text-xs font-medium bg-green-200 text-green-700 rounded-full">
+                      <span className="inline-block px-2 py-1 text-xs font-medium bg-blue-200 text-blue-700 rounded-full">
                         {categories.find((cat) => cat.id === image.category)?.name[currentLanguage]}
                       </span>
                     </div>
@@ -310,7 +310,7 @@ const Gallery = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <Building className="w-12 h-12 text-green-700 mx-auto mb-4" />
+              <Building className="w-12 h-12 text-blue-700 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {currentLanguage === 'en' ? 'Modern Facilities' : 'ఆధునిక సౌకర్యాలు'}
               </h3>

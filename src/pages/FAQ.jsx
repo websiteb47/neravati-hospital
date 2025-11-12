@@ -175,7 +175,7 @@ const FAQ = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-400 to-green-400 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-500 to-blue-500 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">
             {currentLanguage === 'en'
@@ -203,7 +203,7 @@ const FAQ = () => {
                 }
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-700 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-700 focus:border-transparent"
               />
             </div>
             {searchTerm && (
@@ -254,7 +254,7 @@ const FAQ = () => {
                 </p>
                 <button
                   onClick={() => setSearchTerm('')}
-                  className="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+                  className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
                 >
                   {currentLanguage === 'en' ? "Clear Search" : "శోధనను క్లియర్ చేయండి"}
                 </button>
@@ -281,8 +281,8 @@ const FAQ = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl shadow-lg p-8">
-                <div className="w-16 h-16 bg-green-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <MessageSquare className="w-8 h-8 text-green-700" />
+                <div className="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <MessageSquare className="w-8 h-8 text-blue-700" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {currentLanguage === 'en'
@@ -296,15 +296,15 @@ const FAQ = () => {
                 </p>
                 <a
                   href="/contact"
-                  className="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+                  className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
                 >
                   {currentLanguage === 'en' ? "Contact Us" : "మమ్మల్ని సంప్రదించండి"}
                 </a>
               </div>
 
               <div className="bg-white rounded-xl shadow-lg p-8">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Phone className="w-8 h-8 text-green-600" />
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Phone className="w-8 h-8 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {currentLanguage === 'en'
@@ -318,7 +318,7 @@ const FAQ = () => {
                 </p>
                 <a
                   href="tel:9704130234"
-                  className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
                 >
                   {currentLanguage === 'en' ? "Call Now" : "ఇప్పుడు కాల్ చేయండి"}
                 </a>
@@ -341,9 +341,9 @@ const FAQ = () => {
                   {currentLanguage === 'en' ? "Appointments" : "అపాయింట్‌మెంట్లు"}
                 </h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li><a href="/appointment" className="hover:text-green-700 transition-colors">{currentLanguage === 'en' ? "Book Appointment" : "అపాయింట్‌మెంట్ బుక్ చేయండి"}</a></li>
-                  <li><a href="/doctors" className="hover:text-green-700 transition-colors">{currentLanguage === 'en' ? "Find a Doctor" : "వైద్యుడిని కనుగొనండి"}</a></li>
-                  <li><a href="/departments" className="hover:text-green-700 transition-colors">{currentLanguage === 'en' ? "Our Departments" : "మా విభాగాలు"}</a></li>
+                  <li><a href="/appointment" className="hover:text-blue-700 transition-colors">{currentLanguage === 'en' ? "Book Appointment" : "అపాయింట్‌మెంట్ బుక్ చేయండి"}</a></li>
+                  <li><a href="/doctors" className="hover:text-blue-700 transition-colors">{currentLanguage === 'en' ? "Find a Doctor" : "వైద్యుడిని కనుగొనండి"}</a></li>
+                  <li><a href="/departments" className="hover:text-blue-700 transition-colors">{currentLanguage === 'en' ? "Our Departments" : "మా విభాగాలు"}</a></li>
                 </ul>
               </div>
 
@@ -352,9 +352,9 @@ const FAQ = () => {
                   {currentLanguage === 'en' ? "Services" : "సేవలు"}
                 </h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li><a href="/services" className="hover:text-green-700 transition-colors">{currentLanguage === 'en' ? "Our Services" : "మా సేవలు"}</a></li>
-                  <li><a href="/about" className="hover:text-green-700 transition-colors">{currentLanguage === 'en' ? "About Us" : "మా గురించి"}</a></li>
-                  <li><a href="/contact" className="hover:text-green-700 transition-colors">{currentLanguage === 'en' ? "Contact Info" : "సంప్రదింపు వివరాలు"}</a></li>
+                  <li><a href="/services" className="hover:text-blue-700 transition-colors">{currentLanguage === 'en' ? "Our Services" : "మా సేవలు"}</a></li>
+                  <li><a href="/about" className="hover:text-blue-700 transition-colors">{currentLanguage === 'en' ? "About Us" : "మా గురించి"}</a></li>
+                  <li><a href="/contact" className="hover:text-blue-700 transition-colors">{currentLanguage === 'en' ? "Contact Info" : "సంప్రదింపు వివరాలు"}</a></li>
                 </ul>
               </div>
 
@@ -363,9 +363,9 @@ const FAQ = () => {
                   {currentLanguage === 'en' ? "Support" : "మద్దతు"}
                 </h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li><a href="/contact" className="hover:text-green-700 transition-colors">{currentLanguage === 'en' ? "Get Help" : "సహాయం పొందండి"}</a></li>
-                  <li><a href="tel:9704130234" className="hover:text-green-700 transition-colors">{currentLanguage === 'en' ? "Emergency: 97041 30234" : "అత్యవసరం: 97041 30234"}</a></li>
-                  <li><a href="/appointment" className="hover:text-green-700 transition-colors">{currentLanguage === 'en' ? "Schedule Online" : "ఆన్‌లైన్‌లో షెడ్యూల్ చేయండి"}</a></li>
+                  <li><a href="/contact" className="hover:text-blue-700 transition-colors">{currentLanguage === 'en' ? "Get Help" : "సహాయం పొందండి"}</a></li>
+                  <li><a href="tel:9704130234" className="hover:text-blue-700 transition-colors">{currentLanguage === 'en' ? "Emergency: 97041 30234" : "అత్యవసరం: 97041 30234"}</a></li>
+                  <li><a href="/appointment" className="hover:text-blue-700 transition-colors">{currentLanguage === 'en' ? "Schedule Online" : "ఆన్‌లైన్‌లో షెడ్యూల్ చేయండి"}</a></li>
                 </ul>
               </div>
             </div>

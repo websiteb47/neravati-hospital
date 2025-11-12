@@ -138,7 +138,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-400 to-green-400 text-white py-20">
+      <section className="bg-gradient-to-r from-blue-500 to-blue-500 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">
             {currentLanguage === 'en' ? 'About Neravati' : 'నెరావతి గురించి'}
@@ -158,7 +158,7 @@ const About = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="flex justify-center mb-4">
-                  <stat.icon className="w-12 h-12 text-green-700" />
+                  <stat.icon className="w-12 h-12 text-blue-500" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600">{stat.label}</div>
@@ -183,19 +183,19 @@ const About = () => {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" />
                   <span className="text-gray-700">
                     {currentLanguage === 'en' ? 'Patient-centered care approach' : 'రోగి-కేంద్రీకృత సంరక్షణ విధానం'}
                   </span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" />
                   <span className="text-gray-700">
                     {currentLanguage === 'en' ? 'State-of-the-art medical facilities' : 'ఆధునిక వైద్య సౌకర్యాలు'}
                   </span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" />
                   <span className="text-gray-700">
                     {currentLanguage === 'en' ? 'Experienced medical professionals' : 'అనుభవజ్ఞులైన వైద్య నిపుణులు'}
                   </span>
@@ -213,19 +213,19 @@ const About = () => {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" />
                   <span className="text-gray-700">
                     {currentLanguage === 'en' ? 'Advanced medical technology' : 'అధునాతన వైద్య సాంకేతికత'}
                   </span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" />
                   <span className="text-gray-700">
                     {currentLanguage === 'en' ? 'Comprehensive healthcare solutions' : 'సమగ్ర ఆరోగ్య సంరక్షణ పరిష్కారాలు'}
                   </span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" />
                   <span className="text-gray-700">
                     {currentLanguage === 'en' ? 'Community health improvement' : 'సమాజ ఆరోగ్య మెరుగుదల'}
                   </span>
@@ -253,7 +253,7 @@ const About = () => {
             {values.map((value, index) => (
               <div key={index} className="text-center p-6 bg-white rounded-lg shadow-lg">
                 <div className="flex justify-center mb-4">
-                  <value.icon className="w-12 h-12 text-green-700" />
+                  <value.icon className="w-12 h-12 text-blue-700" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
@@ -280,17 +280,17 @@ const About = () => {
             {timeline.map((item, index) => (
               <div key={index} className="flex items-start space-x-8 mb-12">
                 <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-green-700 rounded-full flex items-center justify-center text-white">
+                  <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center text-white">
                     <item.icon className="w-8 h-8" />
                   </div>
                   <div className="text-center mt-2">
-                    <div className="text-sm font-semibold text-green-700">{item.year}</div>
+                    <div className="text-sm font-semibold text-blue-500">{item.year}</div>
                   </div>
                 </div>
-                <div className="flex-1 bg-white p-6 rounded-lg shadow-lg border-l-4 border-green-700">
+                <div className="flex-1 bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-500">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
                   <p className="text-gray-600 mb-3">{item.description}</p>
-                  <div className="flex items-center text-sm text-green-600">
+                  <div className="flex items-center text-sm text-blue-600">
                     <MapPin className="w-4 h-4 mr-1" />
                     <span>{item.location}</span>
                   </div>
@@ -320,7 +320,7 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-xl overflow-hidden">
               <div className="md:flex">
                 {/* Left Profile Card */}
-                <div className="md:w-1/3 bg-gradient-to-br from-green-400 to-green-400 p-8 text-white">
+                <div className="md:w-1/3 bg-gradient-to-br from-blue-400 to-blue-400 p-8 text-white">
                   <div className="text-center">
                     <div className="w-40 h-40 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                       <img
@@ -362,17 +362,17 @@ const About = () => {
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <div className="bg-green-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-green-700">MBBS</h5>
+                          <h5 className="font-semibold text-blue-700">MBBS</h5>
                           <p className="text-sm text-gray-600">Osmania Medical College (1991–97)</p>
                         </div>
                         <div className="bg-green-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-green-700">M.S. (ENT)</h5>
+                          <h5 className="font-semibold text-blue-700">M.S. (ENT)</h5>
                           <p className="text-sm text-gray-600">Kakatiya Medical College, Warangal</p>
                         </div>
                       </div>
                       <div className="space-y-2">
                         <div className="bg-green-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-green-700">MRSH</h5>
+                          <h5 className="font-semibold text-blue-700">MRSH</h5>
                           <p className="text-sm text-gray-600">Member, Royal Society for Public Health</p>
                         </div>
                       </div>
@@ -391,7 +391,7 @@ const About = () => {
                       ].map((area, index) => (
                         <span
                           key={index}
-                          className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                          className="bg-green-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
                         >
                           {area}
                         </span>
@@ -404,7 +404,7 @@ const About = () => {
                     <h4 className="text-xl font-semibold text-gray-900 mb-4">Available Services</h4>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Surgical Services</h5>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-700">Surgical Services</h5>
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li>• Microdebrider & Coblator-assisted Adenoidectomy, Tonsillectomy, Turbinectomy</li>
                           <li>• Correction of Deviated Nasal Septum (SMR, Septoplasty)</li>
@@ -415,7 +415,7 @@ const About = () => {
                         </ul>
                       </div>
                       <div>
-                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Specialized Clinics</h5>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-700">Specialized Clinics</h5>
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li>• Vertigo Diagnostics & Rehabilitation</li>
                           <li>• Allergy Testing (Patch & Prick Test)</li>
@@ -465,7 +465,7 @@ const About = () => {
           <div className="max-w-6xl mx-auto">
             <div className="bg-white rounded-lg shadow-xl overflow-hidden">
               <div className="md:flex">
-                <div className="md:w-1/3 bg-gradient-to-br from-green-400 to-green-400 p-8 text-white">
+                <div className="md:w-1/3 bg-gradient-to-br from-blue-400 to-blue-400 p-8 text-white">
                   <div className="text-center">
                     <div className="w-40 h-40 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                       <img
@@ -497,29 +497,29 @@ const About = () => {
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <div className="bg-green-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-green-700">MBBS (1993-99)</h5>
+                          <h5 className="font-semibold text-blue-700">MBBS (1993-99)</h5>
                           <p className="text-sm text-gray-600">Guntur Medical College, Guntur</p>
                         </div>
                         <div className="bg-green-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-green-700">DGO (1999-2001)</h5>
+                          <h5 className="font-semibold text-blue-700">DGO (1999-2001)</h5>
                           <p className="text-sm text-gray-600">Diploma in Obstetrics & Gynaecology</p>
                         </div>
                         <div className="bg-green-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-green-700">ICOG Fellowship</h5>
+                          <h5 className="font-semibold text-blue-700">ICOG Fellowship</h5>
                           <p className="text-sm text-gray-600">Reproductive Medicine (AIR-1 Topper)</p>
                         </div>
                       </div>
                       <div className="space-y-2">
                         <div className="bg-green-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-green-700">Masters in Reproductive Medicine</h5>
+                          <h5 className="font-semibold text-blue-700">Masters in Reproductive Medicine</h5>
                           <p className="text-sm text-gray-600">Homerton University Hospital (UK), 2019</p>
                         </div>
                         <div className="bg-green-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-green-700">Advanced Diploma in ART</h5>
+                          <h5 className="font-semibold text-blue-700">Advanced Diploma in ART</h5>
                           <p className="text-sm text-gray-600">University of Schleswig Holstein-Kiel (Germany), 2022</p>
                         </div>
                         <div className="bg-green-50 p-3 rounded-lg">
-                          <h5 className="font-semibold text-green-700">Multiple Fellowships</h5>
+                          <h5 className="font-semibold text-blue-700">Multiple Fellowships</h5>
                           <ul className="list-disc list-inside text-sm text-gray-600">
                             <li>Cosmetic Gynaecology</li>
                             <li>Embryology</li>
@@ -545,7 +545,7 @@ const About = () => {
                     <h4 className="text-xl font-semibold text-gray-900 mb-4">Available Services</h4>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Fertility Treatments</h5>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-700">Fertility Treatments</h5>
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li>• IUI (Intrauterine Insemination)</li>
                           <li>• IVF (In Vitro Fertilization)</li>
@@ -553,7 +553,7 @@ const About = () => {
                         </ul>
                       </div>
                       <div>
-                        <h5 className="font-semibold text-gray-900 mb-3 text-green-700">Advanced Procedures</h5>
+                        <h5 className="font-semibold text-gray-900 mb-3 text-blue-700">Advanced Procedures</h5>
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li>• Operative Laparoscopy</li>
                           <li>• Operative Hysteroscopy</li>
@@ -570,7 +570,7 @@ const About = () => {
         </div>
       </section>
      {/* Testimonials */}
-     <section className="py-16 bg-gradient-to-r from-green-100 to-green-200">
+     <section className="py-16 bg-gradient-to-r from-blue-100 to-blue-200">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             {currentLanguage === 'en' ? 'What Our Patients Say' : 'మా రోగులు ఏమంటున్నారు'}
@@ -587,7 +587,7 @@ const About = () => {
             ))}
           </div>
 
-          <div className="mt-12 inline-flex items-center space-x-2 bg-white text-green-700 px-8 py-3 rounded-lg font-semibold shadow-lg">
+          <div className="mt-12 inline-flex items-center space-x-2 bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold shadow-lg">
             <Star className="w-5 h-5 text-yellow-400 fill-current" />
             <span>
               {currentLanguage === 'en'
@@ -599,14 +599,14 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-500 text-white text-center">
+      <section className="py-16 bg-blue-500 text-white text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-4">
             {currentLanguage === 'en'
               ? 'Ready to Experience Quality Healthcare?'
               : 'ఉత్తమ ఆరోగ్య సేవలను అనుభవించడానికి సిద్ధంగా ఉన్నారా?'}
           </h2>
-          <p className="text-xl text-green-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
             {currentLanguage === 'en'
               ? 'Book an appointment with our expert medical team and take the first step toward better health.'
               : 'మా నిపుణుల వైద్య బృందంతో అపాయింట్‌మెంట్ బుక్ చేసుకుని మెరుగైన ఆరోగ్యానికి తొలి అడుగు వేయండి.'}
@@ -614,13 +614,13 @@ const About = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/appointment"
-              className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
               {currentLanguage === 'en' ? 'Book Appointment' : 'అపాయింట్‌మెంట్ బుక్ చేయండి'}
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-700 transition-colors"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors"
             >
               {currentLanguage === 'en' ? 'Contact Us' : 'మమ్మల్ని సంప్రదించండి'}
             </Link>

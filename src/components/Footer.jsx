@@ -161,7 +161,10 @@ const Footer = () => {
                 <Clock className="w-5 h-5 text-green-300 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">
-                    {currentLanguage === 'en' ? 'Mon-Fri: 8AM-6PM' : 'సోమ-శుక్ర: 8AM-6PM'}
+                    {currentLanguage === 'en' ? 'Mon-Sat: 9AM-10PM' : 'సోమ-శని: 9AM-10PM'}
+                  </p>
+                   <p className="text-gray-300 text-sm">
+                    {currentLanguage === 'en' ? 'Sun: 9AM-8PM' : 'ఆది: 9AM-8PM'}
                   </p>
                   <p className="text-gray-400 text-xs">
                     {currentLanguage === 'en' ? 'Emergency: 24/7' : 'అత్యవసర: 24/7'}

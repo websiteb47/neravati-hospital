@@ -343,7 +343,7 @@ const Services = () => {
         </p>
         <button
           onClick={() => navigate('/')}
-          className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition"
+          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition"
         >
           {currentLanguage === 'en' ? 'Go Back Home' : 'హోమ్‌కు తిరిగి వెళ్ళండి'}
         </button>
@@ -356,7 +356,7 @@ const Services = () => {
   return (
     <div>
       {/* Header */}
-      <section className="bg-gradient-to-r from-green-400 to-green-400 text-white py-16 text-center">
+      <section className="bg-gradient-to-r from-blue-400 to-blue-400 text-white py-16 text-center">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             {selectedService?.name?.[currentLanguage]}
