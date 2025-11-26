@@ -24,7 +24,7 @@ const AppointmentForm = () => {
   // Function to send appointment data to WhatsApp
   const sendToWhatsApp = (data) => {
     // Replace this with your actual WhatsApp number (with country code, no + or spaces)
-    const whatsappNumber = '919494694195'; // Example: 919876543210 for India
+    const whatsappNumber = '919704130234'; // Example: 919876543210 for India
     
     // Format date for better readability
     const formatDate = (dateString) => {
